@@ -83,6 +83,7 @@
     background: #fecd94;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    border: none;
 }
 
 #r5 {
@@ -95,6 +96,7 @@
     background: #fecd94;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    border: none;
 }
 
 #r6 {
@@ -107,6 +109,7 @@
     background: #ebb3ff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    border: none;
 }
 
 #r7 {
@@ -119,6 +122,7 @@
     background: #fcadad;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    border: none;
 }
 
 #r8 {
@@ -131,6 +135,7 @@
     background: #fcadad;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    border: none;
 }
 
 .r9 {
@@ -154,6 +159,7 @@
 
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
 }
 #r11 {
     position: absolute;
@@ -164,6 +170,7 @@
 
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
 }
 #r12 {
     position: absolute;
@@ -174,6 +181,7 @@
 
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
 }
 #r13 {
     position: absolute;
@@ -184,6 +192,16 @@
 
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+.l1 {
+    position: absolute;
+    width: 1920px;
+    height: 0px;
+    left: 0px;
+    top: 136px;
+
+    border: 1px solid #949494;
 }
 .profiltxt {
     position: absolute;
@@ -449,4 +467,13 @@
     top: 886px;
     right: 102px;
     bottom: 79.2px;
+}
+.i5 {
+    /* universitas-diponegoro-logo 2 */
+
+    position: absolute;
+    width: 75px;
+    height: 96px;
+    left: 34px;
+    top: 21px;
 }
