@@ -1,0 +1,54 @@
+.informatika {
+    position: absolute;
+    width: 266px;
+    height: 39px;
+    left: 133px;
+    top: 30px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 54px;
+
+    color: #000000;
+}
+.undiptulisan {
+    position: absolute;
+    width: 260px;
+    height: 28px;
+    left: 140px;
+    top: 90px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23.5px;
+    line-height: 28px;
+
+    color: #000000;
+}
+
+.r1{
+    position: absolute;
+    width: 511px;
+    height: 389px;
+    left: 34px;
+    top: 263px;
+    
+    background: #E0FFD8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.r2{
+    position: absolute;
+width: 405px;
+height: 159px;
+left: 577px;
+top: 263px;
+
+background: #B6E0FF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
