@@ -1,3 +1,10 @@
+.body {
+    font-family: "inter";
+}
+
+.border {
+    border: none;
+}
 .informatika {
     position: absolute;
     width: 266px;
@@ -54,7 +61,7 @@
     border-radius: 10px;
 }
 
-.r3 {
+#r3 {
     position: absolute;
     width: 395px;
     height: 159px;
@@ -136,4 +143,310 @@
     background: #e0ffd8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+}
+
+#r10 {
+    position: absolute;
+    width: 259px;
+    height: 142px;
+    left: 325px;
+    top: 865px;
+
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#r11 {
+    position: absolute;
+    width: 259px;
+    height: 142px;
+    left: 658px;
+    top: 865px;
+
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#r12 {
+    position: absolute;
+    width: 259px;
+    height: 142px;
+    left: 992px;
+    top: 865px;
+
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#r13 {
+    position: absolute;
+    width: 259px;
+    height: 142px;
+    left: 1326px;
+    top: 865px;
+
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.profiltxt {
+    position: absolute;
+    width: 184px;
+    height: 24px;
+    left: 300px;
+    top: 284px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+.t1 {
+    position: absolute;
+    width: 99px;
+    height: 24px;
+    left: 837px;
+    top: 282px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+.t2 {
+    position: absolute;
+    width: 88px;
+    height: 24px;
+    left: 862px;
+    top: 480px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+.t3 {
+    /* KHS */
+
+    position: absolute;
+    width: 41px;
+    height: 24px;
+    left: 1102px;
+    top: 480px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+.t4 {
+    /* Help Desk */
+
+    position: absolute;
+    width: 157px;
+    height: 39px;
+    left: 936px;
+    top: 644px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.t5 {
+    position: absolute;
+    width: 110px;
+    height: 24px;
+    left: 1281px;
+    top: 282px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+.t6 {
+    /* PKL */
+
+    position: absolute;
+    width: 61px;
+    height: 39px;
+    left: 1415px;
+    top: 473px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.t7 {
+    /* Skripsi */
+
+    position: absolute;
+    width: 93px;
+    height: 34px;
+    left: 1399px;
+    top: 594px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.t8 {
+    position: absolute;
+    width: 82px;
+    height: 24px;
+    left: 300px;
+    top: 812px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+.t9 {
+    /* Teams */
+
+    position: absolute;
+    width: 101px;
+    height: 39px;
+    left: 352px;
+    top: 913px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    color: #000000;
+}
+.t10 {
+    /* Email */
+
+    position: absolute;
+    width: 82px;
+    height: 39px;
+    left: 687px;
+    top: 913px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    color: #000000;
+}
+.t11 {
+    /* Radio */
+
+    position: absolute;
+    width: 87px;
+    height: 39px;
+    left: 1024px;
+    top: 913px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    color: #000000;
+}
+.t12 {
+    /* About */
+
+    position: absolute;
+    width: 93px;
+    height: 39px;
+    left: 1354px;
+    top: 913px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.i1 {
+    /* Microsoft logo */
+
+    position: absolute;
+    width: 114px;
+    height: 114px;
+    left: 460px;
+    top: 879px;
+}
+
+.i2 {
+    /* Outlook logo */
+
+    position: absolute;
+    width: 90px;
+    height: 86px;
+    left: 799px;
+    top: 890px;
+}
+.i3 {
+    /* radiopatria_radiofm.default logo */
+
+    position: absolute;
+    width: 111px;
+    height: 66px;
+    left: 1122px;
+    top: 903px;
+}
+.i4 {
+    /* Layer_1 */
+
+    position: absolute;
+    left: 1459px;
+    top: 886px;
+    right: 102px;
+    bottom: 79.2px;
 }
