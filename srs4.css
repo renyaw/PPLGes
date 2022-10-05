@@ -1,0 +1,111 @@
+.informatika {
+    width: 266px;
+    height: 39px;
+    left: 133px;
+    top: 30px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 54px;
+
+    color: #000000;
+}
+
+.undiptulisan {
+    width: 254px;
+    height: 28px;
+    left: 133px;
+    top: 80px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23.5px;
+    line-height: 28px;
+
+    color: #000000;
+}
+
+ .khs{
+    position: absolute;
+    width: 639.94px;
+    height: 54px;
+    left: 133px;
+    top: 136px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 54px;
+    
+    color: #000000;
+
+}
+
+.khs1{
+    box-sizing: border-box;
+    position: absolute;
+    width: 1577px;
+    height: 151px;
+    left: 133px;
+    top: 218px;
+
+    background: rgba(17, 154, 129, 0.2);
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+}
+
+.khs2{
+    box-sizing: border-box;
+    position: absolute;
+    width: 1577px;
+    height: 151px;
+    left: 133px;
+    top: 387px;
+
+    background: rgba(17, 154, 129, 0.2);
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+}
+
+.khs3{
+    box-sizing: border-box;
+    position: absolute;
+    width: 1577px;
+    height: 151px;
+    left: 133px;
+    top: 556px;
+
+    background: rgba(17, 154, 129, 0.2);
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+}
+
+.khs4{
+    box-sizing: border-box;
+    position: absolute;
+    width: 1577px;
+    height: 151px;
+    left: 133px;
+    top: 725px;
+
+    background: rgba(17, 154, 129, 0.2);
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+}
+
+.khs5{
+    box-sizing: border-box;
+    position: absolute;
+    width: 1577px;
+    height: 151px;
+    left: 133px;
+    top: 894px;
+
+    background: rgba(17, 154, 129, 0.2);
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+}
