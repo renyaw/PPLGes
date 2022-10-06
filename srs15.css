@@ -29,6 +29,9 @@
 
     color: #000000;
 }
+.tahunan{
+    transform: translate(50px,-125px);
+}
 .rekap{
     position: absolute;
     width: 327px;
