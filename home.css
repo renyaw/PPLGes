@@ -1,9 +1,9 @@
-body {
+html {
     font-family: "inter";
     resize: both;
     overflow: auto;
     zoom:125%;
-    /* padding-top: 56.25% */
+    padding-top: 56.25%;
 }
 
 .informatika {
