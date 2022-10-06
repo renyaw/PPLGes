@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        :root {
+            --main-color: #4a76a8;
+        }
+    
+        .bg-main-color {
+            background-color: var(--main-color);
+        }
+    
+        .text-main-color {
+            color: var(--main-color);
+        }
+    
+        .border-main-color {
+            border-color: var(--main-color);
+        }
+    </style>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    
+    
+    <div class="">
+     <div class="w-full text-white bg-main-color">
+            <div x-data="{ open: false }"
+                class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+                <div class="p-4 flex flex-row items-center justify-between">
+                    <a href="#"
+                        class="text-lg font-semibold tracking-widest uppercase rounded-lg focus:outline-none focus:shadow-outline">example
+                        profile</a>
+                    <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                            <path x-show="!open" fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                            <path x-show="open" fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <nav :class="{'flex': open, 'hidden': !open}"
+                    class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+                    <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                        <button @click="open = !open"
+                            class="flex flex-row items-center space-x-2 w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent hover:bg-blue-800 md:w-auto md:inline md:mt-0 md:ml-4 hover:bg-gray-200 focus:bg-blue-800 focus:outline-none focus:shadow-outline">
+                            <span>Jane Doe</span>
+                            <img class="inline h-6 rounded-full"
+                                src="https://avatars2.githubusercontent.com/u/24622175?s=60&amp;v=4">
+                            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                                class="inline w-4 h-4 transition-transform duration-200 transform">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                            <div class="py-2 bg-white text-blue-800 text-sm rounded-sm border border-main-color shadow-sm">
+                                <a class="block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-indigo-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="#">Settings</a>
+                                <a class="block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-indigo-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="#">Help</a>
+                                <div class="border-b"></div>
+                                <a class="block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-indigo-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="#">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- End of Navbar -->
+
+        <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
+            <img src="/img/beams.jpg" alt="" class="absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" width="1308" />
+            <div class="absolute inset-0 bg-[url(/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+            <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
+              <div class="mx-auto max-w-md">
+                <img src="/img/logo.svg" class="h-6" alt="Tailwind Play" />
+                <div class="divide-y divide-gray-300/50">
+                  <div class="space-y-6 py-8 text-base leading-7 text-gray-600">
+                    <p>An advanced online playground for Tailwind CSS, including support for things like:</p>
+                    <ul class="space-y-4">
+                      <li class="flex items-center">
+                        <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="11" />
+                          <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                        </svg>
+                        <p class="ml-4">
+                          Customizing your
+                          <code class="text-sm font-bold text-gray-900">tailwind.config.js</code> file
+                        </p>
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="11" />
+                          <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                        </svg>
+                        <p class="ml-4">
+                          Extracting classes with
+                          <code class="text-sm font-bold text-gray-900">@apply</code>
+                        </p>
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="11" />
+                          <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                        </svg>
+                        <p class="ml-4">Code completion with instant preview</p>
+                      </li>
+                    </ul>
+                    <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
+                  </div>
+                  <div class="pt-8 text-base font-semibold leading-7">
+                    <p class="text-gray-900">Want to dig deeper into Tailwind?</p>
+                    <p>
+                      <a href="https://tailwindcss.com/docs" class="text-sky-500 hover:text-sky-600">Read the docs &rarr;</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+</body>
+</html>
