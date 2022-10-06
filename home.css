@@ -244,7 +244,7 @@ button {
 /*--------------- LINE ---------------*/
 .l1 {
     position: absolute;
-    width: 1920px;
+    width: 1920vh;
     height: 0px;
     left: 0px;
     top: 136px;
