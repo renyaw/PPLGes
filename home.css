@@ -2,9 +2,6 @@
     font-family: "inter";
 }
 
-.border {
-    
-}
 .informatika {
     position: absolute;
     width: 266px;
@@ -37,9 +34,11 @@
     color: #000000;
 }
 
-button{
-    border:none;
+button {
+    border: none;
 }
+
+/*--------------- RECTANGLE ---------------*/
 .r1 {
     position: absolute;
     width: 511px;
@@ -98,7 +97,6 @@ button{
     background: #fecd94;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    
 }
 
 #r6 {
@@ -111,7 +109,6 @@ button{
     background: #ebb3ff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    
 }
 
 #r7 {
@@ -124,7 +121,6 @@ button{
     background: #fcadad;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    
 }
 
 #r8 {
@@ -137,7 +133,6 @@ button{
     background: #fcadad;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    
 }
 
 .r9 {
@@ -161,7 +156,6 @@ button{
 
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
 }
 #r11 {
     position: absolute;
@@ -172,7 +166,6 @@ button{
 
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
 }
 #r12 {
     position: absolute;
@@ -183,7 +176,6 @@ button{
 
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
 }
 #r13 {
     position: absolute;
@@ -194,8 +186,59 @@ button{
 
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
 }
+.r14 {
+    /* Rectangle 90 */
+
+    position: absolute;
+    width: 65px;
+    height: 68px;
+    left: 269px;
+    top: 690px;
+
+    background: #3628d9;
+}
+.r15 {
+    /* Rectangle 89 */
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 511px;
+    height: 68px;
+    left: 269px;
+    top: 690px;
+
+    background: rgba(54, 40, 217, 0.1);
+    border: 1px solid #3628d9;
+}
+.r16 {
+    /* Rectangle 98 */
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 397px;
+    height: 68px;
+    left: 1248px;
+    top: 688px;
+
+    background: rgba(54, 40, 217, 0.1);
+    border: 1px solid #3628d9;
+}
+.r17 {
+    /* Rectangle 104 */
+
+    position: absolute;
+    width: 65px;
+    height: 68px;
+    left: 1248px;
+    top: 688px;
+
+    background: #3628d9;
+}
+
+/*--------------- LINE ---------------*/
 .l1 {
     position: absolute;
     width: 1920px;
@@ -205,6 +248,7 @@ button{
 
     border: 1px solid #949494;
 }
+
 .profiltxt {
     position: absolute;
     width: 184px;
@@ -221,6 +265,7 @@ button{
     color: #000000;
 }
 
+/*--------------- TEXT ---------------*/
 .t1 {
     position: absolute;
     width: 99px;
@@ -432,7 +477,61 @@ button{
 
     color: #000000;
 }
+.t13 {
+    /* PKL dan Skripsi dapat diambil jika SKSk telah memenuhi batas minimal! */
 
+    position: absolute;
+    width: 266px;
+    height: 30px;
+    left: 1326px;
+    top: 706px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #000000;
+}
+.t14 {
+    /* Pastikan Data yang Tertera Benar! */
+
+    position: absolute;
+    width: 200px;
+    height: 15px;
+    left: 352px;
+    top: 705px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+    color: #000000;
+}
+.t15 {
+    /* Segera lakukan Update Data Pribadi untuk menggunakan fitur lain! */
+
+    position: absolute;
+    width: 376px;
+    height: 15px;
+    left: 352px;
+    top: 724px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+/*--------------- IMAGE ---------------*/
 .i1 {
     /* Microsoft logo */
 
@@ -478,4 +577,215 @@ button{
     height: 96px;
     left: 34px;
     top: 21px;
+}
+.i6 {
+    /* 🦆 icon "warning" */
+
+    position: absolute;
+    width: 44px;
+    height: 39.78px;
+    left: 278px;
+    top: 705px;
+
+
+}
+.i7 {
+    /* Trophy */
+
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    left: 1259px;
+    top: 701px;
+
+    background: url(.png);
+}
+.i8 {
+    /* Ellipse 1 */
+
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    left: 300px;
+    top: 348px;
+
+    background: url(bebek.png);
+}
+/*--------------- GET TEXT ---------------*/
+#gt1 {
+    /* 24060120130053 */
+
+    position: absolute;
+    width: 118px;
+    height: 17px;
+    left: 451px;
+    top: 360px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #000000;
+}
+#gt2 {
+    /* Arya Gessangie Sugyanti Nora Faqih */
+
+    position: absolute;
+    width: 242px;
+    height: 17px;
+    left: 451px;
+    top: 385px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #000000;
+}
+#gt3 {
+    /* AGSNF@students.bebek.ac.id */
+
+    position: absolute;
+    width: 199px;
+    height: 17px;
+    left: 451px;
+    top: 410px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #000000;
+}
+#gt4 {
+    /* 0812 3456 7890 */
+
+    position: absolute;
+    width: 110px;
+    height: 17px;
+    left: 451px;
+    top: 435px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #000000;
+}
+#gt5 {
+    /* 2022/2023 Ganjil */
+
+    position: absolute;
+    width: 115px;
+    height: 17px;
+    left: 306px;
+    top: 496px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #000000;
+}
+#gt6 {
+    /* Fakultas Sains dan Matematika */
+
+    position: absolute;
+    width: 238px;
+    height: 19px;
+    left: 406px;
+    top: 549px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #000000;
+}
+#gt7 {
+    /* Departemen Ilmu Komputer/Informatika */
+
+    position: absolute;
+    width: 302px;
+    height: 19px;
+    left: 374px;
+    top: 576px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #000000;
+}
+#gt8 {
+    /* S1 */
+
+    position: absolute;
+    width: 18px;
+    height: 19px;
+    left: 525px;
+    top: 603px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #000000;
+}
+#gt9 {
+    /* 4.00 / 90 */
+
+    position: absolute;
+    width: 217px;
+    height: 58px;
+    left: 906px;
+    top: 323px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    /* identical to box height */
+
+    color: #000000;
+}
+#gt10 {
+    /* Anggraeni Puspitasari */
+
+    position: absolute;
+    width: 315px;
+    height: 35px;
+    left: 1288px;
+    top: 331px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 29px;
+    line-height: 35px;
+    /* identical to box height */
+
+    color: #000000;
 }
