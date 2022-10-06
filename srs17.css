@@ -1,3 +1,7 @@
+html {
+    font-family: inter;
+    zoom: 130%;
+}
 .tb1 {
     /* tabel 15 */
 
@@ -14,9 +18,144 @@
     width: 1317px;
     height: 468px;
     left: 302px;
-    top: 422px;
+    top: 470px;
 
     background: #ffffff;
     border: 1px solid #5b5b5b;
     border-radius: 4px;
+}
+button {
+    border: none;
+}
+.active,
+button:hover {
+    background: rgb(155, 18, 18);
+    color: white;
+}
+#b1 {
+    /* Rectangle 66 */
+
+    position: absolute;
+    height: 57px;
+    width: 138px;
+    left: 302px;
+    top: 376px;
+
+    background: #c1c1c1;
+
+    border-radius: 7px;
+}
+#b2 {
+    /* Rectangle 67 */
+
+    position: absolute;
+    height: 57px;
+    width: 138px;
+    left: 465px;
+    top: 376px;
+
+    background: #c1c1c1;
+    border-radius: 7px;
+}
+#b3 {
+    /* Rectangle 68 */
+
+    position: absolute;
+    height: 57px;
+    width: 138px;
+    left: 628px;
+    top: 376px;
+
+    background: #c1c1c1;
+
+    border-radius: 7px;
+}
+#b4 {
+    /* Rectangle 69 */
+
+    position: absolute;
+    height: 57px;
+    width: 138px;
+    left: 791px;
+    top: 376px;
+
+    background: #c1c1c1;
+
+    border-radius: 7px;
+}
+#b5 {
+    /* Rectangle 70 */
+
+    position: absolute;
+    height: 57px;
+    width: 138px;
+    left: 954px;
+    top: 376px;
+
+    background: #c1c1c1;
+
+    border-radius: 7px;
+}
+#b6 {
+    /* Rectangle 71 */
+
+    position: absolute;
+    height: 57px;
+    width: 138px;
+    left: 1117px;
+    top: 376px;
+
+    background: #c1c1c1;
+
+    border-radius: 7px;
+}
+#homeb {
+    /* Rectangle 56 */
+
+    position: absolute;
+    width: 110px;
+    height: 46px;
+    left: 454px;
+    top: 47px;
+
+    background: #c1c1c1;
+    border-radius: 15px;
+}
+#dropdown1 {
+    /* Rectangle 72 */
+
+    position: absolute;
+    height: 57px;
+    width: 953px;
+    left: 302px;
+    top: 295px;
+
+    background: #c1c1c1;
+    opacity: 0.5;
+    border-radius: 7px;
+}
+.t1 {
+    /* List Mahasiswa */
+
+    position: absolute;
+    width: 335px;
+    height: 54px;
+    left: 301px;
+    top: 200px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 54px;
+
+    color: #000000;
+}
+.t2 {
+    position: absolute;
+    width: 25px;
+    height: 45px;
+    left: 1577px;
+    top: 950px;
+    font-style: bolder;
 }
