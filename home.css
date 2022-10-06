@@ -1,5 +1,8 @@
-.body {
+body {
     font-family: "inter";
+    resize: both;
+    overflow: auto;
+    zoom:50;
 }
 
 .informatika {
