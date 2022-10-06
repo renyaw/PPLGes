@@ -49,6 +49,7 @@
     height: 181px;
     left: 161px;
     top: 306px;
+
 }
 .persegi1{
     box-sizing: border-box;
@@ -97,4 +98,265 @@
 
     background: rgba(69, 210, 67, 0.78);
     border-radius: 10px;
+}
+.judul1{
+    position: absolute;
+    width: 95px;
+    left: 389px;
+    top: 306px;
+    bottom: 735px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #000000;
+}
+.judul2{
+    position: absolute;
+    width: 83px;
+    left: 711px;
+    top: 306px;
+    bottom: 735px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #000000;
+}
+.judul3{
+    position: absolute;
+    width: 169px;
+    left: 387px;
+    top: 455px;
+    bottom: 586px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #000000;
+}
+.judul4{
+    position: absolute;
+    width: 203px;
+    left: 713px;
+    top: 455px;
+    bottom: 586px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #000000;
+}
+.judul5{
+    position: absolute;
+    width: 284px;
+    height: 39px;
+    left: 1172px;
+    top: 281px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #000000;
+}
+.judul6{
+    position: absolute;
+    width: 47px;
+    height: 39px;
+    left: 1267px;
+    top: 347px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #000000;
+}
+.judul7{
+    position: absolute;
+    width: 63px;
+    height: 39px;
+    left: 1259px;
+    top: 470px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #000000;
+}
+.judul8{
+    position: absolute;
+    width: 126px;
+    height: 30px;
+    left: 170px;
+    top: 672px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    color: #000000;
+}
+.judul9{
+    position: absolute;
+    width: 226px;
+    height: 30px;
+    left: 170px;
+    top: 792px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: #000000;
+}
+.simpan{
+    position: absolute;
+    width: 134px;
+    height: 56px;
+    left: 1348px;
+    top: 966px;
+
+    background: rgba(67, 81, 210, 0.78);
+    border-radius: 10px;
+}
+#simistir{
+    position: absolute;
+    width: 1245px;
+    height: 57px;
+    left: 170px;
+    top: 715px;
+    background: #D9D9D9;
+    border-radius: 10px;
+    
+}
+.sub1{
+    position: absolute;
+    width: 155.69px;
+    height: 27.09px;
+    left: 173.66px;
+    top: 510.34px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 33px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+.sub2{
+    position: absolute;
+    width: 260px;
+    left: 387px;
+    top: 369px;
+    bottom: 672px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    color: #7D7878;
+}
+.sub3{
+    position: absolute;
+    width: 299px;
+    left: 711px;
+    top: 367px;
+    bottom: 674px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #7D7878;
+}
+.sub4{
+    position: absolute;
+    width: 97px;
+    left: 388px;
+    top: 516px;
+    bottom: 525px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #7D7878;
+
+}
+.sub5{
+    position: absolute;
+    width: 323px;
+    left: 711px;
+    top: 516px;
+    bottom: 525px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #7D7878;
+}
+.sub6{
+    position: absolute;
+    width: 271px;
+    height: 39px;
+    left: 1155px;
+    top: 400px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    text-align: center;
+    color: #7D7878;
+}
+.sub7{
+    position: absolute;
+    width: 271px;
+    height: 39px;
+    left: 1155px;
+    top: 525px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    text-align: center;
+    color: #7D7878;
 }
