@@ -179,7 +179,7 @@ button {
 /*--------------- LINE ---------------*/
 .l1 {
     position: absolute;
-    width: 1920vh;
+    width: 1920px;
     height: 0px;
     left: 0px;
     top: 136px;
