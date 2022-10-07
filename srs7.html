@@ -14,8 +14,6 @@
           <img src="img/logo.png" alt="Logo" width="30" height="35" class="d-inline-block" />
           <b>informatika</b>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
@@ -23,27 +21,6 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="srs2.html">Update Data Diri</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="srs5_belum.html">Progress PKL</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="srs6_belum.html">Progress Skripsi</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"> List Skripsi </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="srs16_lul.html">Lulus</a></li>
-                  <li><a class="dropdown-item" href="srs16_blm.html">Belum Lulus</a></li>
-                </ul>
-              </li>
-            </ul>
             <form class="d-flex mt-3" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
               <button class="btn btn-outline-success" type="submit">Search</button>
@@ -53,10 +30,10 @@
       </div>
     </nav>
     <div class="container">
-      <h2 class="mb-5">Verifikasi Progress Mahasiswa</h2>
+      <h2 class="mb-5">Verifikasi IRS Mahasiswa</h2>
       <div class="row">
         <div class="col-2 mt-2">
-          <div class="card">
+          <div class="card border border-4">
             <div class="card-body text-center" style="background-color: #ffee54">
               <a href=""><button style="background-color: #ffee54; border: none; outline: none">IRS</button></a>
             </div>
@@ -116,6 +93,71 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-2 mt-5">
+          <select class="form-select" aria-label="Default select example">
+            <option selected disabled>Tampilkan 8 Item</option>
+            <option value="1">BWA</option>
+            <option value="2">BWA</option>
+            <option value="3">BWA</option>
+          </select>
+        </div>
+        <div class="col-2 mt-3 ">
+            <label for="nama" class="form-label">Cari</label>
+            <input type="text" placeholder="Cari"class="form-control" id="nama">
+        </div>
+      </div>
+      <table class="table table-hover mt-4">
+        <thead>
+          <tr>
+            <th scope="col">NIM</th>
+            <th scope="col">Nama Mahasiswa</th>
+            <th scope="col">Activity</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <td>2406012014001</td>
+            <td>Titi</td>
+            <td>Terima | Tolak | Edit</td>
+          </tr>
+          <tr>
+            <td>2406012014002</td>
+            <td>Dije</td>
+            <td>Terima | Tolak | Edit</td>
+          </tr>
+          <tr>
+            <td>2406012014003</td>
+            <td>Ahay</td>
+            <td>Terima | Tolak | Edit</td>
+          </tr>
+          <tr>
+            <td>2406012014004</td>
+            <td>Soleh</td>
+            <td>Terima | Tolak | Edit</td>
+          </tr>
+          <tr>
+            <td>2406012014005</td>
+            <td>Solihun</td>
+            <td>Terima | Tolak | Edit</td>
+          </tr>
+          <tr>
+            <td>2406012014006</td>
+            <td>Ihik</td>
+            <td>Terima | Tolak | Edit</td>
+          </tr>
+          <tr>
+            <td>2406012014007</td>
+            <td>Kursi</td>
+            <td>Terima | Tolak | Edit</td>
+          </tr>
+          <tr>
+            <td>2406012014008</td>
+            <td>Meja</td>
+            <td>Terima | Tolak | Edit</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>
