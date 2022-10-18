@@ -1,0 +1,27 @@
+srs 1 - Login Page
+
+Mahasiswa:
+srs 2
+srs 3
+srs 4
+srs 5
+srs 6
+srs 10
+
+Operator
+srs 8
+srs 12
+srs 13
+srs 14
+srs 15
+srs 16
+srs 17
+
+Doswal
+srs7
+srs11 
+
+Operator
+srs1
+srs9
+
