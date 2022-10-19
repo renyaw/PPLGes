@@ -54,9 +54,11 @@ if($cok>0){
 
     if($dati['status']=="1"){
         $_SESSION['username'] = $username;
-
+        $_SESSION['nim'] = $nim;
         header("location:");
     }
-    
+    else if($dati['status']=="2"){
+
+    }
 }
 ?>
