@@ -19,7 +19,12 @@
     <title>Dashboard Mahasiswa</title>
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
+
   <body>
+    <?php
+    session_start();
+    require_once('db_login.php');
+    ?>
     <include src="navbar.html"></include>
     <div class="container mt-4">
       <h2 class="fw-bold">Dashboard Mahasiswa</h2>
@@ -33,10 +38,17 @@
                 <img src="img/bebekbulet.png" style="width: 100%" />
               </div>
               <div class="col-md-8">
-                <p>Intania Franscisca</p>
-                <p>24060123456789</p>
-                <p>S1 Informatika</p>
-                <p>Fakultas Sains dan Matematika</p>
+                <?php
+                  $noinduk = $_SESSION['noinduk'];
+                  $query = $db->query("SELECT * FROM mahasiswa where nim ='$noinduk'");
+
+                  $data=mysqli_fetch_assoc($query);
+
+                  echo "<p>". $data['nama']."</p>";
+                  echo "<p>". $data['nim'] ."</p>";
+                  echo "<p>S1 Informatika</p>";
+                  echo "<p>Fakultas Sains dan Matematika</p>";
+                ?>
                 <p class="fw-bold" style="color: #52ff63">Aktif</p>
               </div>
             </div>
