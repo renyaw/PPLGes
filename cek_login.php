@@ -14,7 +14,7 @@ if($cek>0){
 
   $data=mysqli_fetch_assoc($login);
   $_SESSION['username'] = $username;
-
+  $_SESSION['noinduk'] = $data['nip/nim'];
   if($data['status']==1){
     //operator
     $_SESSION['status']= $data['status'];
