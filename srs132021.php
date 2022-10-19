@@ -12,15 +12,29 @@
   </head>
   <body class="body">
     <include src="navdep.html"></include>
+    <?php
+    session_start();
+    require_once('db_login.php');
+    ?>
     <div class="container">
       <h3 class="mt-3">Rekap Data PKL</h3>
       <hr />
       <div class="d-grid gap-2 mt-5 d-md-block">
-        <button class="btn btn-outline-secondary" type="button" disabled>2017</button>
-        <button class="btn btn-secondary" type="button">2018</button>
-        <button class="btn btn-outline-secondary" type="button" disabled>2019</button>
-        <button class="btn btn-outline-secondary" type="button" disabled>2020</button>
-        <button class="btn btn-outline-secondary" type="button" disabled>2021</button>
+        <a href="srs132017.php">
+          <button class="btn btn-outline-secondary" type="button" disabled>2017</button>
+        </a>
+        <a href="srs132018.php">
+          <button class="btn btn-outline-secondary" type="button" disabled>2018</button>
+        </a>
+        <a href="srs132019.php">
+          <button class="btn btn-outline-secondary" type="button" disabled>2019</button>
+        </a>
+        <a href="srs132020.php">
+          <button class="btn btn-outline-secondary" type="button" disabled>2020</button>
+        </a>
+        <a href="srs132021.php">
+          <button class="btn btn-secondary" type="button">2021</button>
+        </a>
       </div>
       <div class="card mt-5 bg-light">
         <div class="row">
@@ -28,7 +42,13 @@
             <div class="card" style="background-color: #92ff80; height: 200px">
               <div class="card-body text-center">
                 <br />
-                <h3>123<br /><br />Sudah PKL</h3>
+                <h3>
+                  <?php
+                    $query = $db->query("SELECT COUNT(khs.nim) FROM khs, mahasiswa WHERE khs.status = '1' AND khs.nim = mahasiswa.nim AND mahasiswa.angkatan = '2021'");
+                    $data = mysqli_fetch_assoc($query);
+                    echo $data['COUNT(khs.nim)'];
+                  ?>
+                <br /><br />Sudah PKL</h3>
               </div>
             </div>
           </div>
@@ -36,7 +56,13 @@
             <div class="card" style="background-color: #ed8282; height: 200px">
               <div class="card-body text-center my-auto">
                 <br />
-                <h3>37<br /><br />Belum PKL</h3>
+                <h3>
+                  <?php
+                    $query = $db->query("SELECT COUNT(khs.nim) FROM khs, mahasiswa WHERE khs.status = '0' AND khs.nim = mahasiswa.nim AND mahasiswa.angkatan = '2021'");
+                    $data = mysqli_fetch_assoc($query);
+                    echo $data['COUNT(khs.nim)'];
+                  ?>
+                <br /><br />Belum PKL</h3>
               </div>
             </div>
           </div>
