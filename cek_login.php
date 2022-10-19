@@ -36,4 +36,7 @@ if($cek>0){
     header("location:srs12.php");
   }
 }
+else{
+  header("location:login.php?pesan=gagal");
+}
 ?>

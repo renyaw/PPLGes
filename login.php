@@ -21,8 +21,12 @@
   </head>
   <body>
     <?php
-
-    require_once('db_login.php');
+      if(isset($_GET['pesan'])){
+        //salah akun/password
+        if($_GET['pesan']=="gagal"){
+          echo "<div class='alert alert-danger text-center'>Kredensial masukmu tak cocok dengan akun<br> dalam sistem kami!</div>";
+        }
+      }
     ?>
     <div class="container h-100">
       <div class="row align-items-center h-100">
