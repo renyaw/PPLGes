@@ -60,7 +60,7 @@
         <div class="col-md-6 border bg-light">
           <div class="row justify-content-evenly mt-2">
             <div class="col-md-5">
-              <div class="card border shadow-sm">
+              <div class="card border rounded-0 shadow-sm">
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #ffee54 0%, #ffffff 55%)">
                   <p class="fw-bold">IPK</p>
                   <?php
@@ -72,7 +72,7 @@
               </div>
             </div>
             <div class="col-md-5">
-              <div class="card border-1 shadow-sm">
+              <div class="card border-1 rounded-0 shadow-sm">
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #52ff63 0%, #ffffff 55%)">
                   <p class="fw-bold">Semester</p>
                   <?php
@@ -86,7 +86,7 @@
           </div>
           <div class="row justify-content-evenly mt-4 mb-2">
             <div class="col-md-5">
-              <div class="card border-1 shadow-sm">
+              <div class="card border-1 rounded-0 shadow-sm">
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #6473ff 0%, #ffffff 55%)">
                   <p class="fw-bold">SKSk</p>
                   <?php
@@ -98,7 +98,7 @@
               </div>
             </div>
             <div class="col-md-5">
-              <div class="card border-1 shadow-sm">
+              <div class="card border-1 rounded-0 shadow-sm">
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #ff5a5a 0%, #ffffff 55%)">
                   <p class="fw-bold">Dosen Wali</p>
                   <?php
