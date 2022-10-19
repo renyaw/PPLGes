@@ -71,14 +71,34 @@
             <b>Alamat</b><br />
             <input type="text" class="form-control" id="alamat" />
             <br />
-            <b>Provinsi</b><br />
+            <div class="form-group">
+              <label for="Provinsi">Provinsi</label>
+              <select class="form-control" id="kode_prov" name="provinsi" onchange="getModel()">
+                <option value="">Pilih Provinsi</option>
+                <?php
+                $result = $db->query('select * from provinsi');
+                while ($data = $result->fetch_object()) :
+                ?>
+                  <option value="<?php echo $data->id ?>"><?php echo $data->nama ?></option>
+                <?php endwhile ?>
+              </select>
+              <small class="form-text text-danger" id="provinsi_error"></small>
+            </div>
+            <div class="form-group">
+              <label for="Provinsi">Kabupaten</label>
+              <select class="form-control" id="kode_kab" name="Kabupaten" onchange="getModel()">
+                <option value="">Pilih Kabupaten</option>
+              </select>
+              <small class="form-text text-danger" id="kabupaten_error"></small>
+              </div>
+            <!-- <b>Provinsi</b><br />
             <input type="text" class="form-control" id="provinsi" />
             <br />
             <b>Kabupaten/Kota</b><br />
             <input type="text" class="form-control" id="kabkota" />
+            <br /> -->
             <br />
-            <br />
-          </div>
+          
         </div>
       </div>
     </div>
