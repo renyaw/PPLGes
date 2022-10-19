@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -70,15 +70,15 @@
         <div class="mt-4 ml-4">
           <button class="btn btn-primary" hreftype="button">Data Mahasiswa</button>
 
-          <a href="srs13.html">
+          <a href="srs13.php">
             <button class="btn btn-primary" type="button">Rekap Mahasiswa PKL</button>
           </a>
 
-          <a href="srs15.html">
+          <a href="srs15.php">
             <button class="btn btn-primary" type="button">Rekap Mahasiswa Skripsi</button>
           </a>
         </div>
       </div>
     </div>
   </body>
-</html>
+</php>

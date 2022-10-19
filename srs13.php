@@ -21,6 +21,7 @@
       <h3 class="mt-3">Rekap Data PKL</h3>
       <hr />
       <div class="d-grid gap-2 mt-5 d-md-block">
+        <div class="container bg-light border py-2">
         <button class="btn btn-outline-secondary" type="button" onclick="showPKL('x');showPKLbelum('x');showHeader('x');">Semua</button>
         <?php
         $query = $db->query("SELECT angkatan FROM mahasiswa where nim in(SELECT max(nim) FROM mahasiswa group by angkatan) order by angkatan");
@@ -28,7 +29,8 @@
           echo "<button class='btn btn-outline-secondary mx-1' id='angkatan' value='$row->angkatan' onclick='showPKL($row->angkatan);showPKLbelum($row->angkatan);showHeader($row->angkatan);'>".$row->angkatan."</button>";
         }
         ?>
-      <div class="card mt-5 bg-light">
+        </div>
+      <div class="card mt-3 bg-light rounded-0">
         <div class="text-center mt-4">
           <h2 id="detail_header">Keseluruhan</h2>
         </div>

@@ -12,7 +12,8 @@ Operator
 srs 8
 srs 9 - dashboard operator
 srs 12
-srs 13
+srs 13 - Rekap PKL
+  Pake ajax1.js, get_headerpkl.php, get_pkl.php, get_pklbelum.php.
 srs 14
 srs 15
 srs 16
