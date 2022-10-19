@@ -45,7 +45,7 @@
                   $data=mysqli_fetch_assoc($query);
                   $data2=mysqli_fetch_assoc($query2);
 
-                  echo "<p>". $data['nama']."</p>";
+                  echo "<p class='fw-bold'>". $data['nama']."</p>";
                   echo "<p>". $data['nim'] ."</p>";
                   echo "<p>S1 Informatika</p>";
                   echo "<p>Fakultas Sains dan Matematika</p>";                
