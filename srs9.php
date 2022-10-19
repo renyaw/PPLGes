@@ -94,7 +94,7 @@
             </thead>
             <?php
               require_once('db_login.php');
-              $result = $db->query("SELECT * FROM mahasiswa");
+              $result = $db->query("SELECT nim, nama, email, smt, status FROM mahasiswa INNER JOIN khs");
               while($row=$result->fetch_object()){
                 echo '<tr>';
                 echo "<td>" . $row->nim . "</td>";
@@ -102,9 +102,6 @@
                 echo "<td>" . $row->email . "</td>";
                 echo "<td>" . $row->semester . "</td>";
                 echo "<td>" . $row->status . "</td>";
-
-                // echo '<td><a class="btn btn-warning btn-sm" href="edit_pesanan.php?id=' .$row->no_ruang .'">Edit</a>&nbsp;&nbsp;
-                // </td>';
                 echo '</tr>';
               }
               ?>
