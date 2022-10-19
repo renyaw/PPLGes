@@ -16,7 +16,7 @@ if($cek>0){
   $_SESSION['username'] = $username;
 
   if($data['status']==1){
-    //admin
+    //operator
     $_SESSION['status']= $data['status'];
     header("location:srs9.php");
   }
