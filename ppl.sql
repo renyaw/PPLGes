@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2022 at 04:49 PM
+-- Generation Time: Oct 19, 2022 at 06:54 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -36,6 +36,13 @@ CREATE TABLE `dosen` (
   `alamat` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `dosen`
+--
+
+INSERT INTO `dosen` (`kode_wali`, `nip`, `nama`, `email`, `nomor_telp`, `alamat`) VALUES
+('E1', '24060120130821', 'Rohmat Subarjo', 'rohmat@gmail.com', '0812347892138', 'Jalan Kenangan');
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +56,13 @@ CREATE TABLE `irs` (
   `file_sks` longblob NOT NULL,
   `nim` varchar(14) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `irs`
+--
+
+INSERT INTO `irs` (`semester_aktif`, `status`, `jml_sks`, `file_sks`, `nim`) VALUES
+('5', 'Aktif', '90', '', '24060120130053');
 
 -- --------------------------------------------------------
 
@@ -78,6 +92,13 @@ CREATE TABLE `khs` (
   `nim` varchar(14) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `khs`
+--
+
+INSERT INTO `khs` (`smt`, `status`, `ip_semester`, `ip_kumulatif`, `file_khs`, `sks_kumulatif`, `nim`) VALUES
+('7', 'Aktif', '3.77', '3.90', '', '90', '24060120130053');
+
 -- --------------------------------------------------------
 
 --
@@ -94,6 +115,13 @@ CREATE TABLE `mahasiswa` (
   `kode_kab` varchar(4) NOT NULL,
   `kode_wali` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mahasiswa`
+--
+
+INSERT INTO `mahasiswa` (`nim`, `nama`, `angkatan`, `alamat`, `nomor_telp`, `email`, `kode_kab`, `kode_wali`) VALUES
+('24060120130053', 'Fathan Muhammad Faqih', '2020', 'Komplek Tugu', '087888327118', 'fathan@gmail.com', '12', 'E1');
 
 -- --------------------------------------------------------
 
@@ -144,6 +172,16 @@ CREATE TABLE `user` (
   `status` varchar(1) NOT NULL,
   `password` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`nip/nim`, `username`, `status`, `password`) VALUES
+('24060120130053', 'Fathan', '2', 'fathan123'),
+('24060120130821', 'Dosen', '3', 'dosen123'),
+('24060120130892', 'Departemen', '4', 'depart123'),
+('24060120136721', 'Admin', '1', 'admin123');
 
 --
 -- Indexes for dumped tables

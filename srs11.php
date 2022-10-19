@@ -59,39 +59,47 @@
           </div>
         </div>
         
-        <div class="col-md-3 mx-auto">
-          <div class="card" style="background-color: #84ffff">
-            <div class="card-body">
-              <div class="card-title">100</div>
-              <p>Mahasiswa Perwalian Aktif</p>
+        <div class="col-md-8 border">
+          <div class="row justify-content-evenly">
+            <div class="col-4">
+              <div class="card" style="background-color: #84ffff">
+                <div class="card-body">
+                  <div class="card-title">100</div>
+                  <p>Mahasiswa Perwalian Aktif</p>
+                </div>
+              </div>
             </div>
+            <div class="col-4">
+              <div class="card" style="background-color: #97ff95">
+                <div class="card-body">
+                  <div class="card-title">50</div>
+                  <p>Mahasiswa Perwalian PKL</p>
+                </div>
+              </div>
+            </div>            
           </div>
-
-          <div class="card mt-5 mb-5" style="background-color: #fdff8f">
-            <div class="card-body">
-              <div class="card-title">10</div>
-              <p>Mahasiswa Perwalian Skripsi</p>
+          <div class="row justify-content-evenly">
+            <div class="col-4">
+              <div class="card mt-5" style="background-color: #fdff8f">
+                <div class="card-body">
+                  <div class="card-title">10</div>
+                  <p>Mahasiswa Perwalian Skripsi</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card" style="background-color: #97ff95">
-            <div class="card-body">
-              <div class="card-title">50</div>
-              <p>Mahasiswa Perwalian PKL</p>
-            </div>
-          </div>
-
-          <div class="card mt-5" style="background-color: rgba(255, 115, 115, 0.74)">
-            <div class="card-body">
-              <div class="card-title">5</div>
-              <p>Mahasiswa Non-Aktif</p>
-            </div>
+            <div class="col-4">
+              <div class="card mt-5" style="background-color: rgba(255, 115, 115, 0.74)">
+                <div class="card-body">
+                  <div class="card-title">5</div>
+                  <p>Mahasiswa Non-Aktif</p>
+                </div>
+              </div>
+            </div> 
           </div>
         </div>
       </div>
-      <div class="row mt-5">
+
+      <div class="row mt-5 border bg-light p-3">
         <div class="col-md-3">
           <div class="card">
             <div class="card-body text-center" style="background-color: #27aed9">
