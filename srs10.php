@@ -61,7 +61,11 @@
               <div class="card border shadow-sm">
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #ffee54 0%, #ffffff 55%)">
                   <p class="fw-bold">IPK</p>
-                  3.67
+                  <?php
+                  $query5 = $db->query(("SELECT ip_kumulatif FROM khs INNER JOIN mahasiswa where mahasiswa.nim=khs.nim"));
+                  $data3 = mysqli_fetch_assoc($query5);
+                  echo $data3['ip_kumulatif'];
+                  ?>
                 </div>
               </div>
             </div>
@@ -69,7 +73,11 @@
               <div class="card border-1 shadow-sm">
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #52ff63 0%, #ffffff 55%)">
                   <p class="fw-bold">Semester</p>
-                  7
+                  <?php
+                  $query3 = $db->query("SELECT smt FROM khs INNER JOIN mahasiswa where mahasiswa.nim=khs.nim");
+                  $data3 = mysqli_fetch_assoc($query3);
+                  echo $data3['smt'];
+                  ?>
                 </div>
               </div>
             </div>
@@ -79,7 +87,11 @@
               <div class="card border-1 shadow-sm">
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #6473ff 0%, #ffffff 55%)">
                   <p class="fw-bold">SKSk</p>
-                  96
+                  <?php
+                  $query4 = $db->query("SELECT jml_sks FROM irs INNER JOIN mahasiswa where mahasiswa.nim=irs.nim");
+                  $data3 = mysqli_fetch_assoc($query4);
+                  echo $data3['jml_sks'];
+                  ?>
                 </div>
               </div>
             </div>
@@ -121,8 +133,8 @@
         <div class="col-md-6 border pb-2 bg-light">
           <div class="row justify-content-evenly">
             <div class="col-md-4">
-              <a href="srs4.html">
-                <div class="card border-0 shadow-sm mt-2">
+              <a href="srs4.php">
+                <div class="card border-0 shadow mt-2">
                   <div class="card-body text-center rounded-1" style="background: #ffee54">
                     <button class="fw-bold border-0 bg-transparent">KHS</button>
                   </div>
@@ -130,19 +142,19 @@
               </a>
             </div>
             <div class="col-md-4">
-              <a href="srs6_belum.html">
-                <div class="card border-0 shadow-sm mt-2">
-                  <div class="card-body text-center rounded-1" style="background: #52ff63">
+              <a href="srs6_belum.php">
+                <div class="card border-0 shadow mt-2">
+                  <div class="card-body text-center rounded-1" style="background: #52ff63;">
                     <button class="fw-bold border-0 bg-transparent">Skripsi</button>
                   </div>
                 </div>
               </a>
             </div>
           </div>
-          <div class="row justify-content-evenly">
+          <div class="row justify-content-evenly mt-4">
             <div class="col-md-4">
-              <a href="srs3.html">
-                <div class="card border-0 shadow-sm mt-2">
+              <a href="srs3.php">
+                <div class="card border-0 shadow mt-2">
                   <div class="card-body text-center rounded-1" style="background: #6473ff">
                     <button class="fw-bold border-0 bg-transparent">IRS</button>
                   </div>
@@ -150,8 +162,8 @@
               </a>
             </div>
             <div class="col-md-4">
-              <a href="srs5_belum.html">
-                <div class="card border-0 shadow-sm mt-2">
+              <a href="srs5_belum.php">
+                <div class="card border-0 shadow mt-2">
                   <div class="card-body text-center rounded-1" style="background: #ff5a5a">
                     <button class="fw-bold border-0 bg-transparent">PKL</button>
                   </div>
