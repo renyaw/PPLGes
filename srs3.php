@@ -15,6 +15,10 @@
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
   <body>
+    <?php
+    session_start();
+    require_once('db_login.php');
+    ?>
     <include src="navbar.html"></include>
     <div class="container mt-4">
       <h2 class="fw-bold">Entry IRS</h2>
@@ -27,27 +31,49 @@
             <div class="card bg-transparent border-0 mx-auto">
               <img src="img/bebekbulet.png" class="img-fluid" />
             </div>
-            <div class="card text-center mt-3 mx-auto bg-success text-white" style="width: 14vh; max-width: 100px">Aktif</div>
+            <div class="card text-center mt-3 mx-auto bg-success text-white" style="width: 14vh; max-width: 100px">
+              Aktif
+            </div>
           </div>
           <div class="col-8">
             <div class="row mt-4">
               <div class="col-6">
                 <h3 class="fw-bold">Nama</h3>
-                <p>Salma Rorointan</p>
+                <?php
+                $noinduk = $_SESSION['noinduk'];
+                $query = $db->query("SELECT nama FROM mahasiswa where nim ='$noinduk'");
+                $data = mysqli_fetch_assoc($query);
+                echo "<p>".$data['nama']."</p>"
+                ?>
               </div>
               <div class="col-6">
                 <h3 class="fw-bold">NIM</h3>
-                <p>24060120130310</p>
+                <?php
+                $noinduk = $_SESSION['noinduk'];
+                $query = $db->query("SELECT nim FROM mahasiswa where nim ='$noinduk'");
+                $data = mysqli_fetch_assoc($query);
+                echo "<p>".$data['nim']."</p>"
+                ?>
               </div>
             </div>
             <div class="row mt-3">
               <div class="col-6">
                 <h3 class="fw-bold">Angkatan</h3>
-                <p>2020</p>
+                <?php
+                $noinduk = $_SESSION['noinduk'];
+                $query = $db->query("SELECT angkatan FROM mahasiswa where nim ='$noinduk'");
+                $data = mysqli_fetch_assoc($query);
+                echo "<p>".$data['angkatan']."</p>"
+                ?>
               </div>
               <div class="col-6">
                 <h3 class="fw-bold">Dosen Wali</h3>
-                <p>Anggraeni Puspitasari</p>
+                <?php
+                $noinduk = $_SESSION['noinduk'];
+                $query = $db->query("SELECT dosen.nama FROM dosen inner join mahasiswa where nim ='$noinduk' and mahasiswa.kode_wali=dosen.kode_wali");
+                $data = mysqli_fetch_assoc($query);
+                echo "<p>".$data['nama']."</p>"
+                ?>
               </div>
             </div>
           </div>
