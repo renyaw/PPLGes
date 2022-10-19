@@ -92,43 +92,19 @@
                 <th scope="col">Status</th>
               </tr>
             </thead>
-            <tbody class=" text-center">
-              <tr>
-                <td>2406012014024</td>
-                <td>Titi</td>
-                <td>titi@students.bebek.co.id</td>
-                <td>5</td>
-                <td>Aktif</td>
-              </tr>
-              <tr>
-                <td>2406012014035</td>
-                <td>Ura</td>
-                <td>ura@students.bebek.co.id</td>
-                <td>3</td>
-                <td>Cuti</td>
-              </tr>
-              <tr>
-                <td>2406012014056</td>
-                <td>Iwa</td>
-                <td>iwa@students.bebek.co.id</td>
-                <td>7</td>
-                <td>Mangkir</td>
-              </tr>
-              <tr>
-                <td>2406012014067</td>
-                <td>Supra</td>
-                <td>supra@students.bebek.co.id</td>
-                <td>5</td>
-                <td>Aktif</td>
-              </tr>
-              <tr>
-                <td>2406012014078</td>
-                <td>Reda</td>
-                <td>reda@students.bebek.co.id</td>
-                <td>3</td>
-                <td>Cuti</td>
-              </tr>
-            </tbody>
+            <?php
+              require_once('db_login.php');
+              $result = $db->query("SELECT nim, nama, email, smt, status FROM mahasiswa INNER JOIN khs");
+              while($row=$result->fetch_object()){
+                echo '<tr>';
+                echo "<td>" . $row->nim . "</td>";
+                echo "<td>" . $row->nama . "</td>";
+                echo "<td>" . $row->email . "</td>";
+                echo "<td>" . $row->semester . "</td>";
+                echo "<td>" . $row->status . "</td>";
+                echo '</tr>';
+              }
+              ?>
           </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
