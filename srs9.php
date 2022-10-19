@@ -86,15 +86,15 @@
             <thead>
               <tr>
                 <th scope="col">NIM</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Email Mahasiswa</th>
+                <th scope="col">Nama Mahasiswa</th>
+                <th scope="col">Email</th>
                 <th scope="col">Semester</th>
                 <th scope="col">Status</th>
               </tr>
             </thead>
             <?php
               require_once('db_login.php');
-              $result = $db->query("SELECT nim, nama, email, smt, status FROM mahasiswa INNER JOIN khs");
+              $result = $db->query("SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs");
               while($row=$result->fetch_object()){
                 echo '<tr>';
                 echo "<td>" . $row->nim . "</td>";
