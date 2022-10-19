@@ -87,7 +87,12 @@
               <div class="card border-1 shadow-sm">
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #ff5a5a 0%, #ffffff 55%)">
                   <p class="fw-bold">Dosen Wali</p>
-                  Rohmat <wbr />Adiguno
+                  <?php
+                  $kodewali = $data['kode_wali'];
+                  $query2 = $db->query("SELECT dosen.nama from dosen INNER JOIN mahasiswa where mahasiswa.kode_wali = dosen.kode_wali");
+                  $data2 = mysqli_fetch_assoc($query2);
+                  echo $data2['nama'];
+                  ?>
                 </div>
               </div>
             </div>

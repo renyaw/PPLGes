@@ -7,14 +7,15 @@ $password = $_POST['password'];
 
 
 $login = $db->query("SELECT * FROM user WHERE username='$username' and password='$password'");
-
 $cek = mysqli_num_rows($login);
 
 if($cek>0){
 
   $data=mysqli_fetch_assoc($login);
-  $_SESSION['username'] = $username;
-  $_SESSION['noinduk'] = $data['nip/nim'];
+  $_SESSION['username'] = $username; 
+  $noinduk = $data['nip/nim'];
+  $_SESSION['noinduk'] = $noinduk;
+ 
   if($data['status']==1){
     //operator
     $_SESSION['status']= $data['status'];
@@ -22,7 +23,17 @@ if($cek>0){
   }
   else if($data['status']==2){
     //mahasiswa
-    $_SESSION['status']= $data['status'];
+    $query1= $db->query("SELECT * FROM mahasiswa WHERE nim ='$noinduk'");
+
+    //insert data into session
+    // $_SESSION['']=
+    // $_SESSION['']=
+    // $_SESSION['']=
+    // $_SESSION['']=
+    // $_SESSION['']=
+    // $_SESSION['']=
+    // $_SESSION['']=
+    // $_session['username']
     header("location:srs10.php");
   }
   else if($data['status']==3){
