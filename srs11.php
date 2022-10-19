@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<php lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,10 +38,11 @@
     </nav>
 
     <div class="container">
-      <h3 class="mt-3 mb-3">Dashboard Dosen Wali</h3>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-3" style="max-width: 540px; background-color: #f1f1f1">
+      <h2 class="fw-bold">Dashboard Dosen Wali</h2>
+        <hr />
+      <div class="row justify-content-between">
+        <div class="col-md-5 border bg-light">
+          <div class="card mb-3 bg-transparent border-0" style="max-width: 540px; background-color: #f1f1f1">
             <div class="row g-0">
               <div class="col-md-4 mx-auto my-auto">
                 <img src="img\bebekbulet.png" class="img-fluid rounded-start mx-auto" alt="bebek" style="width: 90%" />
@@ -59,9 +60,9 @@
           </div>
         </div>
         
-        <div class="col-md-8 border">
+        <div class="col-md-6 border bg-light py-3">
           <div class="row justify-content-evenly">
-            <div class="col-4">
+            <div class="col-5">
               <div class="card" style="background-color: #84ffff">
                 <div class="card-body">
                   <div class="card-title">100</div>
@@ -69,7 +70,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-5">
               <div class="card" style="background-color: #97ff95">
                 <div class="card-body">
                   <div class="card-title">50</div>
@@ -78,17 +79,17 @@
               </div>
             </div>            
           </div>
-          <div class="row justify-content-evenly">
-            <div class="col-4">
-              <div class="card mt-5" style="background-color: #fdff8f">
+          <div class="row justify-content-evenly mt-2">
+            <div class="col-5">
+              <div class="card " style="background-color: #fdff8f">
                 <div class="card-body">
                   <div class="card-title">10</div>
                   <p>Mahasiswa Perwalian Skripsi</p>
                 </div>
               </div>
             </div>
-            <div class="col-4">
-              <div class="card mt-5" style="background-color: rgba(255, 115, 115, 0.74)">
+            <div class="col-5">
+              <div class="card " style="background-color: rgba(255, 115, 115, 0.74)">
                 <div class="card-body">
                   <div class="card-title">5</div>
                   <p>Mahasiswa Non-Aktif</p>
@@ -98,8 +99,8 @@
           </div>
         </div>
       </div>
-
-      <div class="row mt-5 border bg-light p-3">
+      
+      <div class="row justify-content-evenly mt-2 border bg-light p-3">
         <div class="col-md-3">
           <div class="card">
             <div class="card-body text-center" style="background-color: #27aed9">
@@ -110,7 +111,7 @@
         <div class="col-md-3">
           <div class="card">
             <div class="card-body text-center" style="background-color: #ffee54">
-              <a href="srs7.html"><button style="background-color: #ffee54; border: none; outline: none">Verifikasi IRS dan KHS Mahasiswa</button></a>
+              <a href="srs7.php"><button style="background-color: #ffee54; border: none; outline: none">Verifikasi IRS dan KHS Mahasiswa</button></a>
             </div>
           </div>
         </div>
@@ -133,4 +134,4 @@
 
     <br />
   </body>
-</html>
+</php>
