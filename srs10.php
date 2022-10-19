@@ -41,15 +41,17 @@
                 <?php
                   $noinduk = $_SESSION['noinduk'];
                   $query = $db->query("SELECT * FROM mahasiswa where nim ='$noinduk'");
-
+                  $query2= $db->query("SELECT irs.status FROM irs inner join mahasiswa where mahasiswa.nim=irs.nim");
                   $data=mysqli_fetch_assoc($query);
+                  $data2=mysqli_fetch_assoc($query2);
 
                   echo "<p>". $data['nama']."</p>";
                   echo "<p>". $data['nim'] ."</p>";
                   echo "<p>S1 Informatika</p>";
-                  echo "<p>Fakultas Sains dan Matematika</p>";
+                  echo "<p>Fakultas Sains dan Matematika</p>";                
+                  echo "<p class='fw-bold' style='color: #52ff63'>".$data2['status']."</p>";
                 ?>
-                <p class="fw-bold" style="color: #52ff63">Aktif</p>
+
               </div>
             </div>
           </div>
