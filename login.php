@@ -41,7 +41,7 @@
                 <form name="form" method="POST" autocomplete="off" action="cek_login.php">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" />
+                    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" />
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -52,7 +52,7 @@
                     <label class="form-check-label" for="exampleCheck1">Remember me</label>
                   </div>
                   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <input type="submit" name="submit" id="submit" value="submit" />
+                    <input type="submit" class="btn btn-primary" name="submit" id="submit" value="submit" />
                   </div>
                 </form>
                 <br />
