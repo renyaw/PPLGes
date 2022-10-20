@@ -1,4 +1,4 @@
-srs 1 - Login Page
+srs 1 - Login Page - fathan
 
 Mahasiswa:
 srs 2 - update data diri mhs
@@ -10,12 +10,13 @@ srs 10 - dashboard mahasiswa
 
 Operator
 srs 8
-srs 9 - dashboard operator
+srs 9 - dashboard operator - fathan
 srs 12
-srs 13 - Rekap PKL
+srs 13 - Rekap PKL - fathan
   Pake ajax1.js, get_headerpkl.php, get_pkl.php, get_pklbelum.php.
 srs 14
-srs 15
+srs 15 - Rekap Skripsi - fathan 
+  Pake ajax1.js, get_skripsi.php, get_skripsibelum.php, get_pklbelum.php.
 srs 16
 srs 17
 
