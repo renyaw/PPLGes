@@ -67,3 +67,23 @@ function showSkripsibelum(angkatan) {
     callAjax(url, inner);
   }
 }
+
+function showTabelskripsiblm(angkatan) {
+  var inner = 'tabel_skripsiblm';
+  var url = 'get_tabelskripsiblm.php?id=' + angkatan;
+  if (angkatan == '') {
+    document.getElementById(inner).innerHTML = '';
+  } else {
+    callAjax(url, inner);
+  }
+}
+
+function showTabelskripsisdh(angkatan) {
+  var inner = 'tabel_skripsisdh';
+  var url = 'get_tabelskripsisdh.php?id=' + angkatan;
+  if (angkatan == '') {
+    document.getElementById(inner).innerHTML = '';
+  } else {
+    callAjax(url, inner);
+  }
+}

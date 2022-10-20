@@ -8,6 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   </head>
   <body>
+    <?php
+      session_start();
+      require_once('db_login.php');
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <include src="navdep.html"></include>
     <br />
@@ -16,18 +20,18 @@
       <hr />
       <br />
       <div class="d-grid gap-2 d-md-block">
-        <form action="srs16_blm.html">
           <button class="btn btn-success" type="button">Lulus</button>
-          <button class="btn btn-outline-danger" type="submit">Belum Lulus</button>
-        </form>
+          <button class="btn btn-outline-danger" type="submit" onclick="location.href='srs16_blm.php'">Belum Lulus</button>
       </div>
       <br />
       <div class="d-grid gap-2 d-md-block">
-        <button class="btn btn-outline-secondary" type="button" disabled>2017</button>
-        <button class="btn btn-secondary" type="button">2018</button>
-        <button class="btn btn-outline-secondary" type="button" disabled>2019</button>
-        <button class="btn btn-outline-secondary" type="button" disabled>2020</button>
-        <button class="btn btn-outline-secondary" type="button" disabled>2021</button>
+        <button class="btn btn-outline-secondary" type="button" onclick="showTabelskripsisdh('x');">Semua</button>
+          <?php
+            $query = $db->query("SELECT angkatan FROM mahasiswa where nim in(SELECT max(nim) FROM mahasiswa group by angkatan) order by angkatan");
+            while($row=$query->fetch_object()){
+              echo "<button class='btn btn-outline-secondary mx-1' id='angkatan' value='$row->angkatan' onclick='showTabelskripsisdh($row->angkatan)'>".$row->angkatan."</button>";
+            }
+          ?>
       </div>
       <br />
       <table class="table table-hover">
@@ -39,7 +43,7 @@
             <th scope="col">Nilai</th>
           </tr>
         </thead>
-        <tbody class="table-group-divider">
+        <tbody id="tabel_skripsisdh"class="table-group-divider">
           <tr>
             <td>Agus</td>
             <td>2406012014001</td>
@@ -109,5 +113,6 @@
         </ul>
       </nav>
     </div>
+    <script src='ajax1.js'></script>
   </body>
 </html>
