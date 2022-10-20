@@ -14,62 +14,8 @@
     session_start();
     require_once('db_login.php');
     ?>
-    <include src="navbar.html"></include>
     <div class="container">
-        <h3 class="mt-3 mb-3">Dashboard Operator</h3>
-        <div class="row">
-            <div class="col-md-6">
-              <div class="card mb-3" style="max-width: 540px; background-color: #f1f1f1">
-                <div class="row g-0">
-                  <div class="col-md-4 mx-auto my-auto">
-                    <div class="card-title mt-2">Profil</div>
-                    <img src="img\bebekbulet.png" class="img-fluid rounded-start mx-auto mb-3" alt="bebek" style="width: 90%" />
-                  </div>
-                  <div class="col-md-7">
-                    
-                    <div class="card-body">
-                      <p class="card-title fs-4">Bensu</p>
-                      <p class="card-text">Operator</p>
-                      <p class="card-text">Fakultas Sains dan Matematika</p>
-                      <p class="card-text">Informatika</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 mx-auto">
-                <div class="card" style="background-color: #84ffff">
-                  <div class="card-body">
-                    <div class="card-title">100</div>
-                    <p>Mahasiswa Perwalian Aktif</p>
-                  </div>
-                </div>
-      
-                <div class="card mt-2 mb-5" style="background-color: #fdff8f">
-                    <div class="card-body">
-                        <div class="card-title">10</div>
-                        <p>Mahasiswa Perwalian Skripsi</p>
-                    </div>
-                  </div>
-                </div>
-      
-                <div class="col-md-3">
-                <div class="card" style="background-color: #97ff95">
-                  <div class="card-body">
-                    <div class="card-title">50</div>
-                    <p>Mahasiswa Perwalian PKL</p>
-                  </div>
-                </div>
-      
-                <div class="card mt-2" style="background-color: rgba(255, 115, 115, 0.74)">
-                  <div class="card-body">
-                    <div class="card-title">5</div>
-                    <p>Mahasiswa Non-Aktif</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+        <h3 class="mt-3 mb-3">Edit Data</h3>
     <div class="container">
         <div class="row">
             <div class="col-2 mt-5">
@@ -85,6 +31,7 @@
                 <input type="text" placeholder="Cari"class="form-control" id="nama">
             </div>
             </div>
+            <a class="d-flex justify-content-end mt-2 text-black" href="edit_srs9.php?id=23">Edit</a>
           <table class="table table-hover text-center table-bordered">
             <thead>
               <tr>
@@ -93,7 +40,6 @@
                 <th scope="col">Email</th>
                 <th scope="col">Semester</th>
                 <th scope="col">Status</th>
-                <th scope="col">Action</th>
               </tr>
             </thead>
             <?php
@@ -106,8 +52,6 @@
                 echo "<td>" . $row->email . "</td>";
                 echo "<td>" . $row->smt . "</td>";
                 echo "<td>" . $row->status . "</td>";
-                echo '<td><a class="btn btn-warning btn-sm" href="edit_srs9.php?id=' .$row->no_ruang .'">Edit</a>&nbsp;&nbsp;</td>';
-                echo "<td>"<a class="btn btn-warning btn-sm" href="edit_srs9.php?id=23">Edit</a>
                 echo '</tr>';
               }
               ?>
