@@ -49,3 +49,21 @@ function showHeader(angkatan) {
     callAjax(url, inner);
   }
 }
+function showSkripsi(angkatan) {
+  var inner = 'detail_skripsi';
+  var url = 'get_skripsi.php?id=' + angkatan;
+  if (angkatan == '') {
+    document.getElementById(inner).innerHTML = '';
+  } else {
+    callAjax(url, inner);
+  }
+}
+function showSkripsibelum(angkatan) {
+  var inner = 'detail_skripsi2';
+  var url = 'get_skripsibelum.php?id=' + angkatan;
+  if (angkatan == '') {
+    document.getElementById(inner).innerHTML = '';
+  } else {
+    callAjax(url, inner);
+  }
+}
