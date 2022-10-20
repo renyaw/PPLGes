@@ -1,8 +1,20 @@
+<?php
+session_start();
+require_once('db_login.php');
+?>
 <nav class="navbar bg-light sticky-top">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img src="img/logo.png" alt="Logo" width="30" height="35" class="d-inline-block" />
-      <b>informatika</b>
+      <b>informatika |</b>
+      <b class="">Hi,
+      <?php
+      $noinduk=$_SESSION['noinduk'];
+      $query=$db->query("SELECT mahasiswa.nama FROM mahasiswa inner join user where mahasiswa.nim=nip_nim and mahasiswa.nim='$noinduk'");
+      $data = mysqli_fetch_assoc($query);
+      echo $data['nama'].'.';
+      ?>
+      </b>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>

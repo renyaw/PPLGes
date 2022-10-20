@@ -13,7 +13,7 @@ if($cek>0){
 
   $data=mysqli_fetch_assoc($login);
   $_SESSION['username'] = $username; 
-  $noinduk = $data['nip/nim'];
+  $noinduk = $data['nip_nim'];
   $_SESSION['noinduk'] = $noinduk;
  
   if($data['status']==1){
