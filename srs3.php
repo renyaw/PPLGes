@@ -19,7 +19,7 @@
     session_start();
     require_once('db_login.php');
     ?>
-    <include src="navbar.html"></include>
+    <include src="navbar.php"></include>
     <div class="container mt-4">
       <h2 class="fw-bold">Entry IRS</h2>
       <hr />

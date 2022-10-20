@@ -17,7 +17,8 @@ srs 13 - Rekap PKL - fathan
 srs 14
 srs 15 - Rekap Skripsi - fathan 
   Pake ajax1.js, get_skripsi.php, get_skripsibelum.php, get_pklbelum.php.
-srs 16
+srs 16 - detail skripsi - fathan
+  Pake ajax1.js, get_tabelskripsisdh.php, gettabelskripsiblm.php
 srs 17
 
 Doswal

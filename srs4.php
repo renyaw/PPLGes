@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
   <body>
-    <include src="navbar.html"></include>
+    <include src="navbar.php"></include>
     <div class="container">
       <h3>Kartu Hasil Studi (KRS)</h3>
       <div class="card my-3" style="background-color:#BFF2E9">

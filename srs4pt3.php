@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
   <body>
-    <include src="navbar.html"></include>
+    <include src="navbar.php"></include>
     <div class="container mt-4">
       <h2 class="fw-bold">Entry KHS</h2>
       <hr />
