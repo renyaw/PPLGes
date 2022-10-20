@@ -35,7 +35,7 @@
             <div class="card" style="background-color: #92ff80; height: 200px">
               <div class="card-body text-center">
                 <br />
-                <h3 id='detail_skripsi'>123</h3><br /><br />
+                <h3 id='detail_skripsi'></h3><br /><br />
                 <h3>Sudah Skripsi</h3>
               </div>
             </div>
@@ -44,7 +44,7 @@
             <div class="card" style="background-color: #ed8282; height: 200px">
               <div class="card-body text-center my-auto">
                 <br />
-                <h3 id='detail_skripsi2'>37</h3>
+                <h3 id='detail_skripsi2'></h3>
                 <br />
                 <br />
                 <h3>Belum Skripsi</h3>
@@ -61,5 +61,11 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="ajax1.js"></script>
+    <script>
+      window.onload = function(){
+        showSkripsi("x");
+        showSkripsibelum("x");
+      }
+    </script>
   </body>
 </html>
