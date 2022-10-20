@@ -4,7 +4,7 @@ require_once('db_login.php');
 ?>
 <nav class="navbar bg-light sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="srs10.php">
       <img src="img/logo.png" alt="Logo" width="30" height="35" class="d-inline-block" />
       <b>informatika |</b>
       <b class="">Hi,

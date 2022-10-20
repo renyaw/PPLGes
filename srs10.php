@@ -25,12 +25,24 @@
     session_start();
     require_once('db_login.php');
     ?>
+
     <include src="navbar.php"></include>
     <div class="container mt-4">
       <h2 class="fw-bold">Dashboard Mahasiswa</h2>
       <hr />
+      <?php
+      if(isset($_GET['pesan'])){
+        //ucapan selamat login
+        $noinduk = $_SESSION['noinduk'];
+        $query = $db->query("SELECT nama FROM mahasiswa where nim ='$noinduk'");
+        $data=mysqli_fetch_assoc($query);
 
-      <div class="row mt-5">
+        if($_GET['pesan']=="sukses"){
+          echo "<div class='alert alert-success text-center'>Anda Berhasil Login Sebagai <wbr>". $data['nama'].".</div>";
+        }
+      }
+    ?>
+      <div class="row mt-1">
         <div class="col-md-6">
           <div class="col-md border bg-light pt-4">
             <div class="row">

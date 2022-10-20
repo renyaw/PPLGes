@@ -23,7 +23,7 @@
     <?php
       if(isset($_GET['pesan'])){
         //salah akun/password
-        if($_GET['pesan']=="gagal"){
+        if($_GET['pesan']=="sukses"){
           echo "<div class='alert alert-danger text-center'>Kredensial masukmu tak cocok dengan akun<br> dalam sistem kami!</div>";
         }
       }
@@ -32,7 +32,7 @@
       <div class="row align-items-center h-100">
         <div class="col-6 mx-auto">
           <div class="card p-4 rounded-0 shadow-lg">
-            <div class="container text-center">
+            <div class="container text-center mt-3">
               <img src="img/logo.png" alt="Logo" width="100" height="115" class="d-inline-block" />
               <br />
               <br />
@@ -56,7 +56,7 @@
                     <label class="form-check-label" for="exampleCheck1">Remember me</label>
                   </div>
                   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <input type="submit" class="btn btn-primary" name="submit" id="submit" value="submit" />
+                    <input type="submit" class="btn btn-primary" name="submit" id="submit" value="Login" />
                   </div>
                 </form>
                 <br />

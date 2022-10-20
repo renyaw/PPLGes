@@ -34,7 +34,7 @@ if($cek>0){
     // $_SESSION['']=
     // $_SESSION['']=
     // $_session['username']
-    header("location:srs10.php");
+    header("location:srs10.php?pesan=sukses");
   }
   else if($data['status']==3){
     //dosen
