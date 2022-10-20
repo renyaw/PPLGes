@@ -43,7 +43,6 @@
               </tr>
             </thead>
             <?php
-              
               $result = $db->query("SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs");
               while($row=$result->fetch_object()){
                 echo '<tr>';

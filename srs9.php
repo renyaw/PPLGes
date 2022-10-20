@@ -26,7 +26,6 @@
                     <img src="img\bebekbulet.png" class="img-fluid rounded-start mx-auto mb-3" alt="bebek" style="width: 90%" />
                   </div>
                   <div class="col-md-7">
-                    
                     <div class="card-body">
                       <p class="card-title fs-4">Bensu</p>
                       <p class="card-text">Operator</p>
@@ -106,8 +105,6 @@
                 echo "<td>" . $row->email . "</td>";
                 echo "<td>" . $row->smt . "</td>";
                 echo "<td>" . $row->status . "</td>";
-                echo '<td><a class="btn btn-warning btn-sm" href="edit_srs9.php?id=' .$row->no_ruang .'">Edit</a>&nbsp;&nbsp;</td>';
-                echo "<td>"<a class="btn btn-warning btn-sm" href="edit_srs9.php?id=23">Edit</a>
                 echo '</tr>';
               }
               ?>
