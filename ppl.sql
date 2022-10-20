@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2022 at 06:54 PM
+-- Generation Time: Oct 20, 2022 at 06:38 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -121,7 +121,11 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `angkatan`, `alamat`, `nomor_telp`, `email`, `kode_kab`, `kode_wali`) VALUES
-('24060120130053', 'Fathan Muhammad Faqih', '2020', 'Komplek Tugu', '087888327118', 'fathan@gmail.com', '12', 'E1');
+('24060120130049', 'Abdul Mustajir', '2021', 'Komplek Tugu Timur', '087888327118', 'Mustajir@gmail.com', '12', 'E1'),
+('24060120130050', 'Salma Nora Renada', '2020', 'Jalan Kenangan Indah', '0812347892138', 'sumbulnada@gmail.com', '13', 'E1'),
+('24060120130053', 'Fathan Muhammad Faqih', '2020', 'Komplek Tugu', '087888327118', 'fathan@gmail.com', '12', 'E1'),
+('24060120130059', 'Fathan Muhammad Rohmat', '2021', 'Komplek Tugu Barat', '087888327118', 'abdul@gmail.com', '12', 'E1'),
+('24060120130152', 'Made Rohmat Subarjo', '2019', 'Komplek Jayabaya', '081315487465', 'made@gmail.com', '13', 'E1');
 
 -- --------------------------------------------------------
 
@@ -135,6 +139,15 @@ CREATE TABLE `pkl` (
   `status_konfirmasi` varchar(20) NOT NULL,
   `upload_pkl` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pkl`
+--
+
+INSERT INTO `pkl` (`nim`, `status`, `status_konfirmasi`, `upload_pkl`) VALUES
+('24060120130050', 'Belum Lulus', '1', ''),
+('24060120130059', 'Belum Lulus', '1', ''),
+('24060120130049', 'Belum Lulus', '1', '');
 
 -- --------------------------------------------------------
 
@@ -154,11 +167,18 @@ CREATE TABLE `provinsi` (
 --
 
 CREATE TABLE `skripsi` (
-  `nim` varchar(2) NOT NULL,
+  `nim` varchar(14) NOT NULL,
   `status` varchar(15) NOT NULL,
-  `tgl_lulus` varchar(10) NOT NULL,
-  `lama_studi` varchar(10) NOT NULL
+  `tgl_lulus` varchar(10) DEFAULT NULL,
+  `lama_studi` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `skripsi`
+--
+
+INSERT INTO `skripsi` (`nim`, `status`, `tgl_lulus`, `lama_studi`) VALUES
+('24060120130050', 'Belum Lulus', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -167,7 +187,7 @@ CREATE TABLE `skripsi` (
 --
 
 CREATE TABLE `user` (
-  `nip/nim` varchar(14) NOT NULL,
+  `nip_nim` varchar(14) NOT NULL,
   `username` varchar(45) NOT NULL,
   `status` varchar(1) NOT NULL,
   `password` varchar(70) NOT NULL
@@ -177,7 +197,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`nip/nim`, `username`, `status`, `password`) VALUES
+INSERT INTO `user` (`nip_nim`, `username`, `status`, `password`) VALUES
 ('24060120130053', 'Fathan', '2', 'fathan123'),
 ('24060120130821', 'Dosen', '3', 'dosen123'),
 ('24060120130892', 'Departemen', '4', 'depart123'),
@@ -244,7 +264,7 @@ ALTER TABLE `skripsi`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`nip/nim`);
+  ADD PRIMARY KEY (`nip_nim`);
 
 --
 -- Constraints for dumped tables
