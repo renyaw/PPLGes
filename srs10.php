@@ -38,7 +38,9 @@
         $data=mysqli_fetch_assoc($query);
 
         if($_GET['pesan']=="sukses"){
-          echo "<div class='alert alert-success text-center'>Anda Berhasil Login Sebagai <wbr>". $data['nama'].".</div>";
+          echo "<div class='alert alert-success text-center alert-dismissible fade show' role='alert'>Anda Berhasil Login Sebagai <wbr>". $data['nama']."
+          <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+          </div>";
         }
       }
     ?>
