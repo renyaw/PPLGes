@@ -4,12 +4,30 @@
 require_once "db_login.php"; // memanggil halaman
 $id=$_GET['id'];
 
-//Klausa ORDER BY digunakan untuk mengurutkan hasil-set dalam urutan menaik atau menurun
-//sesuai status
 $query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE status='$id'";
 //default
 $query2 =
     "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs";
+
+// Search GIMANA YA CARA MASUKINNYA ANJIR
+if(isset($_GET["search"])){
+  // Pak dika
+  $query2 = cari($_GET["keyword"]);
+
+  function cari($keyword){
+    $query = 
+    $query3 = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs 
+      WHERE
+    mahasiswa.nim LIKE '%$keyword%' OR
+    mahasiswa.nama LIKE '%$keyword%' OR
+    mahasiswa.email LIKE '%$keyword%'
+    ";
+    return query($query);
+  }
+  // End pak dika
+  
+}
+// End Search
 
 //sort
 $sortR = $db->query($query);
@@ -37,9 +55,11 @@ echo '
 
 if ($id == "3") {
     $result = $defaultR;
-} else {
+} else{
     $result = $sortR;
 }
+
+
 $i = 1;
 while ($row = $result->fetch_object()) {
     // fetch_object-> mengembalikan baris saat ini dari kumpulan hasil sebagai objek atau keluarasnfungsi mengembalikan baris saat ini
@@ -54,6 +74,8 @@ while ($row = $result->fetch_object()) {
     echo "</tr>";
     $i++;
 }
+
+
 echo "</table>";
 echo "<br />";
 $result->free();

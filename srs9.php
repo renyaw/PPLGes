@@ -85,12 +85,18 @@
                 <option value="10">10</option>
               </select>
             </div>
-            <div class="col-2 mt-4 ">
-                <a for="nama" class="form-label text-black" style="text-decoration:none;">Cari</a>
-                <input type="text" placeholder="Cari"class="form-control" id="nama">
+            <!-- Cari -->
+            <div class="col-2 mt-5 ">
+            <form action="" method="GET">
+              <div class="input-group mb-3">
+                <input type="text" name="search" value="<?php if(isset($_GET["search"])){echo $_GET['search'];}?>" class="form-control" placeholder="">
+                <button type="submit" class="btn btn-outline-secondary">Cari</button>
+              </div>
+            </form>
             </div>
-            </div>
-            <div class="row text-center">
+            <!-- Selesai Cari -->
+          </div>
+          <div class="row text-center">
             <div class="col">
               <div id="detail_mhs">          
                 <script>

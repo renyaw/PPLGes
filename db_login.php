@@ -18,4 +18,17 @@ function test_input($data){
     return $data;
 }
 
+
+// Function buat SEARCH di SRS 9 
+function query($query){
+    global $db;
+    $result = mysqli_query($db, $query);
+    $rows = [];
+    while($row = mysqli_fetch_assoc($result)){
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
+
 ?>
