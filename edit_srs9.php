@@ -65,34 +65,9 @@ if (!isset($_POST["submit"])) {
 }
 ?>
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Edit Data Pesanan</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    </head>
-    <body>
-      <!-- Navbar ye -->
-        <nav class="navbar navbar-expand-lg fixed-top" style="background-color:#F1A661;">
-          <div class="container">
-            <a class="navbar-brand" href="#">
-              <img src="img\icon.png" alt="Logo" width="30" class="d-inline-block align-text-top">
-              Bebek Voice
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            </div>
-          </div>
-        </nav>
-      <!-- Udah navbarnya -->
-      <br>
-      <div class="container pt-5">
+<div class="container pt-5">
         <div class="card">
-            <div class="card-header">Edit Data Pesanan</div>
+            <div class="card-header">Edit Data Mahasiswa</div>
             <div class="card-body">
               <div class="row">
                 <div class="col-6">
@@ -174,4 +149,3 @@ if (!isset($_POST["submit"])) {
   </body>
   <?php $db->close(); ?>
 </html>
-
