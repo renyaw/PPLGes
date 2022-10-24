@@ -1,30 +1,38 @@
 <?php
 require_once "db_login.php";
+session_start();
 //get data from url
 $id = $_GET["id"];
+
+//mengambil data query yang dipilih
+$getdata = $db->query(
+  "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE mahasiswa.nim = $id "
+);
+
+$data = mysqli_fetch_assoc($getdata);
+//mengisi data pada variabel
+$nim= $data['nim'];
+$nama = $data["nama"];
+$email = $data["email"];
+$smt = $data["smt"];
+$status = $data["status"];
+
+
 
 //cek are user click on submit
 if (!isset($_POST["submit"])) {
     //execute the query
-    $query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE mahasiswa.nim=khs.nim  AND mahasiswa.nim=".$id;
+    $query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE mahasiswa.nim = $id ";
     $result = $db->query($query);
     if (!$result) {
         die("Could not the query database: <br />" . $db->error);
     } else {
         while ($row = $result->fetch_object()) {
-            $nim = $row->nim;
-            $nama = $row->nama;
-            $email = $row->email;
-            $smt = $row->smt;
-            $status = $row->status;
+            $name = $row->status;
         }
     }
 } else {
-    $valid = True; //flag validasi
-    $nim = test_input($_POST["nim"]);
-    $nama = test_input($_POST["nama"]);
-    $email = test_input($_POST["email"]);
-    $smt = test_input($_POST["smt"]);
+    $valid = true; //flag validasi
     $status = test_input($_POST["status"]);
     if ($status == "") {
         $error_status = "Name is required";
@@ -33,10 +41,11 @@ if (!isset($_POST["submit"])) {
 
     //Update data ke database
     if($valid){
-        $query = "UPDATE mahasiswa SET nama='".$nama."', email='".$email."' WHERE nim='".$id."';";
-        $query .= "UPDATE khs SET smt='".$smt."', status='".$status."' WHERE nim='".$id."' ";
+        $query = "UPDATE mahasiswa, khs SET mahasiswa.nim='$nim', nama='$nama', email='$email', smt='$smt', status='$status' 
+        WHERE mahasiswa.nim=$id";
+        
            //execute the query
-        $result = $db->multi_query($query);
+        $result = $db->query($query);
         if (!$result) {
             die(
                 "Could not the query the database: <br />" .
@@ -45,6 +54,7 @@ if (!isset($_POST["submit"])) {
                     $query
             );
         } else {
+            
             $db->close();
             header("Location: srs9.php");
         }
@@ -68,31 +78,30 @@ if (!isset($_POST["submit"])) {
         <div class="card mt-5 card ">
             <h5 class="card-header text-bg-success">Edit Data Mahasiswa</h1>
             <div class="card-body">
-              <form method="post" autocomplete="on" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]).'?id=' .$id; ?>">
+              <form action="" method="post">
                 <div class="mb-3">
                     <label for="nim" class="form-label">NIM Mahasiswa</label>
-                    <input type="text" class="form-control border-success" id="nim" name="nim" value="<?php echo $nim; ?>">
+                    <input type="" class="form-control border-success" id="nim" value="<?= $nim; ?>">
                 </div>
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama Mahasiswa</label>
-                    <input type="text" class="form-control border-success" id="nama" name="nama" value="<?php echo $nama; ?>">
+                    <input type="name" class="form-control border-success" id="nama" value="<?= $nama; ?>">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email Mahasiswa</label>
-                    <input type="text" class="form-control border-success" id="email" name="email" value="<?php echo $email; ?>">
+                    <input type="email" class="form-control border-success" id="email" value="<?= $email; ?>">
                 </div>
                 <div class="row">
                     <div class="mb-3 col-6">
                         <label for="smt" class="form-label">Semester</label>
-                        <input type="text" class="form-control border-success" id="smt" name="smt" value="<?php echo $smt; ?>">
+                        <input type="number" class="form-control border-success" id="smt" value="<?= $smt; ?>">
                     </div>
                     <div class="mb-3 col-6">
                         <label for="status" class="form-label">Status</label>
                         <select name="status" id="status" class="form-select border-success">
-                            <option value="none" <?php if (isset($status)) echo 'selected="true"';?>>--Masukkan Status--</option>
-                            <option value="Aktif" <?php if (isset($status) && $status="Aktif") echo 'selected="true"';?>>Aktif</option>
-                            <option value="Cuti" <?php if (isset($status) && $status="Cuti") echo 'selected="true"';?>>Cuti</option>
-                            <option value="Mangkir" <?php if (isset($status) && $status="Mangkir") echo 'selected="true"';?>>Mangkir</option>
+                            <option value="0"></option>
+                            <option value="1"></option>
+                            <option value="2"></option>
                         </select>
                         
                     </div>
