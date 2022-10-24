@@ -16,14 +16,6 @@ $email = $data["email"];
 $smt = $data["smt"];
 $status = $data["status"];
 
-function edit($data){
-    $nim= $data['nim'];
-    $nama = $data["nama"];
-    $email = $data["email"];
-    $smt = $data["smt"];
-    $status = $data["status"];
-    
-}
 
 //cek are user click on submit
 if (!isset($_POST["submit"])) {
@@ -47,8 +39,9 @@ if (!isset($_POST["submit"])) {
 
     //Update data ke database
     if($valid){
-        $query = "UPDATE mahasiswa, khs SET
-          ";
+        $query = "UPDATE mahasiswa, khs SET nim'".$nim."', nama'".$nama."', email'".$email."', smt'".$smt."', status'".$status."' 
+        WHERE nim=".$id;
+        
            //execute the query
         $result = $db->query($query);
         if (!$result) {
