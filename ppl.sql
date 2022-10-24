@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2022 at 06:38 PM
+-- Generation Time: Oct 24, 2022 at 08:44 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -97,6 +97,10 @@ CREATE TABLE `khs` (
 --
 
 INSERT INTO `khs` (`smt`, `status`, `ip_semester`, `ip_kumulatif`, `file_khs`, `sks_kumulatif`, `nim`) VALUES
+('1', 'Aktif', '3.68', '3.68', '', '24', '24060120130152'),
+('3', 'Aktif', '3.5', '3.90', '', '50', '24060120130152'),
+('5', 'Aktif', '3.90', '3.90', '', '50', '24060120130053'),
+('6', 'Aktif', '3.68', '3.90', '', '70', '24060120130053'),
 ('7', 'Aktif', '3.77', '3.90', '', '90', '24060120130053');
 
 -- --------------------------------------------------------
