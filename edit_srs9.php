@@ -59,7 +59,7 @@ if (!isset($_POST["submit"])) {
                     $query
             );
         } else {
-            //ketika sudah di submit , maka akan langsung pindah ke halaman view_customer.php
+            
             $db->close();
             header("Location: srs9.php");
         }
