@@ -13,7 +13,6 @@
     session_start();
     require_once('db_login.php');
     ?>
-    <include src="navbar.html"></include>
     <div class="container">
         <h3 class="mt-3 mb-3">Dashboard Operator</h3>
         <div class="row">
@@ -71,18 +70,17 @@
     <div class="container">
         <div class="row">
             <div class="col-2 mt-5">
-              <select name="status" id="status" onchange="showMhs(this.value)" class="form-select" aria-label="Default select example">
+            <select name="status" id="status" onchange="showMhs(this.value)" class="form-select" aria-label="Default select example">
                 <option value="3">Tampilkan Semua</option>
-                <option value="0">1</option>
-                <option value="1">2</option>
-                <option value="2">3</option>
-                <option value="4">4</option>
+                <option value="1">1</option>
                 <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
                 <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
               </select>
             </div>
             <!-- Cari -->

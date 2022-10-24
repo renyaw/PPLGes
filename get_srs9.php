@@ -1,10 +1,9 @@
 <?php
 // include our login information
-//session_start(); //menginisialilasi session lalu akan diteruskan ke get dan post
+ //menginisialilasi session lalu akan diteruskan ke get dan post
 require_once "db_login.php"; // memanggil halaman
 $id=$_GET['id'];
-
-$query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE status='$id'";
+$query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs order by mahasiswa.nim LIMIT $id;";
 //default
 $query2 =
     "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs";
@@ -12,7 +11,7 @@ $query2 =
 // Search GIMANA YA CARA MASUKINNYA ANJIR
 if(isset($_GET["search"])){
   // Pak dika
-  $query2 = cari($_GET["keyword"]);
+  
 
   function cari($keyword){
     $query = 
@@ -24,10 +23,12 @@ if(isset($_GET["search"])){
     ";
     return query($query);
   }
+  
+  $query2 = cari($_GET["keyword"]);
   // End pak dika
   
 }
-// End Search
+// // End Search
 
 //sort
 $sortR = $db->query($query);

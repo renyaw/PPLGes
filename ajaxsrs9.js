@@ -22,8 +22,8 @@ function getXMLHTTPRequest() {
     xmlhttp.send(null);
   }
   
-  function showMhs() {
-    var status = document.getElementById('status').value;
+  function showMhs(status) {
+    // var status = document.getElementById('status').value;
     var inner = 'detail_mhs';
     var url = 'get_srs9.php?id=' + status;
     if (status == '') {
