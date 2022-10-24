@@ -20,7 +20,8 @@
       <?php
       $noinduk=$_SESSION['noinduk'];
       $query = $db->query("SELECT khs.smt, khs.ip_semester, khs.sks_kumulatif from khs where nim = '$noinduk' order by smt");
-      
+      $query2= $db->query("SELECT angkatan from mahasiswa where nim ='$noinduk'");
+      $data=mysqli_fetch_assoc($query2);
       while($row=$query->fetch_object()){
         // echo '<a href="srs4.php?pesan='.$row->smt.'" style="text-decoration:none">';
         echo "<div class='card my-3' style='background-color:#BFF2E9'>";
