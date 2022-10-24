@@ -6,11 +6,11 @@ srs 3 - entry irs
 srs 4 - List KHS - fathan - done?
 srs 5
 srs 6
-srs 10 - dashboard mahasiswa
+srs 10 - dashboard mahasiswa - fathan
 
 Operator
 srs 8
-srs 9 - dashboard operator - fathan
+srs 9 - dashboard operator - nada :)
 srs 12
 srs 13 - Rekap PKL - fathan
   Pake ajax1.js, get_headerpkl.php, get_pkl.php, get_pklbelum.php.
