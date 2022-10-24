@@ -3,10 +3,10 @@ require_once "db_login.php";
 //get data from url
 $id = $_GET["id"];
 
-// //mengambil data query yang dipilih
-// $getdata = $db->query(
-//   "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE nim='$id'"
-// );
+//mengambil data query yang dipilih
+$getdata = $db->query(
+  "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE mahasiswa.nim = $id "
+);
 
 // $data = mysqli_fetch_assoc($getdata);
 // //mengisi data pada variabel
@@ -80,22 +80,36 @@ $id = $_GET["id"];
         <div class="card mt-5">
             <h5 class="card-header">Edit Data Mahasiswa</h1>
             <div class="card-body">
-              <form action="" method="get">
-                <div class="mb-3 row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                    </div>
+              <form action="" method="post">
+                <div class="mb-3">
+                    <label for="nim" class="form-label">NIM Mahasiswa</label>
+                    <input type="" class="form-control" id="nim">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                  </div>
-                  <button type="submit" class="btn btn-outline-success">Submit</button>
+                    <label for="nama" class="form-label">Nama Mahasiswa</label>
+                    <input type="name" class="form-control" id="nama">
+                </div>
+                <div class="mb-3 col-6">
+                    <label for="email" class="form-label">Email Mahasiswa</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-3">
+                        <label for="smt" class="form-label">Semester</label>
+                        <input type="number" class="form-control" id="smt">
+                    </div>
+                    <div class="mb-3 col-3">
+                        <label for="status" class="form-label">Status</label>
+                        <select name="status" id="status" class="form-select" aria-label="Default select example">
+                            <option value="0"></option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                        </select>
+                        
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-outline-success">Submit</button>
               </form>
             </div>
         </div>
