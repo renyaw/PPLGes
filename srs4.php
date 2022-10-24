@@ -10,10 +10,30 @@
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
   <body>
+    <?php
+    session_start();
+    require_once('db_login.php');
+    ?>
     <include src="navbar.php"></include>
     <div class="container">
-      <h3>Kartu Hasil Studi (KRS)</h3>
-      <div class="card my-3" style="background-color:#BFF2E9">
+      <h3>Kartu Hasil Studi (KRS)</h3>      
+      <?php
+      $noinduk=$_SESSION['noinduk'];
+      $query = $db->query("SELECT khs.smt, khs.ip_semester, khs.sks_kumulatif from khs where nim = '$noinduk' order by smt");
+      
+      while($row=$query->fetch_object()){
+        echo "<div class='card my-3' style='background-color:#BFF2E9'>";
+        echo '<div class="d-grid py-2" >';
+        echo '<button class="btn text-start"style="background-color:#BFF2E9" type="button">Semester '.$row->smt.' | Tahun akademik 2020/2021';
+        echo "<hr>IP Semester : ".$row->ip_semester;
+        echo "<br>Jumlah SKS : ".$row->sks_kumulatif;
+        echo '</button>';
+        echo '</div>';
+        echo '</div>';
+      }
+      ?>
+      
+      <!-- <div class="card my-3" style="background-color:#BFF2E9">
         <div class="d-grid py-2" >
           <button class="btn text-start"style="background-color:#BFF2E9" type="button">Semester 1 | Tahun akademik 2020/2021
             <hr>IP Semester : 4.00
@@ -53,7 +73,7 @@
             <br>Jumlah SKS : 20
           </button>
         </div>
-      </div>
+      </div> -->
 
       
     </div>
