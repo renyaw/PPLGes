@@ -25,15 +25,7 @@ if($cek>0){
     //mahasiswa
     $query1= $db->query("SELECT * FROM mahasiswa WHERE nim ='$noinduk'");
 
-    //insert data into session
-    // $_SESSION['']=
-    // $_SESSION['']=
-    // $_SESSION['']=
-    // $_SESSION['']=
-    // $_SESSION['']=
-    // $_SESSION['']=
-    // $_SESSION['']=
-    // $_session['username']
+    
     header("location:srs10.php?pesan=sukses");
   }
   else if($data['status']==3){
