@@ -16,12 +16,18 @@ $email = $data["email"];
 $smt = $data["smt"];
 $status = $data["status"];
 
+function edit($data){
+    $nim= $data['nim'];
+    $nama = $data["nama"];
+    $email = $data["email"];
+    $smt = $data["smt"];
+    $status = $data["status"];
+    
+}
 
 //cek are user click on submit
 if (!isset($_POST["submit"])) {
-    // $query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE nim='$id'" . $id;
     //execute the query
-
     $query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE mahasiswa.nim = $id ";
     $result = $db->query($query);
     if (!$result) {
@@ -37,6 +43,26 @@ if (!isset($_POST["submit"])) {
     if ($status == "") {
         $error_status = "Name is required";
         $valid = false;
+    }
+
+    //Update data ke database
+    if($valid){
+        $query = "UPDATE mahasiswa, khs SET
+          ";
+           //execute the query
+        $result = $db->query($query);
+        if (!$result) {
+            die(
+                "Could not the query the database: <br />" .
+                    $db->error .
+                    "<br>Query:" .
+                    $query
+            );
+        } else {
+            //ketika sudah di submit , maka akan langsung pindah ke halaman view_customer.php
+            $db->close();
+            header("Location: srs9.php");
+        }
     }
 }
 
@@ -85,8 +111,8 @@ if (!isset($_POST["submit"])) {
                         
                     </div>
                 </div>
-                
-                <button type="submit" class="btn btn-outline-success mt-3">Submit</button>
+
+                <button type="submit" class="btn btn-outline-success mt-3" name="submit" value="submit">Submit</button>
               </form>
             </div>
         </div>
