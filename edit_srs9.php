@@ -16,6 +16,7 @@ $email = $data["email"];
 $smt = $data["smt"];
 $status = $data["status"];
 
+$nim = $_session['noinduk'];
 
 //cek are user click on submit
 if (!isset($_POST["submit"])) {
@@ -39,8 +40,9 @@ if (!isset($_POST["submit"])) {
 
     //Update data ke database
     if($valid){
-        $query = "UPDATE mahasiswa, khs SET nim'".$nim."', nama'".$nama."', email'".$email."', smt'".$smt."', status'".$status."' 
-        WHERE nim=".$id;
+        
+        $query = "UPDATE mahasiswa, khs SET nim='$nim', nama='$nama', email='$email', smt='$smt', status='$status' 
+        WHERE mahasiswa.nim="'$nim';
         
            //execute the query
         $result = $db->query($query);
