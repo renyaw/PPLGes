@@ -9,7 +9,7 @@ srs 6
 srs 10 - dashboard mahasiswa - fathan
 
 Operator
-srs 1 - Bikin akun mhs sama isi data mhs - nada
+srs 1 - Bikin akun mhs sama isi data mhs
 srs 8
 srs 9 - dashboard operator - nada :) - (kurang masukin update data mhs ke db sama search).
   Pake get_srs9, ajaxsrs9, edit_srs9
