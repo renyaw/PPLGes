@@ -8,61 +8,38 @@ $getdata = $db->query(
   "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE mahasiswa.nim = $id "
 );
 
-// $data = mysqli_fetch_assoc($getdata);
-// //mengisi data pada variabel
-// $nim= $data['nim'];
-// $nama = $data["nama"];
-// $email = $data["email"];
-// $status = $data["status"];
+$data = mysqli_fetch_assoc($getdata);
+//mengisi data pada variabel
+$nim= $data['nim'];
+$nama = $data["nama"];
+$email = $data["email"];
+$smt = $data["smt"];
+$status = $data["status"];
 
 
-// //mengecek belum apa susah menonton submit
-// if (!isset($_POST["submit"])) {
-//     $query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE nim='$id'" . $id;
-//     //execute the query
-//     $result = $db->query($query);
-//     if (!$result) {
-//         die("Could not the query database: <br />" . $db->error);
-//     } else {
-//         while ($row = $result->fetch_object()) {
-//             $name = $row->status;
-//         }
-//     }
-// } else {
-//     $valid = true; //flag validasi
-//     $status = test_input($_POST["status"]);
-//     if ($status == "") {
-//         $error_status = "Name is required";
-//         $valid = false;
-//     }
+//cek are user click on submit
+if (!isset($_POST["submit"])) {
+    // $query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE nim='$id'" . $id;
+    //execute the query
 
+    $query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE mahasiswa.nim = $id ";
+    $result = $db->query($query);
+    if (!$result) {
+        die("Could not the query database: <br />" . $db->error);
+    } else {
+        while ($row = $result->fetch_object()) {
+            $name = $row->status;
+        }
+    }
+} else {
+    $valid = true; //flag validasi
+    $status = test_input($_POST["status"]);
+    if ($status == "") {
+        $error_status = "Name is required";
+        $valid = false;
+    }
+}
 
-//     //update data into database
-//     if ($valid) {
-//         //asign a query
-//         $query = "UPDATE pesanan SET status='" .$status ."'WHERE id_pesanan=" .$id;
-//         if($status=='2'){
-//           $query2= $db->query("UPDATE ruang SET status = '0' WHERE no_ruang='$no_ruang'");
-//         }
-//         else{
-//           $query3= $db->query("UPDATE ruang SET status = '1' WHERE no_ruang='$no_ruang'");
-//         }
-//         //execute the query
-//         $result = $db->query($query);
-//         if (!$result) {
-//             die(
-//                 "Could not the query the database: <br />" .
-//                     $db->error .
-//                     "<br>Query:" .
-//                     $query
-//             );
-//         } else {
-//             //ketika sudah di submit , maka akan langsung pindah ke halaman view_customer.php
-//             $db->close();
-//             header("Location: dashboard_admin.php");
-//         }
-//     }
-// }
 ?>
 
 <!DOCTYPE html>
@@ -76,31 +53,31 @@ $getdata = $db->query(
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
   <body>
-    <div class="container">
-        <div class="card mt-5">
-            <h5 class="card-header">Edit Data Mahasiswa</h1>
+    <div class="container col-8">
+        <div class="card mt-5 card ">
+            <h5 class="card-header text-bg-success">Edit Data Mahasiswa</h1>
             <div class="card-body">
               <form action="" method="post">
                 <div class="mb-3">
                     <label for="nim" class="form-label">NIM Mahasiswa</label>
-                    <input type="" class="form-control" id="nim">
+                    <input type="" class="form-control border-success" id="nim" value="<?= $nim; ?>">
                 </div>
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama Mahasiswa</label>
-                    <input type="name" class="form-control" id="nama">
+                    <input type="name" class="form-control border-success" id="nama" value="<?= $nama; ?>">
                 </div>
-                <div class="mb-3 col-6">
+                <div class="mb-3">
                     <label for="email" class="form-label">Email Mahasiswa</label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control border-success" id="email" value="<?= $email; ?>">
                 </div>
                 <div class="row">
-                    <div class="mb-3 col-3">
+                    <div class="mb-3 col-6">
                         <label for="smt" class="form-label">Semester</label>
-                        <input type="number" class="form-control" id="smt">
+                        <input type="number" class="form-control border-success" id="smt" value="<?= $smt; ?>">
                     </div>
-                    <div class="mb-3 col-3">
+                    <div class="mb-3 col-6">
                         <label for="status" class="form-label">Status</label>
-                        <select name="status" id="status" class="form-select" aria-label="Default select example">
+                        <select name="status" id="status" class="form-select border-success">
                             <option value="0"></option>
                             <option value="1"></option>
                             <option value="2"></option>
@@ -109,7 +86,7 @@ $getdata = $db->query(
                     </div>
                 </div>
                 
-                <button type="submit" class="btn btn-outline-success">Submit</button>
+                <button type="submit" class="btn btn-outline-success mt-3">Submit</button>
               </form>
             </div>
         </div>
