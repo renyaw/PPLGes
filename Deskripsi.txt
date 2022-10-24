@@ -3,7 +3,7 @@ srs 1 - Login Page - fathan
 Mahasiswa:
 srs 2 - update data diri mhs
 srs 3 - entry irs
-srs 4
+srs 4 - List KHS - fathan - done?
 srs 5
 srs 6
 srs 10 - dashboard mahasiswa
