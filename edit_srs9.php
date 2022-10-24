@@ -1,5 +1,6 @@
 <?php
 require_once "db_login.php";
+session_start();
 //get data from url
 $id = $_GET["id"];
 
@@ -16,7 +17,7 @@ $email = $data["email"];
 $smt = $data["smt"];
 $status = $data["status"];
 
-$nim = $_session['noinduk'];
+
 
 //cek are user click on submit
 if (!isset($_POST["submit"])) {
@@ -40,9 +41,9 @@ if (!isset($_POST["submit"])) {
 
     //Update data ke database
     if($valid){
-        
+        $nim = $_SESSION['noinduk'];
         $query = "UPDATE mahasiswa, khs SET nim='$nim', nama='$nama', email='$email', smt='$smt', status='$status' 
-        WHERE mahasiswa.nim="'$nim';
+        WHERE mahasiswa.nim=$nim";
         
            //execute the query
         $result = $db->query($query);
