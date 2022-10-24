@@ -1,7 +1,7 @@
 srs 1 - Login Page - fathan
 
 Mahasiswa:
-srs 2 - update data diri mhs
+srs 2 - update data diri mhs 
 srs 3 - entry irs
 srs 4 - List KHS - fathan - done?
 srs 5
@@ -10,7 +10,8 @@ srs 10 - dashboard mahasiswa - fathan
 
 Operator
 srs 8
-srs 9 - dashboard operator - nada :)
+srs 9 - dashboard operator - nada :) - (kurang masukin update data mhs ke db sama search).
+  Pake get_srs9, ajaxsrs9, edit_srs9
 srs 12
 srs 13 - Rekap PKL - fathan
   Pake ajax1.js, get_headerpkl.php, get_pkl.php, get_pklbelum.php.
@@ -22,8 +23,8 @@ srs 16 - detail skripsi - fathan
 srs 17
 
 Doswal
-srs7 - dashboard dosen
-srs11 
+srs7 - verifikasi progress studi mhs
+srs11 - dashboard doswal -fathan
 
 departemen
 srs1  - dashboard departemen
