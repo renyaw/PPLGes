@@ -41,9 +41,8 @@ if (!isset($_POST["submit"])) {
 
     //Update data ke database
     if($valid){
-        $nim = $_SESSION['noinduk'];
-        $query = "UPDATE mahasiswa, khs SET nim='$nim', nama='$nama', email='$email', smt='$smt', status='$status' 
-        WHERE mahasiswa.nim=$nim";
+        $query = "UPDATE mahasiswa, khs SET mahasiswa.nim='$nim', nama='$nama', email='$email', smt='$smt', status='$status' 
+        WHERE mahasiswa.nim=$id";
         
            //execute the query
         $result = $db->query($query);
