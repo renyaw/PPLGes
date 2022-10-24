@@ -3,10 +3,14 @@
  //menginisialilasi session lalu akan diteruskan ke get dan post
 require_once "db_login.php"; // memanggil halaman
 $id=$_GET['id'];
-$query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs order by mahasiswa.nim LIMIT $id;";
+//'max(khs.smt) dan group by nim' untuk mengambil smt tertinggi dari nim yang sama
+//'smt in (SELECT max(smt) FROM khs group by smt)' untuk mengambil apasaja data smt pada tabel khs, digunakan group by karena akan diambil max dari data smt yang duplikat
+//'where smt in ()' supaya smt yang diambil hanya menggunakan smt yang sudah dilakukan pada query internal
+$query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, max(khs.smt) as smt, khs.status FROM mahasiswa,khs where mahasiswa.nim=khs.nim AND smt in (SELECT max(smt) FROM khs group by smt) GROUP by nim  order by smt desc LIMIT $id;";
+#SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, max(khs.smt) as smt, khs.status FROM mahasiswa,khs where mahasiswa.nim=khs.nim  GROUP by nim  order by smt desc 
 //default
 $query2 =
-    "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs";
+    "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, max(khs.smt) as smt, khs.status FROM mahasiswa,khs where mahasiswa.nim=khs.nim AND smt in (SELECT max(smt) FROM khs group by smt) GROUP by nim order by smt desc";
 
 // Search GIMANA YA CARA MASUKINNYA ANJIR
 if(isset($_GET["search"])){
