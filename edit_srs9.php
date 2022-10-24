@@ -88,11 +88,11 @@ if (!isset($_POST["submit"])) {
                     </div>
                     <div class="mb-3 col-6">
                         <label for="status" class="form-label">Status</label>
-                        <select name="status" id="status" class="form-select border-success">
+                        <select name="status" id="status" class="form-select border-success" required>
                             <option value="none" <?php if (isset($status)) echo 'selected="true"';?>>--Masukkan Status--</option>
-                            <option value="Aktif" <?php if (isset($status) && $status="Aktif") echo 'selected="true"';?>>Aktif</option>
-                            <option value="Cuti" <?php if (isset($status) && $status="Cuti") echo 'selected="true"';?>>Cuti</option>
-                            <option value="Mangkir" <?php if (isset($status) && $status="Mangkir") echo 'selected="true"';?>>Mangkir</option>
+                            <option value="Aktif" <?php if (isset($status) && $status=="Aktif") echo 'selected="true"';?>>Aktif</option>
+                            <option value="Cuti" <?php if (isset($status) && $status=="Cuti") echo 'selected="true"';?>>Cuti</option>
+                            <option value="Mangkir" <?php if (isset($status) && $status=="Mangkir") echo 'selected="true"';?>>Mangkir</option>
                         </select>
                         
                     </div>
