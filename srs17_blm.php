@@ -40,11 +40,11 @@
           <tr>
             <th scope="col">Nama</th>
             <th scope="col">NIM</th>
-            <th scope="col">Dosen Penguji</th>
+            <th scope="col">Dosen Wali</th>
             <th scope="col">Angkatan</th>
           </tr>
         </thead>
-        <tbody id="tabel_skripsiblm" class="table-group-divider">
+        <tbody id="tabel_pklblm" class="table-group-divider">
         </tbody>
       </table>
     </div>

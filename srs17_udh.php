@@ -21,15 +21,15 @@
       <br />
       <div class="d-grid gap-2 d-md-block">
           <button class="btn btn-success" type="button">Lulus</button>
-          <button class="btn btn-outline-danger" type="submit" onclick="location.href='srs16_blm.php'">Belum Lulus</button>
+          <button class="btn btn-outline-danger" type="submit" onclick="location.href='srs17_blm.php'">Belum Lulus</button>
       </div>
       <br />
       <div class="d-grid gap-2 d-md-block">
-        <button class="btn btn-outline-secondary" type="button" onclick="showTabelskripsisdh('x');">Semua</button>
+        <button class="btn btn-outline-secondary" type="button" onclick="showTabelpklsdh('x');">Semua</button>
           <?php
             $query = $db->query("SELECT angkatan FROM mahasiswa where nim in(SELECT max(nim) FROM mahasiswa group by angkatan) order by angkatan");
             while($row=$query->fetch_object()){
-              echo "<button class='btn btn-outline-secondary mx-1' id='angkatan' value='$row->angkatan' onclick='showTabelskripsisdh($row->angkatan)'>".$row->angkatan."</button>";
+              echo "<button class='btn btn-outline-secondary mx-1' id='angkatan' value='$row->angkatan' onclick='showTabelpkludh($row->angkatan)'>".$row->angkatan."</button>";
             }
           ?>
       </div>
@@ -39,7 +39,7 @@
           <tr>
             <th scope="col">Nama</th>
             <th scope="col">NIM</th>
-            <th scope="col">Tanggal Sidang</th>
+            <th scope="col">Tanggal Mulai</th>
             <th scope="col">Nilai</th>
           </tr>
         </thead>
