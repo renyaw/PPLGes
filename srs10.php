@@ -49,7 +49,11 @@
           <div class="col-md border bg-light pt-4">
             <div class="row">
               <div class="col-md-4 p-3 ps-4">
-                <img src="img/bebekbulet.png" style="width: 100%" />
+                <?php
+                $poto = $db->query("SELECT * from mahasiswa where nim = '$noinduk'") ;
+                $d= mysqli_fetch_assoc($poto);
+                ?>
+                <img src='<?php echo "potopropil/".$d["fotoprofile"]; ?>'style='width: 100%' />
               </div>
               <div class="col-md-8">
                 <?php

@@ -9,6 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   </head>
   <body>
+  <script src="ajaxsrs17lagi.js"></script>
+  <?php
+    session_start();
+    require_once('db_login.php');
+  ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <include src="navdep.html"></include>
     <br />
@@ -23,44 +28,30 @@
         </form>
       </div> -->
       <br />
-      <div class="d-grid gap-2 d-md-block">
-        <button class="btn btn-outline-secondary" type="button" disabled>2017</button>
-        <button class="btn btn-outline-secondary" type="button" disabled>2018</button>
-        <button class="btn btn-secondary" type="button">2019</button>
-        <button class="btn btn-outline-secondary" type="button" disabled>2020</button>
-        <button class="btn btn-outline-secondary" type="button" disabled>2021</button>
+      <div class="container">
+        <button class="btn btn-outline-secondary" type="button" onclick="showTabelmhs('x');">Semua</button>
+        <?php
+          $query = $db->query("SELECT angkatan FROM mahasiswa where nim in(SELECT max(nim) FROM mahasiswa group by angkatan) order by angkatan");
+          while($row=$query->fetch_object()){
+            echo "<button class='btn btn-outline-secondary mx-1' id='angkatan' value='$row->angkatan' onclick='showTabelmhs($row->angkatan)'>".$row->angkatan."</button>";
+          }
+        ?>
       </div>
       <br />
+      <br />
+      <div>
       <table class="table table-hover">
         <thead>
           <tr>
-            <th class="col-1" scope="col">No</th>
-            <th class="col-7" scope="col">Nama</th>
-            <th class="col-2" scope="col">NIM</th>
-            <th class="col-2" scope="col">Status</th>
+            <th scope="col">Nama</th>
+            <th scope="col">NIM</th>
+            <th scope="col">Status</th>
           </tr>
         </thead>
-        <tbody class="table-group-divider">
-          <tr>
-            <td>1</td>
-            <td>Soleh Mustafa Yaya</td>
-            <td>2406012013333</td>
-            <td>Aktif</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Nanas Asem Banget</td>
-            <td>2406012013014</td>
-            <td>Aktif</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Cantik Deh Kamutia</td>
-            <td>24060120140123</td>
-            <td>Aktif</td>
-          </tr>
+        <tbody id="tabel_mhs" class="table-group-divider">
         </tbody>
       </table>
+    </div>
       <br />
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
@@ -80,5 +71,10 @@
         </ul>
       </nav>
     </div>
+    <script>
+      window.onload = function(){
+        showTabelmhs('x');
+      }
+    </script>
   </body>
 </html>
