@@ -9,12 +9,16 @@
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
   <body>
+    <?php
+    session_start();
+    require_once "db_login.php";
+    ?>
     <div class="container px-5 pt-4 pb-5">
       <h2>Data Mahasiswa</h2>
       <div class="alert alert-success pb-1 pt-2" role="alert">
           <h5>Info : Data berhasil disimpan.</h5>
           <p>Pastikan daya yang Anda Masukkan benar.</p>
-        </div>
+      </div>
       <div class="row">
         <div class="col-4 mt-3">
           <div class="image overflow-hidden">
@@ -23,38 +27,50 @@
         </div>
         <div class="col-8">
         <form>
+          <?php 
+          $atnama = $_POST["nama"];
+          $atnama = ucwords(strtolower($atnama));
+          $nim = test_input($_POST["nim"]);
+          $nama = test_input($atnama);
+          $angkatan = test_input($_POST["angkatan"]);
+          $status = test_input($_POST["status"]);
+          // $kode_wali = test_input($_POST["kode_wali"]);
+
+          //insert into database
+          $input = $db->query(
+            "insert into mahasiswa(nim,nama,angkatan) values('$nim','$nama','$angkatan')"
+          );
+          ?>
+          <div class="mt-1 mb-3">
+            <label for="nim" class=" col-form-label fw-semibold">NIM Mahasiswa</label>
+            <input type="text" readonly class="form-control-plaintext  " id="nim" value="(ambil dari db)">
+          </div>
+          <div class="mb-3">
+            <label for="nama" class=" col-form-label fw-semibold">Nama Mahasiswa</label>
+            <input type="text" readonly class="form-control-plaintext " id="nama" value="(ambil dari db)">
+          </div>
+          <div class="row mb-3">
+            <label for="angkatan" class="col-sm-3 col-form-label fw-semibold">Angkatan : </label>
+            <div class="col-sm-9">
+              <input type="text" readonly class="form-control-plaintext" id="angkatan" value="(Ambil dari db)">
+            </div>
+          </div>
+          <div class=" row mb-3">
+            <label for="status" class="col-sm-3 col-form-label fw-semibold">Status : </label>
+            <div class="col-sm-9">
+              <input type="text" readonly class="form-control-plaintext" id="status" value="(Ambil dari db)">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="wali" class="col-sm-3 col-form-label fw-semibold">Kode Wali : </label>
+            <div class="col-sm-9">
+              <input type="text" readonly class="form-control-plaintext" id="wali" value="(Ambil dari db)">
+            </div>
+          </div>
           
-        <div class="mt-1 mb-3">
-          <label for="staticEmail" class=" col-form-label fw-semibold">NIM Mahasiswa</label>
-            <input type="text" readonly class="form-control-plaintext  " id="staticEmail" value="(ambil dari db)">
-        </div>
-        <div class="mb-3">
-          <label for="staticEmail" class=" col-form-label fw-semibold">Nama Mahasiswa</label>
-            <input type="text" readonly class="form-control-plaintext " id="staticEmail" value="(ambil dari db)">
-        </div>
-        <div class="row mb-3">
-          <label for="staticEmail" class="col-sm-3 col-form-label fw-semibold">Angkatan : </label>
-          <div class="col-sm-9">
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="(Ambil dari db)">
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary mt-4 ">Submit</button>
           </div>
-        </div>
-        <div class=" row mb-3">
-          <label for="staticEmail" class="col-sm-3 col-form-label fw-semibold">Status : </label>
-          <div class="col-sm-9">
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="(Ambil dari db)">
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label for="staticEmail" class="col-sm-3 col-form-label fw-semibold">Kode Wali : </label>
-          <div class="col-sm-9">
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="(Ambil dari db)">
-          </div>
-        </div>
-        
-        <div class="d-flex justify-content-end">
-          <button type="submit" class="btn btn-primary mt-4 ">Submit</button>
-        </div>
-        
         </form>
 
         </div>
