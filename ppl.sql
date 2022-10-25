@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2022 at 03:59 PM
+-- Generation Time: Oct 25, 2022 at 06:59 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -100,10 +100,10 @@ CREATE TABLE `khs` (
 --
 
 INSERT INTO `khs` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semester`, `ip_kumulatif`, `file_khs`, `sks_kumulatif`, `nim`) VALUES
-(1, '1', 'Aktif', '0', '3.68', '3.68', '', '24', '24060120130152'),
+(1, '1', 'Aktif', '0', '3.68', '3.68', '', '24', '24060120130049'),
 (2, '3', 'Aktif', '0', '3.5', '3.90', '', '50', '24060120130152'),
-(3, '5', 'Aktif', '0', '3.90', '3.90', '', '50', '24060120130053'),
-(4, '6', 'Aktif', '0', '3.68', '3.90', '', '70', '24060120130053'),
+(3, '5', 'Aktif', '0', '3.90', '3.90', '', '50', '24060120130050'),
+(4, '6', 'Aktif', '0', '3.68', '3.90', '', '70', '24060120130059'),
 (5, '7', 'Aktif', '0', '3.77', '3.90', '', '90', '24060120130053');
 
 -- --------------------------------------------------------
@@ -231,6 +231,7 @@ ALTER TABLE `dosen`
 --
 ALTER TABLE `irs`
   ADD PRIMARY KEY (`id_irs`),
+  ADD UNIQUE KEY `nim_2` (`nim`),
   ADD KEY `nim` (`nim`);
 
 --
@@ -245,6 +246,7 @@ ALTER TABLE `kabupaten`
 --
 ALTER TABLE `khs`
   ADD PRIMARY KEY (`id_khs`),
+  ADD UNIQUE KEY `nim` (`nim`),
   ADD KEY `fk_nim` (`nim`);
 
 --
@@ -260,6 +262,7 @@ ALTER TABLE `mahasiswa`
 --
 ALTER TABLE `pkl`
   ADD PRIMARY KEY (`id_pkl`),
+  ADD UNIQUE KEY `nim` (`nim`),
   ADD KEY `fk_nim_mhs` (`nim`);
 
 --
@@ -273,6 +276,7 @@ ALTER TABLE `provinsi`
 --
 ALTER TABLE `skripsi`
   ADD PRIMARY KEY (`id_skripsi`),
+  ADD UNIQUE KEY `nim` (`nim`),
   ADD KEY `fk_nim_mhsw` (`nim`);
 
 --
@@ -301,7 +305,7 @@ ALTER TABLE `khs`
 -- AUTO_INCREMENT for table `pkl`
 --
 ALTER TABLE `pkl`
-  MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `skripsi`
