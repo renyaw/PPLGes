@@ -54,7 +54,7 @@
             <label for="fakultas" class=" col-form-label">Fakultas</label>
               <input type="text" readonly class="form-control-plaintext form-control-sm" id="prodi" value="Sains dan Matematika">
           </div>
-          <button type="submit" class="btn btn-primary mt-3">Submit</button>
+          <button type="submit" class="btn btn-primary mt-4">Update</button>
         </form>
         </div>
 
