@@ -17,6 +17,11 @@
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
+    <?php
+    session_start();
+    require_once('db_login.php');
+    
+    ?>
 
     <!-- Mulai -->
     <div class="container mt-4">
@@ -49,20 +54,20 @@
                 <!-- </svg> -->
               </div>
 
-              <form action="srs1pt2.php">
+              <form action="srs1pt2.php" method="POST" name="form" autocomplete="on">
                 <div class="form-group mb-6 mt-6">
                   <input
                     type="text"
                     class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="nim"
+                    id="nim" name="nim"
                     placeholder="NIM Mahasiswa"
                   />
                 </div>
                 <div class="form-group mb-4">
                   <input
-                    type="text"
+                    type="name"
                     class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="nama"
+                    id="nama" name="nama"
                     placeholder="Nama Mahasiswa"
                   />
                 </div>
@@ -70,9 +75,8 @@
                   <p>Angkatan:</p>
                   <select
                     class="form-select block w-1/3 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    aria-label=".form-select-sm "
-                  >
-                    <option selected>2020</option>
+                    id="angkatan">
+                    <option selected>Pilih Angkatan</option>
                     <option value="1">2020</option>
                     <option value="2">2021</option>
                     <option value="3">2022</option>
@@ -82,9 +86,8 @@
                   <p>Jalur Masuk:</p>
                   <select
                     class="form-select block w-1/3 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    aria-label=".form-select-sm"
-                  >
-                    <option selected>SBMPTN</option>
+                    id="jalur">
+                    <option selected>Pilih Jalur Masuk</option>
                     <option value="1">SNMPTN</option>
                     <option value="2">SBMPTN</option>
                     <option value="3">Mandiri</option>
