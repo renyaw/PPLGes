@@ -12,10 +12,12 @@ $cek = mysqli_num_rows($login);
 if($cek>0){
 
   $data=mysqli_fetch_assoc($login);
+  //masukin username ke session
   $_SESSION['username'] = $username; 
+  //masukin nim/nip ke session dengan nama vaeriable noinduk
   $noinduk = $data['nip_nim'];
   $_SESSION['noinduk'] = $noinduk;
- 
+
   if($data['status']==1){
     //operator
     $_SESSION['status']= $data['status'];
