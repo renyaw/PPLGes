@@ -20,9 +20,9 @@
 
     <!-- Mulai -->
     <div class="container mt-4">
-      <h2 class="fw-bolder fs-1">Edit Profile</h2>
+      <h2 class="fw-bolder fs-1">Insert Data Mahasiswa</h2>
       <hr />
-      <div class="container mx-auto my-100 p-5 mt-10 pb-35 bg-light border rounded-md">
+      <div class="container mx-auto my-100 px-5 pb-5 pt-2 mt-100 pb-35 bg-light border rounded-md">
         <div class="md:flex no-wrap md:-mx-2">
           <!-- Left Side -->
           <div class="w-full md:w-3/12 md:mx-2">
@@ -40,7 +40,7 @@
           <div class="w-full md:w-9\12 mx-2 h-10">
             <!-- Profile tab -->
             <!-- About Section -->
-            <div class="bg-white p-3 shadow-sm border-2 rounded-md">
+            <div class="bg-white px-3 pb-2 pt-0 shadow-sm border-2 rounded-md">
               <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
                 <!-- <span clas="text-green-500">
                             <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
