@@ -9,6 +9,11 @@
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
   <body>
+    <?php
+    //Cek apakah sudah login atau belum
+    session_start();
+    require_once "db_login.php";
+    ?>
     <div class="container px-5 pt-4 pb-5">
       <h2>Data Mahasiswa</h2>
       <div class="row">
@@ -18,36 +23,46 @@
           </div>
         </div>
         <div class="col-6">
-        <form>
-          
+        <form method="POST" name="form" autocomplete="on" action="srs1pt2.php">
           <div class="mb-3 mt-3">
-            <input type="text" class="form-control" placeholder="NIM Mahasiswa" id="nohp">
+            <input type="text" class="form-control" placeholder="NIM Mahasiswa" id="nim" name="nim">
           </div>
           <div class="mb-3 mt-5">
-            <input type="text" class="form-control" placeholder="Nama Mahasiswa" id="nohp">
+            <input type="text" class="form-control" placeholder="Nama Mahasiswa" id="nama" name="nama">
           </div>
-          
           <div class="row">
           <div class=" col-6 mt-3">
           <label for="angkatan" class="form-label">Angkatan:</label>
-            <select name="" id="" class="form-control form-control">
-            <option value="">
-            </option>
+            <select name="angkatan" id="angkatan" class="form-control form-control">
+              <option value="">Pilih Angkatan</option>
+              <option value="">2017</option>
+              <option value="">2018</option>
+              <option value="">2019</option>
+              <option value="">2020</option>
+              <option value="">2021</option>
+              <option value="">2022</option>
+              <option value="">2023</option>
             </select>
           </div>
           <div class=" col-6 mt-3">
           <label for="status" class="form-label">Status:</label>
-            <select name="" id="" class="form-control form-control">
-            <option value="">
-            </option>
+            <select name="status" id="status" class="form-control form-control">
+                <option value="">Pilih Status</option>
+                <option value="">Aktif</option>
+                <option value="">Tidak Aktif</option>
+                <option value="">Cuti</option>
+                <option value="">Mangkir</option>
             </select>
           </div>
           </div>
           <div class="mb-3 mt-4">
-          <label for="status" class="form-label">Kode Wali:</label>
-            <select name="" id="" class="form-control form-control">
-            <option value="">
-            </option>
+          <label for="wali" class="form-label">Kode Wali:</label>
+            <select name="kode_wali" id="kode_wali" class="form-control form-control">
+            <option value="">Pilih Kode Wali</option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary mt-4">Submit</button>
