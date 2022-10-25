@@ -18,7 +18,11 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <include src="navbar.html"></include>
+    <?php 
+    session_start();
+    require_once('db_login.php');
+    ?>
+    
     <div class="container mt-4">
       <h2 class="fw-bolder fs-1">Edit Profile</h2>
       <hr />
@@ -49,25 +53,38 @@
               </div>
 
               <ul class="list-inside space-y-2 mt-6">
+                <?php 
+                $atnama = $_POST["nama"];
+                $atnama = ucwords(strtolower($atnama));
+                $nim = test_input($_POST["nim"]);
+                $nama = test_input($atnama);
+                $angkatan = test_input($_POST["angkatan"]);
+                $jalur = test_input($_POST["jalur"]);
+
+                //insert into db
+                $input = $db->query(
+                  "INSET INTO mahasiswa(nim,nama,angkatan,jalur) values('$nim','$nama','$angkatan','$jalur')"
+              );
+                ?>
                 <li>
                   <div class="text-black font-bold">Nim Mahasiswa</div>
-                  <div class="text-black text-m">240601120130053</div>
+                  
                 </li>
                 <li>
                   <div class="text-black font-bold">Nama Mahasiswa</div>
-                  <div class="text-black text-m">Arya Gessangie Sugyanti Nora Faqih</div>
+                  
                 </li>
                 <li>
                   <div class="text-black font-bold">Angkatan:</div>
-                  <div class="text-black text-m">2020</div>
+                  
                 </li>
                 <li>
                   <div class="text-black font-bold">Jalur Masuk:</div>
-                  <div class="text-black text-m">SBMPTN</div>
+                  
                 </li>
                 <li>
                   <div class="text-black font-bold">Status Mahasiswa:</div>
-                  <div class="text-black text-m">Aktif</div>
+                  
                 </li>
               </ul>
               <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md mt-4" role="alert">

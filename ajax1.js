@@ -87,3 +87,23 @@ function showTabelskripsisdh(angkatan) {
     callAjax(url, inner);
   }
 }
+
+function showTabelpklblm(angkatan) {
+  var inner = 'tabel_pklblm';
+  var url = 'get_tabelpklblm.php?id=' + angkatan;
+  if (angkatan == '') {
+    document.getElementById(inner).innerHTML = '';
+  } else {
+    callAjax(url, inner);
+  }
+}
+
+function showTabelpklsdh(angkatan) {
+  var inner = 'tabel_pklsdh';
+  var url = 'get_tabelpklsdh.php?id=' + angkatan;
+  if (angkatan == '') {
+    document.getElementById(inner).innerHTML = '';
+  } else {
+    callAjax(url, inner);
+  }
+}
