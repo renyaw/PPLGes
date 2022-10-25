@@ -19,4 +19,11 @@
             Silahkan hubungi dosen pembimbing untuk arahan selanjutnya.
         </div>
     </div>
+    <div class="bg-white">
+      <br>
+      <br>
+    </div>
+    <?PHP
+    include('Footer.php');
+    ?>
   </body>
