@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2022 at 03:59 PM
+-- Generation Time: Oct 25, 2022 at 07:53 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -52,7 +52,7 @@ INSERT INTO `dosen` (`kode_wali`, `nip`, `nama`, `email`, `nomor_telp`, `alamat`
 CREATE TABLE `irs` (
   `id_irs` int(20) NOT NULL,
   `semester_aktif` varchar(1) NOT NULL,
-  `status` varchar(15) NOT NULL,
+  `status` varchar(1) NOT NULL DEFAULT '0',
   `jml_sks` varchar(3) NOT NULL,
   `file_sks` longblob NOT NULL,
   `nim` varchar(14) NOT NULL
@@ -63,7 +63,7 @@ CREATE TABLE `irs` (
 --
 
 INSERT INTO `irs` (`id_irs`, `semester_aktif`, `status`, `jml_sks`, `file_sks`, `nim`) VALUES
-(1, '5', 'Aktif', '90', '', '24060120130053');
+(1, '5', '0', '90', '', '24060120130053');
 
 -- --------------------------------------------------------
 
@@ -86,7 +86,7 @@ CREATE TABLE `kabupaten` (
 CREATE TABLE `khs` (
   `id_khs` int(20) NOT NULL,
   `smt` varchar(2) NOT NULL,
-  `status` varchar(15) NOT NULL,
+  `status` varchar(1) NOT NULL DEFAULT '0',
   `status_konfirmasi` varchar(20) NOT NULL,
   `ip_semester` varchar(4) NOT NULL,
   `ip_kumulatif` varchar(4) NOT NULL,
@@ -100,11 +100,11 @@ CREATE TABLE `khs` (
 --
 
 INSERT INTO `khs` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semester`, `ip_kumulatif`, `file_khs`, `sks_kumulatif`, `nim`) VALUES
-(1, '1', 'Aktif', '0', '3.68', '3.68', '', '24', '24060120130152'),
-(2, '3', 'Aktif', '0', '3.5', '3.90', '', '50', '24060120130152'),
-(3, '5', 'Aktif', '0', '3.90', '3.90', '', '50', '24060120130053'),
-(4, '6', 'Aktif', '0', '3.68', '3.90', '', '70', '24060120130053'),
-(5, '7', 'Aktif', '0', '3.77', '3.90', '', '90', '24060120130053');
+(1, '1', 'A', '0', '3.68', '3.68', '', '24', '24060120130049'),
+(2, '3', 'A', '0', '3.5', '3.90', '', '50', '24060120130152'),
+(3, '5', 'A', '0', '3.90', '3.90', '', '50', '24060120130050'),
+(4, '6', 'A', '0', '3.68', '3.90', '', '70', '24060120130059'),
+(5, '7', 'A', '0', '3.77', '3.90', '', '90', '24060120130053');
 
 -- --------------------------------------------------------
 
@@ -144,7 +144,7 @@ INSERT INTO `mahasiswa` (`nim`, `nama`, `angkatan`, `alamat`, `nomor_telp`, `ema
 CREATE TABLE `pkl` (
   `id_pkl` int(20) NOT NULL,
   `nim` varchar(14) NOT NULL,
-  `status` varchar(15) NOT NULL,
+  `status` varchar(1) NOT NULL DEFAULT '0',
   `tanggal_mulai` varchar(20) NOT NULL,
   `nilai` varchar(2) DEFAULT NULL,
   `status_konfirmasi` varchar(20) NOT NULL,
@@ -156,9 +156,9 @@ CREATE TABLE `pkl` (
 --
 
 INSERT INTO `pkl` (`id_pkl`, `nim`, `status`, `tanggal_mulai`, `nilai`, `status_konfirmasi`, `upload_pkl`) VALUES
-(1, '24060120130050', 'Belum Lulus', '25/10/2022', 'A', '1', ''),
-(2, '24060120130059', 'Belum Lulus', '25/10/2022', 'A', '1', ''),
-(3, '24060120130049', 'Belum Lulus', '', '', '1', '');
+(1, '24060120130050', '0', '25/10/2022', 'A', '1', ''),
+(2, '24060120130059', '0', '25/10/2022', 'A', '1', ''),
+(3, '24060120130049', '0', '', '', '1', '');
 
 -- --------------------------------------------------------
 
@@ -180,7 +180,7 @@ CREATE TABLE `provinsi` (
 CREATE TABLE `skripsi` (
   `id_skripsi` int(20) NOT NULL,
   `nim` varchar(14) NOT NULL,
-  `status` varchar(15) NOT NULL,
+  `status` varchar(1) NOT NULL DEFAULT '0',
   `nilai` varchar(2) DEFAULT NULL,
   `tgl_sidang` varchar(10) DEFAULT NULL,
   `lama_studi` varchar(10) DEFAULT NULL
@@ -191,7 +191,7 @@ CREATE TABLE `skripsi` (
 --
 
 INSERT INTO `skripsi` (`id_skripsi`, `nim`, `status`, `nilai`, `tgl_sidang`, `lama_studi`) VALUES
-(1, '24060120130050', 'Belum Lulus', NULL, NULL, NULL);
+(1, '24060120130050', '0', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -231,6 +231,7 @@ ALTER TABLE `dosen`
 --
 ALTER TABLE `irs`
   ADD PRIMARY KEY (`id_irs`),
+  ADD UNIQUE KEY `nim_2` (`nim`),
   ADD KEY `nim` (`nim`);
 
 --
@@ -245,6 +246,7 @@ ALTER TABLE `kabupaten`
 --
 ALTER TABLE `khs`
   ADD PRIMARY KEY (`id_khs`),
+  ADD UNIQUE KEY `nim` (`nim`),
   ADD KEY `fk_nim` (`nim`);
 
 --
@@ -260,6 +262,7 @@ ALTER TABLE `mahasiswa`
 --
 ALTER TABLE `pkl`
   ADD PRIMARY KEY (`id_pkl`),
+  ADD UNIQUE KEY `nim` (`nim`),
   ADD KEY `fk_nim_mhs` (`nim`);
 
 --
@@ -273,6 +276,7 @@ ALTER TABLE `provinsi`
 --
 ALTER TABLE `skripsi`
   ADD PRIMARY KEY (`id_skripsi`),
+  ADD UNIQUE KEY `nim` (`nim`),
   ADD KEY `fk_nim_mhsw` (`nim`);
 
 --
@@ -301,7 +305,7 @@ ALTER TABLE `khs`
 -- AUTO_INCREMENT for table `pkl`
 --
 ALTER TABLE `pkl`
-  MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `skripsi`
