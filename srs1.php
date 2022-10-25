@@ -1,113 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/dist/output.css" rel="stylesheet" />
+    <title>Update Data Pribadi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
     <script src="https://unpkg.com/htmlincludejs"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
-    <style>
-      body {
-        font-family: "Inter";
-        font-size: 22px;
-      }
-    </style>
   </head>
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
-    <?php
-    session_start();
-    require_once('db_login.php');
-    
-    ?>
-
-    <!-- Mulai -->
-    <div class="container mt-4">
-      <h2 class="fw-bolder fs-1">Insert Data Mahasiswa</h2>
-      <hr />
-      <div class="container mx-auto my-2 px-5 pb-5 pt-2 mt-100 pb-35">
-        <div class="md:flex no-wrap md:-mx-2">
-          <!-- Left Side -->
-          <div class="w-full md:w-3/12 md:mx-2">
-            <!-- Profile Card -->
-            <div class="">
-              <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">Data Mahasiswa</h1>
-              <div class="image overflow-hidden">
-                <img class="" src="img\Bebek.png" alt="" width="250" />
-              </div>
-            </div>
-            <!-- End of profile card -->
-            <div class="my-4"></div>
+    <div class="container px-5 pt-4 pb-5">
+      <h2>Data Mahasiswa</h2>
+      <div class="row">
+        <div class="col-4 mt-3">
+          <div class="image overflow-hidden">
+              <img class="" src="img\Bebek.png" alt="" width="250" />
           </div>
-          <!-- Right Side -->
-          <div class="w-full md:w-9\12 mx-2 h-10">
-            <!-- Profile tab -->
-            <!-- About Section -->
-            <div class="bg-white px-3 pb-2 pt-0 mt-3 shadow-sm border-2 rounded-md">
-              <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-                <!-- <span clas="text-green-500">
-                            <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor"> -->
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                <!-- </svg> -->
-              </div>
-
-              <form action="srs1pt2.php" method="POST" name="form" autocomplete="on">
-                <div class="form-group mb-6 mt-6">
-                  <input
-                    type="text"
-                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="nim" name="nim"
-                    placeholder="NIM Mahasiswa"
-                  />
-                </div>
-                <div class="form-group mb-4">
-                  <input
-                    type="name"
-                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="nama" name="nama"
-                    placeholder="Nama Mahasiswa"
-                  />
-                </div>
-                <div class="form-group mb-4">
-                  <p>Angkatan:</p>
-                  <select
-                    class="form-select block w-1/3 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="angkatan">
-                    <option selected>Pilih Angkatan</option>
-                    <option value="1">2020</option>
-                    <option value="2">2021</option>
-                    <option value="3">2022</option>
-                  </select>
-                </div>
-                <div class="form-group mb-6">
-                  <p>Jalur Masuk:</p>
-                  <select
-                    class="form-select block w-1/3 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="jalur">
-                    <option selected>Pilih Jalur Masuk</option>
-                    <option value="1">SNMPTN</option>
-                    <option value="2">SBMPTN</option>
-                    <option value="3">Mandiri</option>
-                  </select>
-                </div>
-
-                <button
-                  type="submit"
-                  class="w-1/3 px-6 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
+        </div>
+        <div class="col-6">
+        <form>
+          
+          <div class="mb-3 mt-3">
+            <input type="text" class="form-control" placeholder="NIM Mahasiswa" id="nohp">
           </div>
+          <div class="mb-3 mt-5">
+            <input type="text" class="form-control" placeholder="Nama Mahasiswa" id="nohp">
+          </div>
+          
+          <div class="row">
+          <div class=" col-6 mt-3">
+          <label for="angkatan" class="form-label">Angkatan:</label>
+            <select name="" id="" class="form-control form-control">
+            <option value="">
+            </option>
+            </select>
+          </div>
+          <div class=" col-6 mt-3">
+          <label for="status" class="form-label">Status:</label>
+            <select name="" id="" class="form-control form-control">
+            <option value="">
+            </option>
+            </select>
+          </div>
+          </div>
+          <div class="mb-3 mt-4">
+          <label for="status" class="form-label">Kode Wali:</label>
+            <select name="" id="" class="form-control form-control">
+            <option value="">
+            </option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        </form>
         </div>
       </div>
     </div>
-
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    
   </body>
 </html>

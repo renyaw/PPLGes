@@ -16,7 +16,7 @@
         <p>Lakukan update data pribadi untuk menggunakan fitur lain.</p>
       </div>
       <div class="row">
-        <div class="col-3">
+        <div class="col-3 mt-3">
           <div class="image overflow-hidden d-flex justify-content-center">
             <img class="" src="img\Bebek.png" alt="" width="250" />
           </div>
@@ -24,19 +24,16 @@
             <a href="" class=""><button type="button" class="btn btn-warning px-5 mt-2 text-white" style="width: 250px; background-color:#FF8064;">Ubah Foto</button></a>
             
             </div>
-            <div class="d-flex justify-content-center">
-              <p class="mt-2 mx-auto">2023/2024 Ganjil</p>
-            </div>
-            <div class="d-flex justify-content-center">
-              <a href="#" class="btn btn-success">Aktif</a>
+            <div class="d-flex justify-content-center mt-3">
+              <span class="badge text-bg-success py-2 px-4">Aktif</span>
             </div>
             
         </div>
-        <div class="col-4">
+        <div class="col-3 mt-2">
         <form>
         <div class="">
           <label for="staticEmail" class=" col-form-label">NIM Mahasiswa</label>
-            <input type="text" readonly class="form-control-plaintext form-control-sm" id="staticEmail" value="(ambil dari db)">
+            <input type="text" readonly class="form-control-plaintext form-control-sm " id="staticEmail" value="(ambil dari db)">
         </div>
         <div class="">
           <label for="staticEmail" class=" col-form-label">Nama Mahasiswa</label>
@@ -61,7 +58,7 @@
         <div class="col-4">
         <form>
           
-          <div class="mb-3 mt-2">
+          <div class="mb-3 mt-3">
             <label for="NoHp" class="form-label">Nomor Handphone</label>
             <input type="text" class="form-control form-control-sm" id="nohp">
           </div>
@@ -71,19 +68,25 @@
           </div>
           <div class="mb-3">
             <label for="provinsi" class="form-label">Provinsi</label>
-            <input type="text" class="form-control form-control-sm" id="provinsi">
+            <select name="" id="" class="form-control form-control-sm">
+            <option value="">
+            </option>
+            </select>
           </div>
           <div class="mb-3">
             <label for="kota" class="form-label">Kabupaten/Kota</label>
-            <input type="text" class="form-control form-control-sm" id="kota">
+            <select name="" id="" class="form-control form-control-sm">
+            <option value="">
+            </option>
+            </select>
+            
           </div>
-
         </form>
 
         </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    <script src="ajaxsrs9.js"></script>
+  
   </body>
 </html>
