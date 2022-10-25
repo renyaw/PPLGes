@@ -20,14 +20,14 @@
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
 
-  <body>
+  <body class="bg-light">
     <?php
     session_start();
     require_once('db_login.php');
     ?>
 
     <include src="navbar.php"></include>
-    <div class="container mt-4">
+    <div class="container pt-4 bg-white" mx2>
       <h2 class="fw-bold">Dashboard Mahasiswa</h2>
       <hr />
       <?php
@@ -44,7 +44,7 @@
         }
       }
     ?>
-      <div class="row mt-1">
+      <div class="row mt-1 pe-3">
         <div class="col-md-6">
           <div class="col-md border bg-light pt-4">
             <div class="row">
@@ -128,7 +128,7 @@
         </div>
       </div>
 
-      <div class="row mt-3">
+      <div class="row mt-3 pe-3">
         <div class="col-md-6">
           <div class="row">
             <div class="col-9 ms-3">
@@ -146,7 +146,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 border pb-2 bg-light">
+        <div class="col-md-6 border py-2 bg-light">
           <div class="row justify-content-evenly">
             <div class="col-md-4">
               <a href="srs4.php">
@@ -167,7 +167,7 @@
               </a>
             </div>
           </div>
-          <div class="row justify-content-evenly mt-4">
+          <div class="row justify-content-evenly mt-4 pb-2">
             <div class="col-md-4">
               <a href="srs3.php">
                 <div class="card border-0 shadow mt-2">
@@ -189,8 +189,15 @@
           </div>
         </div>
       </div>
+      <div class="bg-white h-25">
+      <br>
+      <br>
+      </div>
     </div>
-
+    <?PHP
+    include('Footer.php');
+    ?>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>
