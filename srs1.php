@@ -22,7 +22,7 @@
     <div class="container mt-4">
       <h2 class="fw-bolder fs-1">Insert Data Mahasiswa</h2>
       <hr />
-      <div class="container mx-auto my-100 px-5 pb-5 pt-2 mt-100 pb-35 bg-light border rounded-md">
+      <div class="container mx-auto my-2 px-5 pb-5 pt-2 mt-100 pb-35">
         <div class="md:flex no-wrap md:-mx-2">
           <!-- Left Side -->
           <div class="w-full md:w-3/12 md:mx-2">
@@ -40,7 +40,7 @@
           <div class="w-full md:w-9\12 mx-2 h-10">
             <!-- Profile tab -->
             <!-- About Section -->
-            <div class="bg-white px-3 pb-2 pt-0 shadow-sm border-2 rounded-md">
+            <div class="bg-white px-3 pb-2 pt-0 mt-3 shadow-sm border-2 rounded-md">
               <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
                 <!-- <span clas="text-green-500">
                             <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -49,12 +49,12 @@
                 <!-- </svg> -->
               </div>
 
-              <form action="srs1pt2.html">
+              <form action="srs1pt2.php">
                 <div class="form-group mb-6 mt-6">
                   <input
                     type="text"
                     class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="exampleInput90"
+                    id="nim"
                     placeholder="NIM Mahasiswa"
                   />
                 </div>
@@ -62,7 +62,7 @@
                   <input
                     type="text"
                     class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="exampleInput90"
+                    id="nama"
                     placeholder="Nama Mahasiswa"
                   />
                 </div>
@@ -70,7 +70,7 @@
                   <p>Angkatan:</p>
                   <select
                     class="form-select block w-1/3 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    aria-label=".form-select-sm example"
+                    aria-label=".form-select-sm "
                   >
                     <option selected>2020</option>
                     <option value="1">2020</option>
@@ -82,7 +82,7 @@
                   <p>Jalur Masuk:</p>
                   <select
                     class="form-select block w-1/3 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    aria-label=".form-select-sm example"
+                    aria-label=".form-select-sm"
                   >
                     <option selected>SBMPTN</option>
                     <option value="1">SNMPTN</option>
@@ -93,7 +93,7 @@
 
                 <button
                   type="submit"
-                  class="w-1/3 px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                  class="w-1/3 px-6 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                 >
                   Submit
                 </button>
