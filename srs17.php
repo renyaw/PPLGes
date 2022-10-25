@@ -3,33 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>List Skripsi</title>
+    <title>List Mahasiswa</title>
     <script src="https://unpkg.com/htmlincludejs"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/htmlincludejs"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   </head>
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <include src="navdep.html"></include>
     <br />
     <div class="container">
-      <h3>List PKL</h3>
-      <hr/>
+      <h3>List Mahasiswa</h3>
+      <hr />
       <br />
-      <div class="d-grid gap-2 d-md-block">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            -- Pilih Status Mahasiswa --
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Lulus</a></li>
-            <li><a class="dropdown-item" href="#">Belum Lulus</a></li>
-          </ul>
-        </div>
+      <!-- <div class="d-grid gap-2 d-md-block">
+        <form action="srs16_lul.html">
+          <button class="btn btn-outline-success" type="submit">Lulus</button>
+          <button class="btn btn-danger" type="button">Belum Lulus</button>
+        </form>
+      </div> -->
       <br />
       <div class="d-grid gap-2 d-md-block">
         <button class="btn btn-outline-secondary" type="button" disabled>2017</button>
-        <button class="btn btn-secondary" type="button">2018</button>
-        <button class="btn btn-outline-secondary" type="button" disabled>2019</button>
+        <button class="btn btn-outline-secondary" type="button" disabled>2018</button>
+        <button class="btn btn-secondary" type="button">2019</button>
         <button class="btn btn-outline-secondary" type="button" disabled>2020</button>
         <button class="btn btn-outline-secondary" type="button" disabled>2021</button>
       </div>
@@ -37,60 +34,30 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">Nama</th>
-            <th scope="col">NIM</th>
-            <th scope="col">Tanggal Mulai</th>
-            <th scope="col">Status</th>
+            <th class="col-1" scope="col">No</th>
+            <th class="col-7" scope="col">Nama</th>
+            <th class="col-2" scope="col">NIM</th>
+            <th class="col-2" scope="col">Status</th>
           </tr>
         </thead>
         <tbody class="table-group-divider">
           <tr>
-            <td>Agus</td>
-            <td>2406012014001</td>
-            <td>07-10-2022</td>
+            <td>1</td>
+            <td>Soleh Mustafa Yaya</td>
+            <td>2406012013333</td>
             <td>Aktif</td>
           </tr>
           <tr>
-            <td>Budi</td>
-            <td>2406012014002</td>
-            <td>07-10-2022</td>
+            <td>2</td>
+            <td>Nanas Asem Banget</td>
+            <td>2406012013014</td>
             <td>Aktif</td>
           </tr>
           <tr>
-            <td>Rini</td>
-            <td>2406012014003</td>
-            <td>07-10-2022</td>
+            <td>3</td>
+            <td>Cantik Deh Kamutia</td>
+            <td>24060120140123</td>
             <td>Aktif</td>
-          </tr>
-          <tr>
-            <td>Cinta</td>
-            <td>2406012014004</td>
-            <td>07-10-2022</td>
-            <td>Aktif</td>
-          </tr>
-          <tr>
-            <td>Ananda</td>
-            <td>2406012014005</td>
-            <td>07-10-2022</td>
-            <td>Mangkir</td>
-          </tr>
-          <tr>
-            <td>Anisatul</td>
-            <td>2406012014006</td>
-            <td>07-10-2022</td>
-            <td>Mangkir</td>
-          </tr>
-          <tr>
-            <td>Ilma</td>
-            <td>2406012014007</td>
-            <td>07-10-2022</td>
-            <td>Cuti</td>
-          </tr>
-          <tr>
-            <td>Taskia</td>
-            <td>2406012014008</td>
-            <td>07-10-2022</td>
-            <td>Cuti</td>
           </tr>
         </tbody>
       </table>
