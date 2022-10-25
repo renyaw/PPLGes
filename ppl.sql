@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2022 at 03:15 PM
+-- Generation Time: Oct 25, 2022 at 03:24 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -117,6 +117,7 @@ CREATE TABLE `mahasiswa` (
   `alamat` varchar(50) NOT NULL,
   `nomor_telp` varchar(15) NOT NULL,
   `email` varchar(30) NOT NULL,
+  `jalur_masuk` varchar(20) NOT NULL,
   `kode_kab` varchar(4) NOT NULL,
   `kode_wali` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -125,12 +126,12 @@ CREATE TABLE `mahasiswa` (
 -- Dumping data for table `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`nim`, `nama`, `angkatan`, `alamat`, `nomor_telp`, `email`, `kode_kab`, `kode_wali`) VALUES
-('24060120130049', 'Abdul Mustajir', '2021', 'Komplek Tugu Timur', '087888327118', 'Mustajir@gmail.com', '12', 'E1'),
-('24060120130050', 'Salma Nora Renada', '2020', 'Jalan Kenangan Indah', '0812347892138', 'sumbulnada@gmail.com', '13', 'E1'),
-('24060120130053', 'Fathan Muhammad Faqih', '2020', 'Komplek Tugu', '087888327118', 'fathan@gmail.com', '12', 'E1'),
-('24060120130059', 'Fathan Muhammad Rohmat', '2021', 'Komplek Tugu Barat', '087888327118', 'abdul@gmail.com', '12', 'E1'),
-('24060120130152', 'Made Rohmat Subarjo', '2019', 'Komplek Jayabaya', '081315487465', 'made@gmail.com', '13', 'E1');
+INSERT INTO `mahasiswa` (`nim`, `nama`, `angkatan`, `alamat`, `nomor_telp`, `email`, `jalur_masuk`, `kode_kab`, `kode_wali`) VALUES
+('24060120130049', 'Abdul Mustajir', '2021', 'Komplek Tugu Timur', '087888327118', 'Mustajir@gmail.com', 'SBMPTN', '12', 'E1'),
+('24060120130050', 'Salma Nora Renada', '2020', 'Jalan Kenangan Indah', '0812347892138', 'sumbulnada@gmail.com', 'SNMPTN', '13', 'E1'),
+('24060120130053', 'Fathan Muhammad Faqih', '2020', 'Komplek Tugu', '087888327118', 'fathan@gmail.com', 'SBMPTN', '12', 'E1'),
+('24060120130059', 'Fathan Muhammad Rohmat', '2021', 'Komplek Tugu Barat', '087888327118', 'abdul@gmail.com', 'SNMPTN', '12', 'E1'),
+('24060120130152', 'Made Rohmat Subarjo', '2019', 'Komplek Jayabaya', '081315487465', 'made@gmail.com', 'SBMPTN', '13', 'E1');
 
 -- --------------------------------------------------------
 
