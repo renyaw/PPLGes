@@ -44,54 +44,7 @@
           </tr>
         </thead>
         <tbody id="tabel_skripsisdh"class="table-group-divider">
-          <tr>
-            <td>Agus</td>
-            <td>2406012014001</td>
-            <td>07-10-2022</td>
-            <td>A</td>
-          </tr>
-          <tr>
-            <td>Budi</td>
-            <td>2406012014002</td>
-            <td>07-10-2022</td>
-            <td>A</td>
-          </tr>
-          <tr>
-            <td>Rini</td>
-            <td>2406012014003</td>
-            <td>07-10-2022</td>
-            <td>A</td>
-          </tr>
-          <tr>
-            <td>Cinta</td>
-            <td>2406012014004</td>
-            <td>07-10-2022</td>
-            <td>A</td>
-          </tr>
-          <tr>
-            <td>Ananda</td>
-            <td>2406012014005</td>
-            <td>07-10-2022</td>
-            <td>A</td>
-          </tr>
-          <tr>
-            <td>Anisatul</td>
-            <td>2406012014006</td>
-            <td>07-10-2022</td>
-            <td>A</td>
-          </tr>
-          <tr>
-            <td>Ilma</td>
-            <td>2406012014007</td>
-            <td>07-10-2022</td>
-            <td>A</td>
-          </tr>
-          <tr>
-            <td>Taskia</td>
-            <td>2406012014008</td>
-            <td>07-10-2022</td>
-            <td>A</td>
-          </tr>
+          
         </tbody>
       </table>
       <br />
@@ -114,5 +67,10 @@
       </nav>
     </div>
     <script src='ajax1.js'></script>
+    <script>
+      window.onload = function(){
+        showTabelskripsisdh('x');
+      }
+    </script>
   </body>
 </html>
