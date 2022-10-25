@@ -54,7 +54,7 @@
         </div>
         <div class="container mt-5 mb-5">
           <div class="col d-flex justify-content-center">
-            <a href="srs16_blm.html"><button type="button" class="btn btn-outline-primary mx-auto">Lihat Detail</button> </a>
+            <a href="srs16_blm.php"><button type="button" class="btn btn-outline-primary mx-auto">Lihat Detail</button> </a>
           </div>
         </div>
       </div>
