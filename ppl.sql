@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2022 at 03:42 PM
+-- Generation Time: Oct 25, 2022 at 03:59 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -145,6 +145,8 @@ CREATE TABLE `pkl` (
   `id_pkl` int(20) NOT NULL,
   `nim` varchar(14) NOT NULL,
   `status` varchar(15) NOT NULL,
+  `tanggal_mulai` varchar(20) NOT NULL,
+  `nilai` varchar(2) DEFAULT NULL,
   `status_konfirmasi` varchar(20) NOT NULL,
   `upload_pkl` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -153,10 +155,10 @@ CREATE TABLE `pkl` (
 -- Dumping data for table `pkl`
 --
 
-INSERT INTO `pkl` (`id_pkl`, `nim`, `status`, `status_konfirmasi`, `upload_pkl`) VALUES
-(1, '24060120130050', 'Belum Lulus', '1', ''),
-(2, '24060120130059', 'Belum Lulus', '1', ''),
-(3, '24060120130049', 'Belum Lulus', '1', '');
+INSERT INTO `pkl` (`id_pkl`, `nim`, `status`, `tanggal_mulai`, `nilai`, `status_konfirmasi`, `upload_pkl`) VALUES
+(1, '24060120130050', 'Belum Lulus', '25/10/2022', 'A', '1', ''),
+(2, '24060120130059', 'Belum Lulus', '25/10/2022', 'A', '1', ''),
+(3, '24060120130049', 'Belum Lulus', '', '', '1', '');
 
 -- --------------------------------------------------------
 
@@ -179,7 +181,8 @@ CREATE TABLE `skripsi` (
   `id_skripsi` int(20) NOT NULL,
   `nim` varchar(14) NOT NULL,
   `status` varchar(15) NOT NULL,
-  `tgl_lulus` varchar(10) DEFAULT NULL,
+  `nilai` varchar(2) DEFAULT NULL,
+  `tgl_sidang` varchar(10) DEFAULT NULL,
   `lama_studi` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -187,8 +190,8 @@ CREATE TABLE `skripsi` (
 -- Dumping data for table `skripsi`
 --
 
-INSERT INTO `skripsi` (`id_skripsi`, `nim`, `status`, `tgl_lulus`, `lama_studi`) VALUES
-(1, '24060120130050', 'Belum Lulus', NULL, NULL);
+INSERT INTO `skripsi` (`id_skripsi`, `nim`, `status`, `nilai`, `tgl_sidang`, `lama_studi`) VALUES
+(1, '24060120130050', 'Belum Lulus', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
