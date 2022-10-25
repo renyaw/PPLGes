@@ -29,7 +29,7 @@
           <?php
             $query = $db->query("SELECT angkatan FROM mahasiswa where nim in(SELECT max(nim) FROM mahasiswa group by angkatan) order by angkatan");
             while($row=$query->fetch_object()){
-              echo "<button class='btn btn-outline-secondary mx-1' id='angkatan' value='$row->angkatan' onclick='showTabelpkludh($row->angkatan)'>".$row->angkatan."</button>";
+              echo "<button class='btn btn-outline-secondary mx-1' id='angkatan' value='$row->angkatan' onclick='showTabelpklsdh($row->angkatan)'>".$row->angkatan."</button>";
             }
           ?>
       </div>
@@ -43,7 +43,9 @@
             <th scope="col">Nilai</th>
           </tr>
         </thead>
-        <!-- <tbody id="tabel_skripsisdh"class="table-group-divider">
+        <tbody id="tabel_pklsdh"class="table-group-divider">
+        </tbody>
+        <!-- 
           <tr>
             <td>Agus</td>
             <td>2406012014001</td>
