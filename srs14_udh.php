@@ -116,5 +116,12 @@
       </nav>
     </div>
     <script src='ajax1.js'></script>
+    <div class="bg-white">
+      <br>
+      <br>
+    </div>
+    <?PHP
+    include('Footer.php');
+    ?>
   </body>
 </html>

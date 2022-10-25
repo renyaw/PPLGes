@@ -20,4 +20,11 @@
             Silahkan hubungi dosen pembimbing untuk mendapatkan sertifikat dan arahan selanjutnya.
         </div>
     </div>
+    <div class="bg-white">
+      <br>
+      <br>
+    </div>
+    <?PHP
+    include('Footer.php');
+    ?>
   </body>
