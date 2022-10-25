@@ -33,7 +33,7 @@ if (!isset($_POST["submit"])) {
 
     //Update data ke database
     if($valid){
-        $query = "UPDATE mahasiswa SET nama='".$nama."', email='".$email."' WHERE nim='".$id."';";
+        $query .= "UPDATE mahasiswa SET nama='".$nama."', email='".$email."' WHERE nim='".$id."';";
         $query .= "UPDATE khs SET smt='".$smt."', status='".$status."' WHERE nim='".$id."' ";
            //execute the query
         $result = $db->multi_query($query);
@@ -84,7 +84,7 @@ if (!isset($_POST["submit"])) {
                 <div class="row">
                     <div class="mb-3 col-6">
                         <label for="smt" class="form-label">Semester</label>
-                        <input type="text" class="form-control border-success" id="smt" name="smt" value="<?php echo $smt; ?>">
+                        <input type="number" class="form-control border-success" id="smt" name="smt" value="<?php echo $smt; ?>">
                     </div>
                     <div class="mb-3 col-6">
                         <label for="status" class="form-label">Status</label>
