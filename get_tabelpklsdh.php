@@ -1,9 +1,8 @@
 <?php
 require_once('db_login.php');
 $id=$_GET['id'];
-
-$query = $db->query("SELECT mahasiswa.nama, mahasiswa.nim, skripsi.tgl_sidang from skripsi inner join mahasiswa where mahasiswa.nim=skripsi.nim  and status = 'Lulus' and mahasiswa.angkatan='$id';");
-$query2= $db->query("SELECT mahasiswa.nama, mahasiswa.nim, skripsi.tgl_sidang from skripsi inner join mahasiswa where mahasiswa.nim=skripsi.nim  and status = 'Lulus' ;");
+$query = $db->query("SELECT mahasiswa.nama, mahasiswa.nim, pkl.tanggal_mulai, pkl.nilai from pkl inner join mahasiswa where mahasiswa.nim=pkl.nim  and status = 'Lulus' and mahasiswa.angkatan='$id';");
+$query2= $db->query("SELECT mahasiswa.nama, mahasiswa.nim, pkl.tanggal_mulai, pkl.nilai from pkl inner join mahasiswa where mahasiswa.nim=pkl.nim  and status = 'Lulus' ;");
 
 if($id!='x'){
   $result = $query;
@@ -19,8 +18,8 @@ if($jml!=0){
     echo '<tr>';
     echo '<td>'.$row->nama.'</td>';
     echo '<td>'.$row->nim.'</td>';
-    echo '<td>'.$row->tgl_lulus.'</td>';
-    echo '<td> - </td>';
+    echo '<td>'.$row->tanggal_mulai.'</td>';
+    echo '<td>'.$row->nilai.'</td>';
     echo '</tr>';  
   }   
 }
