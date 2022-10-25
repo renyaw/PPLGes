@@ -1,106 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ubah Data</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Data Pribadi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
     <script src="https://unpkg.com/htmlincludejs"></script>
-    <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
-    <style>
-      body {
-        font-family: "Inter";
-        font-size: 22px;
-      }
-    </style>
   </head>
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <include src="navbar.php"></include>
-    <div class="container mt-3">
-      <h3 class="fw-bold">Update Data Diri</h3>
-      <hr />
-      <div class="card bg-light mt-5  border- rounded-0">
-        <div class="row m-2 mt-4">
-          <div class="col-2">
-            <img src="img/Bebek.png" alt="fotomhs" width="170" height="210" />
-            <br />
-            <br />
-            <div class="container text-center">
-              <button class="btn btn-primary" type="button">Ubah Foto</button>
-              <br />
-              <br />
-              <h6>2022/2023 Ganjil</h6>
-              <span class="badge text-bg-success">Aktif</span>
-            </div>
+    <div class="container mt-4">
+      <h2>Update Data Pribadi</h2>
+      <div class="alert alert-warning pt-2 pb-1 col-11" role="alert">
+        <h5>Peringatan!</h5>
+        <p>Lakukan update data pribadi untuk menggunakan fitur lain.</p>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <div class="image overflow-hidden d-flex justify-content-center">
+            <img class="" src="img\Bebek.png" alt="" width="250" />
           </div>
-          <div class="col-1"></div>
-          <div class="col">
-            <b>NIM</b><br />
-            24060120130053<br />
-            <br />
-            <b>Nama</b><br />
-            Arya Gessangie Sugyanti Nora Faqih<br />
-            <br />
-            <b>Tempat Lahir</b><br />
-            <input type="text" class="form-control" id="tempatlahir" />
-            <br />
-            <b>Tanggal Lahir</b><br />
-            <input type="text" class="form-control" id="tanggallahir" />
-            <br />
-            <b>NIK</b><br />
-            <input type="text" class="form-control" id="nik" />
-            <br />
-            <b>Nomor</b><br />
-            <input type="text" class="form-control" id="nomor" />
-            <br />
-            <button class="btn btn-success" type="button">Update</button>
-            <br /><br />
-          </div>
-          <div class="col-1"></div>
-          <div class="col">
-            <b>Angkatan</b><br />
-            2020<br />
-            <br />
-            <b>Prodi</b><br />
-            Informatika<br />
-            <br />
-            <b>Fakultas</b><br />
-            Sains dan Matematika<br />
-            <br />
-            <b>Alamat</b><br />
-            <input type="text" class="form-control" id="alamat" />
-            <br />
-            <div class="form-group">
-              <label for="Provinsi">Provinsi</label>
-              <select class="form-control" id="kode_prov" name="provinsi" onchange="getModel()">
-                <option value="">Pilih Provinsi</option>
-                <?php
-                $result = $db->query('select * from provinsi');
-                while ($data = $result->fetch_object()) :
-                ?>
-                  <option value="<?php echo $data->id ?>"><?php echo $data->nama ?></option>
-                <?php endwhile ?>
-              </select>
-              <small class="form-text text-danger" id="provinsi_error"></small>
+            <div class="d-flex justify-content-center">
+            <a href="" class=""><button type="button" class="btn btn-warning px-5 mt-2 text-white" style="width: 250px; background-color:#FF8064;">Ubah Foto</button></a>
+            
             </div>
-            <div class="form-group">
-              <label for="Provinsi">Kabupaten</label>
-              <select class="form-control" id="kode_kab" name="Kabupaten" onchange="getModel()">
-                <option value="">Pilih Kabupaten</option>
-              </select>
-              <small class="form-text text-danger" id="kabupaten_error"></small>
-              </div>
-            <!-- <b>Provinsi</b><br />
-            <input type="text" class="form-control" id="provinsi" />
-            <br />
-            <b>Kabupaten/Kota</b><br />
-            <input type="text" class="form-control" id="kabkota" />
-            <br /> -->
-            <br />
+            <div class="d-flex justify-content-center">
+              <p class="mt-2 mx-auto">2023/2024 Ganjil</p>
+            </div>
+            <div class="d-flex justify-content-center">
+              <a href="#" class="btn btn-success">Aktif</a>
+            </div>
+            
+        </div>
+        <div class="col-4">
+        <form>
+        <div class="">
+          <label for="staticEmail" class=" col-form-label">NIM Mahasiswa</label>
+            <input type="text" readonly class="form-control-plaintext form-control-sm" id="staticEmail" value="(ambil dari db)">
+        </div>
+        <div class="">
+          <label for="staticEmail" class=" col-form-label">Nama Mahasiswa</label>
+            <input type="text" readonly class="form-control-plaintext form-control-sm" id="staticEmail" value="(ambil dari db)">
+        </div>
+        <div class="">
+          <label for="staticEmail" class=" col-form-label">Angkatan</label>
+            <input type="text" readonly class="form-control-plaintext form-control-sm" id="staticEmail" value="(ambil dari db)">
+        </div>
+        <div class="">
+            <label for="prodi" class=" col-form-label">Prodi</label>
+              <input type="text" readonly class="form-control-plaintext form-control-sm" id="prodi" value="Informatika">
+          </div>
+          <div class="">
+            <label for="fakultas" class=" col-form-label">Fakultas</label>
+              <input type="text" readonly class="form-control-plaintext form-control-sm" id="prodi" value="Sains dan Matematika">
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+        </div>
+
+        <div class="col-4">
+        <form>
           
+          <div class="mb-3 mt-2">
+            <label for="NoHp" class="form-label">Nomor Handphone</label>
+            <input type="text" class="form-control form-control-sm" id="nohp">
+          </div>
+          <div class="mb-3">
+            <label for="alamat" class="form-label">Alamat</label>
+            <input type="text" class="form-control form-control-sm" id="alamat">
+          </div>
+          <div class="mb-3">
+            <label for="provinsi" class="form-label">Provinsi</label>
+            <input type="text" class="form-control form-control-sm" id="provinsi">
+          </div>
+          <div class="mb-3">
+            <label for="kota" class="form-label">Kabupaten/Kota</label>
+            <input type="text" class="form-control form-control-sm" id="kota">
+          </div>
+
+        </form>
+
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="ajaxsrs9.js"></script>
   </body>
 </html>
