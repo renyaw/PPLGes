@@ -8,12 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
-  <body>
+  <body class="bg-light">
     <?php 
     session_start();
     require_once('db_login.php');
     ?>
-    <div class="container">
+    <div class="container bg-white px-3 ">
         <h3 class="mt-3 mb-3">Dashboard Operator</h3>
         <div class="row">
             <div class="col-md-6">
@@ -106,6 +106,11 @@
             </div>
           </div>
     </div>
+
+      <br>
+    <?php 
+    include("footer.php");
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="ajaxsrs9.js"></script>
   </body>
