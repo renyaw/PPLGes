@@ -21,7 +21,7 @@
     session_start();
     require_once "db_login.php";
     ?>
-    <div class="container mt-5">
+    <div class="container mt-4">
       <div class="card">
         <div class="card-header fw-bold">
           Data Mahasiswa
@@ -58,24 +58,28 @@
                 </select>
               </div>
               <div class=" col-6 mt-3">
-              <label for="status" class="form-label">Status:</label>
-                <select name="status" id="status" class="form-control form-control">
-                    <option value="">Pilih Status</option>
-                    <option value="">Aktif</option>
-                    <option value="">Tidak Aktif</option>
-                    <option value="">Cuti</option>
-                    <option value="">Mangkir</option>
+              <label for="jalur_masuk" class="form-label">Jalur Masuk:</label>
+                <select name="jalur_masuk" id="jalur_masuk" class="form-control form-control">
+                    <option value="0">Pilih Jalur Masuk</option>
+                    <option value="SNMPTN">SNMPTN</option>
+                    <option value="SBMPTN">SBMPTN</option>
+                    <option value="Mandiri">Mandiri</option>
                 </select>
               </div>
               </div>
               <div class="mb-3 mt-4">
               <label for="wali" class="form-label">Kode Wali:</label>
                 <select name="kode_wali" id="kode_wali" class="form-control form-control">
-                <option value="">Pilih Kode Wali</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                  <option value="E0">Pilih Kode Wali</option>
+                  <?php
+                    require_once "db_login.php";
+                    $result = $db->query("select * from dosen");
+                    while ($kode = $result->fetch_object()): ?>
+                        <option value="<?php echo $kode->kode_wali; ?>">
+                          <?php echo $kode->kode_wali; ?>
+                        </option>
+                  <?php endwhile;
+                  ?>
                 </select>
               </div>
               <button type="submit" class="btn btn-primary mt-4">Submit</button>

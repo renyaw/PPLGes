@@ -12,8 +12,9 @@
     <?php
     session_start();
     require_once "db_login.php";
+    
     ?>
-    <div class="container mt-5">
+    <div class="container mt-4">
     <div class="card">
       <div class="card-header fw-bold">
         Data Mahasiswa
@@ -32,33 +33,34 @@
             </div>
           </div>
           <div class="col-8">
-          <form>
+         
             <?php 
             $atnama = $_POST["nama"];
             $atnama = ucwords(strtolower($atnama));
             $nim = test_input($_POST["nim"]);
             $nama = test_input($atnama);
             $angkatan = test_input($_POST["angkatan"]);
-            $status = test_input($_POST["status"]);
-            // $kode_wali = test_input($_POST["kode_wali"]);
-
+            $jalur_masuk = test_input($_POST["jalur_masuk"]);
+            $kode_wali = test_input($_POST["kode_wali"]);
             //insert into database
-            $input = $db->query(
-              "insert into mahasiswa(nim,nama,angkatan) values('$nim','$nama','$angkatan')"
-            );
+            
+            $result = $db->query("INSERT INTO mahasiswa (nim, nama, angkatan, jalur_masuk, kode_wali) VALUES ('$nim', '$nama', '$angkatan', '$jalur_masuk', '$kode_wali')") ;
+            $data = mysqli_fetch_assoc($result);
+          
             ?>
+            <form>
             <div class="mt-1 mb-3">
               <label for="nim" class=" col-form-label fw-semibold">NIM Mahasiswa</label>
-              <input type="text" readonly class="form-control-plaintext  " id="nim" value="(ambil dari db)">
+              <input type="text" readonly class="form-control-plaintext  " id="nim" value="<?php echo $data["nim"]; ?>">
             </div>
             <div class="mb-3">
               <label for="nama" class=" col-form-label fw-semibold">Nama Mahasiswa</label>
-              <input type="text" readonly class="form-control-plaintext " id="nama" value="(ambil dari db)">
+              <input type="text" readonly class="form-control-plaintext " id="nama" value="<?php echo $data["nama"]; ?>">
             </div>
             <div class="row mb-3">
               <label for="angkatan" class="col-sm-3 col-form-label fw-semibold">Angkatan : </label>
               <div class="col-sm-9">
-                <input type="text" readonly class="form-control-plaintext" id="angkatan" value="(Ambil dari db)">
+                <input type="text" readonly class="form-control-plaintext" id="angkatan" value="<?php echo $data["angkatan"]; ?>">
               </div>
             </div>
             <div class=" row mb-3">
@@ -70,13 +72,14 @@
             <div class="mb-3 row">
               <label for="wali" class="col-sm-3 col-form-label fw-semibold">Kode Wali : </label>
               <div class="col-sm-9">
-                <input type="text" readonly class="form-control-plaintext" id="wali" value="(Ambil dari db)">
+                <input type="text" readonly class="form-control-plaintext" id="wali" value="<?php echo $data["kode_wali"]; ?>">
               </div>
             </div>
             
             <div class="d-flex justify-content-end">
               <button type="submit" class="btn btn-primary mt-4 ">Submit</button>
             </div>
+            
           </form>
 
           </div>
