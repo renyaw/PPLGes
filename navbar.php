@@ -30,7 +30,7 @@ require_once('db_login.php');
             <a class="nav-link active" aria-current="page" href="srs10.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="srs2.php">Update Data Diri</a>
+            <a class="nav-link" href="srs2edit.php">Update Data Diri</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="srs3.php">Entry IRS</a>
