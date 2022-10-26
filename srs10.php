@@ -54,13 +54,13 @@
                 $poto = $db->query("SELECT * from mahasiswa where nim = '$noinduk'") ;
                 $d= mysqli_fetch_assoc($poto);
                 ?>
-                <img src='<?php echo "Fotoprofile/".$d["fotoprofile"]; ?>'style='width: 100%' />
+                <img  src='<?php echo "Fotoprofile/".$d["fotoprofile"]; ?>'style='width: 100%;border-radius:5%' />
               </div>
               <div class="col-md-8">
                 <?php
                   $noinduk = $_SESSION['noinduk'];
                   $query = $db->query("SELECT * FROM mahasiswa where nim ='$noinduk'");
-                  $query2= $db->query("SELECT irs.status FROM irs inner join mahasiswa where mahasiswa.nim=irs.nim");
+                  $query2= $db->query("SELECT khs.status FROM khs inner join mahasiswa where mahasiswa.nim=khs.nim");
                   $data=mysqli_fetch_assoc($query);
                   $data2=mysqli_fetch_assoc($query2);
 
@@ -144,7 +144,9 @@
                   </div>
                 </div>
                 <div class="col-9">
+                  <a href="srs2tampil.php" class="text-dark">
                   <p class="fs-1 fw-bold mt-2">Profile</p>
+                  </a>
                 </div>
               </div>
             </div>
