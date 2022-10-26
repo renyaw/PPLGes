@@ -64,9 +64,9 @@
               </div>
             </div>
             <div class=" row mb-3">
-              <label for="status" class="col-sm-3 col-form-label fw-semibold">Status : </label>
+              <label for="status" class="col-sm-3 col-form-label fw-semibold">Jalur Masuk : </label>
               <div class="col-sm-9">
-                <input type="text" readonly class="form-control-plaintext" id="status" value="(Ambil dari db)">
+                <input type="text" readonly class="form-control-plaintext" id="jalur_masuk" value="<?php echo $data["jalur_masuk"]; ?>">
               </div>
             </div>
             <div class="mb-3 row">
