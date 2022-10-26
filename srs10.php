@@ -50,10 +50,11 @@
             <div class="row">
               <div class="col-md-4 p-3 ps-4">
                 <?php
+                $noinduk = $_SESSION['noinduk'];
                 $poto = $db->query("SELECT * from mahasiswa where nim = '$noinduk'") ;
                 $d= mysqli_fetch_assoc($poto);
                 ?>
-                <img src='<?php echo "potopropil/".$d["fotoprofile"]; ?>'style='width: 100%' />
+                <img src='<?php echo "Fotoprofile/".$d["fotoprofile"]; ?>'style='width: 100%' />
               </div>
               <div class="col-md-8">
                 <?php
