@@ -25,6 +25,8 @@
     ?>
 
     <div class="container py-5 bg-white">
+      <h2 class="fw-bold">Data Diri</h2>
+      <div name="garishr" class="row border border-dark my-3 mx-1"></div>
       <?php
         if(isset($_GET['pesan'])){
           //salah akun/password

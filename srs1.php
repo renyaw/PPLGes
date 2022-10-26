@@ -23,7 +23,7 @@
     ?>
     <div class="container px-5 pt-4 pb-5 bg-white">
       <h2 class="fw-bold">Data Mahasiswa</h2>
-      <div class="row border border-dark my-3 mx-1"></div>
+      <div name="garishr" class="row border border-dark my-3 mx-1"></div>
       <div class="row justify-content-evenly border px-2 py-5 mx-1 mt-3">
         <div class="col-4 mt-3">
           <div class="image overflow-hidden">

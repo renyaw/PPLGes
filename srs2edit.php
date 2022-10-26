@@ -67,111 +67,123 @@
     ?>
     <form method="POST" onsubmit="" name="form" enctype="multipart/form-data">
       <div class="container mt-4">
-        <h2>Update Data Pribadi</h2>
+        <h2 class="fw-bold">Update Data Pribadi</h2>
+        <div name="garishr" class="row border border-dark my-3 mx-1"></div>
         <div class="alert alert-warning pt-2 pb-1 col-11" role="alert">
           <h5>Peringatan!</h5>
           <p>Lakukan update data pribadi untuk menggunakan fitur lain.</p>
         </div>
-        <div class="row justify-content-evenly border mx-1 py-4">
-          <div class="col-3 mt-3">
-            <div class="image overflow-hidden d-flex justify-content-center">
-              <img style="border-radius:5%"src='<?php echo "fotoprofile/" .$data["fotoprofile"]; ?>' alt="" width="250" />
-            </div>
-            <div class="d-flex justify-content-center ">
-            <!-- Modal trigger button -->
-            <button type="button" class="btn btn-warning px-5 mt-2 text-white" style="width: 250px; background-color:#FF8064;" data-bs-toggle="modal" data-bs-target="#modalId">
-              Ubah foto
-            </button>
-            
-            <!-- Modal Body -->
-            <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-            <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitleId">Upload Foto Profile Anda</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                  <input type="file" name="file" value="">
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+        <div class="card">
+          <div class="card-header fw-bold">
+            Profile
+          </div>
+          <div class="card-body">
+            <div class="row justify-content-evenly mx-1 pt-1 pb-4">
+              <div class="col-3 mt-3">
+                <div class="image overflow-hidden d-flex justify-content-center">
+                  <img style="border-radius:5%"src='<?php echo "fotoprofile/" .$data["fotoprofile"]; ?>' alt="" width="250" />
+                </div>
+                <div class="d-flex justify-content-center ">
+                <!-- Modal trigger button -->
+                <button type="button" class="btn btn-warning px-5 mt-2 text-white" style="width: 250px; background-color:#FF8064;" data-bs-toggle="modal" data-bs-target="#modalId">
+                  Ubah foto
+                </button>
+                
+                <!-- Modal Body -->
+                <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitleId">Upload Foto Profile Anda</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Pastikan Foto Berukuran 4x6, berukuran kurang dari 5 mb, dan diberi nama "nim.jpg/png"
+                        </p>
+                        <input type="file" name="file" value="">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
+                <!-- Optional: Place to the bottom of scripts -->
+                <script>
+                  const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+                </script>
+                
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                  <span class="badge text-bg-success py-2 px-4">Aktif</span>
+                </div>
               </div>
-            </div>
-            <!-- Optional: Place to the bottom of scripts -->
-            <script>
-              const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
-            </script>
-            
-            </div>
-            <div class="d-flex justify-content-center mt-3">
-              <span class="badge text-bg-success py-2 px-4">Aktif</span>
+
+              <div class="col-8 ">
+                <div class="row justify-content-evenly">   
+                  <div class="col-5 ">
+                    <div class="">
+                      <label for="nim" class=" col-form-label fw-bold">NIM Mahasiswa</label>
+                        <input type="text" readonly class="form-control-plaintext form-control-sm border bg-light text-secondary" id="staticEmail" value="<?php echo "&nbsp;" .
+                            $data["nim"]; ?>">
+                    </div>
+                    <div class="">
+                      <label for="staticEmail" class=" col-form-label fw-bold">Nama Mahasiswa</label>
+                        <input type="text" readonly class="form-control-plaintext form-control-sm border bg-light text-secondary" id="staticEmail" value="<?php echo "&nbsp;" .
+                            $data["nama"]; ?>">
+                    </div>
+                    <div class="">
+                      <label for="staticEmail" class=" col-form-label fw-bold">Angkatan</label>
+                        <input type="text" readonly class="form-control-plaintext form-control-sm border bg-light text-secondary" id="staticEmail" value="<?php echo "&nbsp;" .
+                            $data["angkatan"]; ?>">
+                    </div>
+                    <div class="">
+                        <label for="prodi" class=" col-form-label fw-bold">Prodi</label>
+                          <input type="text" readonly class="form-control-plaintext form-control-sm border bg-light text-secondary" id="prodi" value=" Informatika">
+                      </div>
+                      <div class="">
+                        <label for="fakultas" class=" col-form-label fw-bold">Fakultas</label>
+                          <input type="text" readonly class="form-control-plaintext form-control-sm border bg-light text-secondary" id="prodi" value=" Sains dan Matematika">
+                      </div>
+                    <button type="submit" name="submit" class="btn btn-primary mt-4 shadow" value="submit">Simpan</button>
+                  </div>
+                  <div class="col-5 ">
+                    <div class="">
+                      <label for="NoHp" class="form-label fw-bold" >Nomor Handphone</label>
+                      <input type="text" class="form-control form-control-sm" id="nomor_telp" name="nomor_telp"  value="<?php echo $data[
+                          "nomor_telp"
+                      ]; ?>">
+                    </div>
+                    <div class="mt-2">
+                      <label for="alamat" class="form-label fw-bold">Alamat</label>
+                      <input type="text" class="form-control form-control-sm" id="alamat" name="alamat" value="<?php echo $data[
+                          "alamat"
+                      ]; ?>">
+                    </div>
+                    <div class="mt-1">
+                      <label for="provinsi" class="form-label fw-bold">Provinsi</label>
+                      <select name="provinsi" id="provinsi" class="form-control form-control-sm " >
+                      <option value="">
+                      </option>
+                      </select>
+                    </div>
+                    <div class="mt-1">
+                      <label for="kota" class="form-label fw-bold">Kabupaten/Kota</label>
+                      <select name="kabupaten" id="" class="form-control form-control-sm">
+                      <option value="<?php echo $data[
+                          "kode_kab"
+                      ]; ?>"><?php echo $data["kode_kab"]; ?>
+                      </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>  
             </div>
           </div>
-          <div class="col-8 ">
-            <div class="row justify-content-evenly">   
-              <div class="col-5 ">
-                <div class="">
-                  <label for="nim" class=" col-form-label fw-bold">NIM Mahasiswa</label>
-                    <input type="text" readonly class="form-control-plaintext form-control-sm border bg-light text-secondary" id="staticEmail" value="<?php echo "&nbsp;" .
-                        $data["nim"]; ?>">
-                </div>
-                <div class="">
-                  <label for="staticEmail" class=" col-form-label fw-bold">Nama Mahasiswa</label>
-                    <input type="text" readonly class="form-control-plaintext form-control-sm border bg-light text-secondary" id="staticEmail" value="<?php echo "&nbsp;" .
-                        $data["nama"]; ?>">
-                </div>
-                <div class="">
-                  <label for="staticEmail" class=" col-form-label fw-bold">Angkatan</label>
-                    <input type="text" readonly class="form-control-plaintext form-control-sm border bg-light text-secondary" id="staticEmail" value="<?php echo "&nbsp;" .
-                        $data["angkatan"]; ?>">
-                </div>
-                <div class="">
-                    <label for="prodi" class=" col-form-label fw-bold">Prodi</label>
-                      <input type="text" readonly class="form-control-plaintext form-control-sm border bg-light text-secondary" id="prodi" value=" Informatika">
-                  </div>
-                  <div class="">
-                    <label for="fakultas" class=" col-form-label fw-bold">Fakultas</label>
-                      <input type="text" readonly class="form-control-plaintext form-control-sm border bg-light text-secondary" id="prodi" value=" Sains dan Matematika">
-                  </div>
-                <button type="submit" name="submit" class="btn btn-primary mt-4 shadow" value="submit">Simpan</button>
-              </div>
-              <div class="col-5 ">
-                <div class="">
-                  <label for="NoHp" class="form-label fw-bold" >Nomor Handphone</label>
-                  <input type="text" class="form-control form-control-sm" id="nomor_telp" name="nomor_telp"  value="<?php echo $data[
-                      "nomor_telp"
-                  ]; ?>">
-                </div>
-                <div class="mt-2">
-                  <label for="alamat" class="form-label fw-bold">Alamat</label>
-                  <input type="text" class="form-control form-control-sm" id="alamat" name="alamat" value="<?php echo $data[
-                      "alamat"
-                  ]; ?>">
-                </div>
-                <div class="mt-1">
-                  <label for="provinsi" class="form-label fw-bold">Provinsi</label>
-                  <select name="provinsi" id="provinsi" class="form-control form-control-sm " >
-                  <option value="">
-                  </option>
-                  </select>
-                </div>
-                <div class="mt-1">
-                  <label for="kota" class="form-label fw-bold">Kabupaten/Kota</label>
-                  <select name="kabupaten" id="" class="form-control form-control-sm">
-                  <option value="<?php echo $data[
-                      "kode_kab"
-                  ]; ?>"><?php echo $data["kode_kab"]; ?>
-                  </option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>  
         </div>
+
       </div>
     </form> 
 
