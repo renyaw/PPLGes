@@ -48,7 +48,7 @@
         <div class="col-md-6">
           <div class="col-md border bg-light pt-4">
             <div class="row">
-              <div class="col-md-4 p-3 ps-4">
+              <div class="col-md-4 px-3 pb-3 pt-1 ps-4">
                 <?php
                 $noinduk = $_SESSION['noinduk'];
                 $poto = $db->query("SELECT * from mahasiswa where nim = '$noinduk'") ;
@@ -136,7 +136,7 @@
       <div class="row mt-3 pe-3">
         <div class="col-md-6">
           <div class="row">
-            <div class="col-9 ms-3">
+            <div class="col-11 ms-3">
               <div class="row border bg-light">
                 <div class="col-3">
                   <div class="card border-0 bg-transparent pt-1">

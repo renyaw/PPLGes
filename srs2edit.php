@@ -147,6 +147,7 @@
                           <input type="text" readonly class="form-control-plaintext form-control-sm border bg-light text-secondary" id="prodi" value=" Sains dan Matematika">
                       </div>
                     <button type="submit" name="submit" class="btn btn-primary mt-4 shadow" value="submit">Simpan</button>
+                    <button type="button"  class="btn btn-warning mt-4 shadow" onclick="location.href='srs10.php'">Kembali</button>
                   </div>
                   <div class="col-5 ">
                     <div class="">

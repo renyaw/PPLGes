@@ -9,14 +9,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
-  <body>
+  <body class="bg-light">
     <?php
     session_start();
     require_once('db_login.php');
     ?>
     <include src="navbar.php"></include>
-    <div class="container">
-      <h3>Kartu Hasil Studi (KRS)</h3>      
+    <div class="container py-4 px-5 bg-white">
+      <h3 class="fw-bold">Kartu Hasil Studi (KRS)</h3>    
+      <div name="garishr" class="row border border-dark my-3 mx-1"></div>  
       <?php
       $noinduk=$_SESSION['noinduk'];
       $query = $db->query("SELECT khs.smt, khs.ip_semester, khs.sks_kumulatif from khs where nim = '$noinduk' order by smt");
