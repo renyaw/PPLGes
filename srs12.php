@@ -18,6 +18,15 @@
 
     $query2 = $db->query('SELECT count(*) as jmlmhs from mahasiswa');
     $jmlmhs=mysqli_fetch_assoc($query2);
+
+    $query3= $db->query('SELECT count(*) as jmlaktif from khs WHERE status="Aktif"');
+    $jmlaktif=mysqli_fetch_assoc($query3);
+
+    $query4= $db->query('SELECT count(*) as jmltdka from khs WHERE status!="Aktif"');
+    $jmltdka=mysqli_fetch_assoc($query4);
+
+
+
     ?>
     <div class="container">
       <h3>Dashboard Departemen</h3>
@@ -46,7 +55,7 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Jumlah Mahasiswa Aktif</h5>
-                <p class="card-text">110</p>
+                <p class="card-text"><?php echo $jmlaktif['jmlaktif']?></p>
               </div>
             </div>
           </div>
@@ -54,7 +63,7 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Jumlah Mahasiswa Non Aktif</h5>
-                <p class="card-text">1300</p>
+                <p class="card-text"><?php echo $jmltdka['jmltdka']?></p>
               </div>
             </div>
           </div>
