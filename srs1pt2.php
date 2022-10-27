@@ -13,6 +13,7 @@
     session_start();
     require_once "db_login.php";
     ?>
+    <include src="navbaroperator.php"></include>
     <div class="container mt-4">
     <div class="card">
       <div class="card-header fw-bold">
