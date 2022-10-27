@@ -85,16 +85,22 @@
               </div>
               <div class="mt-2">
                 <label for="alamat" class="form-label fw-bold">Alamat</label>
-                <input type="text" readonly class="form-control form-control-sm bg-light text-secondary" id="alamat" name="alamat" value="<?php echo $data["alamat"]; ?>">
+                <input type="text" readonly class="form-control form-control-sm bg-light text-secondary" id="alamat" name="alamat" value="<?php echo $data["alamat"];?>">
               </div>
               <div class="mt-1">
-                <label for="provinsi" class="form-label fw-bold"">Provinsi</label>
-                <input type="text" readonly class="form-control form-control-sm bg-light text-secondary" id="provinsi" name="provinsi" value="<?php  ?>">
+                <label for="provinsi" class="form-label fw-bold">Provinsi</label>
+                <input type="text" readonly class="form-control form-control-sm bg-light text-secondary" id="provinsi" name="provinsi" value="<?php 
+                $query2 = $db->query("SELECT provinsi.nama from provinsi INNER JOIN mahasiswa ON mahasiswa.kode_prov=provinsi.kode_prov where mahasiswa.nim='$noinduk'");
+                $data1 =mysqli_fetch_assoc($query2);
+                echo $data1["nama"] ?>">
 
               </div>
               <div class="mt-1">
                 <label for="kota" class="form-label fw-bold">Kabupaten/Kota</label>
-                <input type="text" readonly class="form-control form-control-sm bg-light text-secondary" id="provinsi" name="provinsi" value="<?php echo $data["kode_kab"]; ?>">
+                <input type="text" readonly class="form-control form-control-sm bg-light text-secondary" id="provinsi" name="provinsi" value="<?php 
+                $query3 = $db->query("SELECT kabupaten.nama from kabupaten INNER JOIN mahasiswa ON mahasiswa.kode_kab=kabupaten.kode_kab where mahasiswa.nim='$noinduk'");
+                $data2 =mysqli_fetch_assoc($query3);
+                echo $data2["nama"] ?>">
               </div>
             </div>
           </div>
