@@ -40,7 +40,7 @@
       $prov = $_POST["provinsi"];
       $kab = $_POST["kabupaten"];
       if(empty($nama)){
-        $result2 = $db->query("UPDATE mahasiswa set nomor_telp='$nomor_telp', alamat='$alamat', kode_kab='$kab' where nim='$noinduk'");
+        $result2 = $db->query("UPDATE mahasiswa set nomor_telp='$nomor_telp', alamat='$alamat',kode_prov='$prov', kode_kab='$kab' where nim='$noinduk'");
         header("location:srs2tampil.php?pesan=sukses");
       }
       else{
