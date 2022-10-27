@@ -16,15 +16,18 @@
       </style>
   </head>
   <body class="bg-light">
+  <include src="navbaroperator.php"></include>
     <?php
     //Cek apakah sudah login atau belum
     session_start();
     require_once "db_login.php";
+    
     if (isset($_GET["pesan"])) {
       if ($_GET["pesan"] == "success") {
           echo "<div class='alert alert-success text-center'>Data Berhasil tersimpan</div>";
       }
     }
+    
     if (isset($_POST["submit"])) {
       //untuk foto
       $ekstensi_diperbolehkan	= array('png','jpg','pdf');
