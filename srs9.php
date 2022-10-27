@@ -163,6 +163,9 @@
                 <option value="40">40</option>
               </select>
             </div>
+            <div class="col-3 mt-5">
+              <a href="srs1.php"><button type="button" class="btn btn-warning">Tambah Mahasiswa</button></a>
+            </div>
           </div>
           <div class="row text-center">
             <div class="col">
