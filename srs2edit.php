@@ -37,6 +37,7 @@
       //untuk data lainnya
       $nomor_telp = test_input($_POST["nomor_telp"]);
       $alamat = test_input($_POST["alamat"]);
+      $prov = $_POST["provinsi"];
       $kab = $_POST["kabupaten"];
       if(empty($nama)){
         $result2 = $db->query("UPDATE mahasiswa set nomor_telp='$nomor_telp', alamat='$alamat', kode_kab='$kab' where nim='$noinduk'");
@@ -46,7 +47,7 @@
         if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
           if($ukuran < 1044070){			
             move_uploaded_file($file_tmp, 'fotoprofile/'.$nama);
-            $result = $db->query("UPDATE mahasiswa set fotoprofile='$nama', nomor_telp='$nomor_telp', alamat='$alamat', kode_kab='$kab' where nim='$noinduk'");
+            $result = $db->query("UPDATE mahasiswa set fotoprofile='$nama', nomor_telp='$nomor_telp', alamat='$alamat', kode_prov='$prov', kode_kab='$kab' where nim='$noinduk'");
             //$query = $db->query("UPDATE upload  set nama_file='$nama' where id_file=9");
             if($result){
               header("location:srs2tampil.php?pesan=sukses");
@@ -155,17 +156,20 @@
                 <div class="mt-1">
                   <label for="provinsi" class="form-label fw-bold">Provinsi</label>
                   <select name="provinsi" id="provinsi" class="form-control form-control-sm " >
-                  <option value="">
-                  </option>
+                    <option value="0">-- Pilih Provinsi --</option>
+                    <?php
+                    $result1 = $db->query("select * from provinsi");
+
+                    while ($data1 = $result1->fetch_object()): ?>
+                        <option value="<?php echo $data1->kode_prov; ?>"><?php echo $data1->nama; ?></option>
+                    <?php endwhile;
+                    ?>
                   </select>
                 </div>
                 <div class="mt-1">
                   <label for="kota" class="form-label fw-bold">Kabupaten/Kota</label>
-                  <select name="kabupaten" id="" class="form-control form-control-sm">
-                  <option value="<?php echo $data[
-                      "kode_kab"
-                  ]; ?>"><?php echo $data["kode_kab"]; ?>
-                  </option>
+                  <select name="kabupaten" id="kabupaten" class="form-control form-control-sm">
+                  <option value="0">-- Pilih Kabupaten/Kota --</option>
                   </select>
                 </div>
               </div>
@@ -174,12 +178,13 @@
         </div>
       </div>
     </form> 
-
+    
     <div>
     <br>
       <br>
     </div>
     <?php include "Footer.php"; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="ajax2.js"></script>
   </body>
 </html>
