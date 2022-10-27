@@ -12,7 +12,6 @@
     <?php
     session_start();
     require_once "db_login.php";
-    
     ?>
     <div class="container mt-4">
     <div class="card">
@@ -33,21 +32,6 @@
             </div>
           </div>
           <div class="col-8">
-         
-            <?php 
-            $atnama = $_POST["nama"];
-            $atnama = ucwords(strtolower($atnama));
-            $nim = test_input($_POST["nim"]);
-            $nama = test_input($atnama);
-            $angkatan = test_input($_POST["angkatan"]);
-            $jalur_masuk = test_input($_POST["jalur_masuk"]);
-            $kode_wali = test_input($_POST["kode_wali"]);
-            //insert into database
-            
-            $result = $db->query("INSERT INTO mahasiswa (nim, nama, angkatan, jalur_masuk, kode_wali) VALUES ('$nim', '$nama', '$angkatan', '$jalur_masuk', '$kode_wali')") ;
-            $data = mysqli_fetch_assoc($result);
-          
-            ?>
             <form>
             <div class="mt-1 mb-3">
               <label for="nim" class=" col-form-label fw-semibold">NIM Mahasiswa</label>
