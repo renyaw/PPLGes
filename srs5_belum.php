@@ -1,3 +1,4 @@
+<?php require_once('db_connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <include src="navbar.php"></include>
     <div class="container">
+      <br>
       <h3>Progress PKL</h3>
       <hr>
       <div class="alert alert-warning" role="alert">Anda belum mengambil/memasukkan data PKL!</div>
@@ -25,16 +27,21 @@
           <input type="text" class="form-control" id="nim" />
         </div>
         <div class="mb-3">
-          <label for="instansi" class="form-label">Instansi</label>
-          <input type="text" class="form-control" id="instansi" />
+          <label for="instansi" class="form-label">Tanggal</label>
+          <input type="text" class="form-control" id="instansi" placeholder="dd/mm/yyyy" />
         </div>
         <div class="mb-3">
           <label for="doswal" class="form-label">Dosen Wali</label>
-          <select class="form-select" aria-label="Default select example">
-            <option selected disabled>-- Pilih Dosen Wali --</option>
-            <option value="1">Dosen A</option>
-            <option value="2">Dosen B</option>
-            <option value="3">Dosen C</option>
+          <select class="form-select" id="dosen" name="dosen">
+            <option>-- Pilih Dosen Wali --</option>
+              <?php
+                $result = $db->query('select * from dosen');
+                while ($data = $result->fetch_object()):
+              ?>
+                <option value="<?php echo $data->id ?>"><?php echo $data->nama ?></option>
+              <?php 
+                endwhile 
+              ?>
           </select>
         </div>
         <br />
