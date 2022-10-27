@@ -146,7 +146,7 @@
             <h3 class="fw-bold">Semester</h3>
           </div>
           <div class="row mx-2">
-            <input type="text" name="semester" id="semester" class="border rounded-2 fw-bold" readonly style="background-color: rgb(178, 178, 178)"  value="<?php if(empty($data2['smt'])){echo '1';} else{echo $data2['smt']+1;} ?>" />
+            <input type="text" name="semester" id="semester" class="border rounded-2 fw-bold" readonly style="background-color: rgb(178, 178, 178)"  value="<?php if(empty($data2['smt'])){echo '1';} else{echo $data2['smt'];} ?>" />
           </div>
           <div class="row mt-4">
             <h3 class="fw-bold">IP Semester</h3>
