@@ -129,7 +129,7 @@
         <tbody class="table-group-divider text-center">
           <?php
           require_once('db_login.php');
-          $query=$db->query("SELECT mahasiswa.nim, nama, angkatan from mahasiswa,pkltemp where mahasiswa.nim=pkltemp.nim");
+          $query=$db->query("SELECT mahasiswa.nim, mahasiswa.nama, angkatan from mahasiswa,pkltemp,dosen where mahasiswa.nim=pkltemp.nim and mahasiswa.kode_wali=dosen.kode_wali");
           while($row=$query->fetch_object()){
             echo '<tr>';
             echo '<td>'.$row->nama.'</td>';
