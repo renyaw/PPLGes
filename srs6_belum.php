@@ -93,6 +93,7 @@
             <br>
             <div class="d-grid d-md-flex justify-content-md-end">
               <button type="submit" id="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
+              <button type="button"  class="btn btn-warning ms-2 shadow" onclick="location.href='srs10.php'">Kembali</button>
             </div>
           </form>
         </div>
