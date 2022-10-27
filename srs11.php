@@ -67,6 +67,7 @@
 
                   echo "<p class='fs-4 fw-bolder'>".$data['nama'] ."</p>";
                   echo "<p>". $noinduk."</p>";
+                  echo "<p >Kode Wali: ".$data['kode_wali'] ."</p>";
                   echo "<p>Dosen Wali Informatika</p>";
                   echo "<p>Fakultas Sains dan Matematika</p>";
 
@@ -131,28 +132,28 @@
         <div class="col-md-3">
           <div class="card">
             <div class="card-body text-center" style="background-color: #27aed9">
-              <a href=""><button style="background-color: #27aed9; border: none; outline: none">PROFILE</button></a>
+              <a href="srs7.php"><button style="background-color: #27aed9; border: none; outline: none">Verifikasi IRS Mahasiswa</button></a>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card">
             <div class="card-body text-center" style="background-color: #ffee54">
-              <a href="srs7.php"><button style="background-color: #ffee54; border: none; outline: none">Verifikasi IRS dan KHS Mahasiswa</button></a>
+              <a href="srs7khs.php"><button style="background-color: #ffee54; border: none; outline: none">Verifikasi KHS Mahasiswa</button></a>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card text-center" style="background-color: #95ffb3">
             <div class="card-body text-center">
-              <a href=""><button style="background-color: #95ffb3; border: none; outline: none">Verifikasi Mahasiswa PKL</button></a>
+              <a href="srs7pkl.php"><button style="background-color: #95ffb3; border: none; outline: none">Verifikasi Mahasiswa PKL</button></a>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card text-center" style="background-color: #ff7373">
             <div class="card-body text-center">
-              <a href=""><button style="background-color: #ff7373; border: none; outline: none">Verifikasi Mahasiswa Skripsi</button></a>
+              <a href="srs7skripsi.php"><button style="background-color: #ff7373; border: none; outline: none">Verifikasi Mahasiswa Skripsi</button></a>
             </div>
           </div>
         </div>
