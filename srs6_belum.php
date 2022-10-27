@@ -20,6 +20,7 @@
         </div>
         <br>
         <div class="p-3 mb-2 bg-light text-dark">
+          <form method="POST" name="form" autocomplete="on" action="srs5_ong.php">
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
                 <input type="text" class="form-control" id="nama">
@@ -47,9 +48,35 @@
                 </select>
             </div>
             <br>
+            <?php
+                if (isset($_POST["submit"])) {
+                  $nama = test_input($_POST['nama']);
+                  $nim = test_input($_POST['nim']);
+                  $judul = test_input($_POST['judul']);
+                  $dosen = test_input($_POST['dosen']);
+
+                  $result = $db->query(
+                    "insert into skripsi(nim, judul, tgl_sidang, nilai, file_skripsi) values('$nim','$judul', NULL, NULL, NULL)"
+                  );
+                  if (!$result) {
+                    die(
+                        "Could not the query the database: <br />" .
+                            $db->error .
+                            "<br>Query:" .
+                            $query
+                    );
+                } else {
+                    $db->close();
+                    header("Location: srs6_ong.php");
+                  
+                }
+              }
+                
+              ?>
             <div class="d-grid d-md-flex justify-content-md-end">
-              <a href="srs6_ong.html"><button class="btn btn-primary" type="button">Submit</button></a>
+              <button type="submit" id="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
             </div>
+          </form>
         </div>
         <br>
     </div>

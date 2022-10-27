@@ -13,6 +13,7 @@
     session_start();
     require_once('db_login.php');
     ?>
+    <include src="navbaroperator.php"></include>
     <div class="container bg-white px-3 ">
         <h3 class="mt-3 mb-3">Dashboard Operator</h3>
         <div class="row">

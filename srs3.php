@@ -76,7 +76,12 @@
             </div>
 
             <div class="card text-center mt-3 mx-auto bg-success text-white" style="width: 14vh; max-width: 100px">
-              Aktif
+              <?php
+                $noinduk = $_SESSION['noinduk'];
+                $query = $db->query("SELECT stat FROM khs where nim ='$noinduk'");
+                $data = mysqli_fetch_assoc($query);
+                echo $data['stat']
+              ?>
             </div>
           </div>
           <div class="col-8">
@@ -120,6 +125,17 @@
                 ?>
               </div>
             </div>
+            <div class="row mt-3">
+              <div class="col-6">
+                <h3 class="fw-bold">Jumlah SKS</h3>
+                <?php
+                $noinduk = $_SESSION['noinduk'];
+                $query = $db->query("SELECT sks_kumulatif FROM khs where nim ='$noinduk'");
+                $data = mysqli_fetch_assoc($query);
+                echo "<p>".$data['sks_kumulatif']."</p>"
+                ?>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -130,12 +146,6 @@
           </div>
           <div class="row mx-2">
             <input type="text" name="semester" id="semester" class="border rounded-2" style="background-color: rgb(178, 178, 178)" value="<?php if (empty($smt)){echo '1';} else{echo $smt+1;} ?>" />
-          </div>
-          <div class="row mt-4">
-            <h3 class="fw-bold">Jumlah SKS:</h3>
-          </div>
-          <div class="row mx-2">
-            <input type="text" name="sks" id="sks" class="border rounded-2" style="background-color: rgb(178, 178, 178)" placeholder="Masukan jumlah SKS yang diambil..." />
           </div>
           <div class="row mt-4">
             <h3 class="fw-bold">Upload Scan IRS</h3>
