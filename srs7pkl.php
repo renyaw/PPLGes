@@ -131,6 +131,7 @@
             <th scope="col">NIM</th>
             <th scope="col">Nama Mahasiswa</th>
             <th scope="col">Angkatan</th>
+            <th scope="col">File PKL</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -144,6 +145,11 @@
             echo '<td>'.$row->nama.'</td>';
             echo '<td>'.$row->nim.'</td>';
             echo '<td>'.$row->angkatan.'</td>';
+            echo '<td>';
+            echo '<a href="filekhs/'.$row->upload_pkl.'" target="_blank">';
+            echo $row->upload_pkl;
+            echo '</a>';
+            echo '</td>';
             echo '<td><a class="btn btn-success btn-sm" href="srs7pklkonfirmasi.php?id='.$row->nim.'&action=terima'.'">Terima</a>&nbsp;&nbsp;
             <a class="btn btn-danger btn-sm" href="srs7pklkonfirmasi.php?id='.$row->nim.'&action=tolak'.'">Tolak</a>
             </td>';

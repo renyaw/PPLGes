@@ -87,7 +87,7 @@
         <div class="col-2 mt-2">
           <div class="card">
             <div class="card-body text-center" style="background-color: #52ff63">
-              <a href="srs7skripsi.php"><button style="background-color: #52ff63; border: none; outline: none">PKL</button></a>
+              <a href="srs7pkl.php"><button style="background-color: #52ff63; border: none; outline: none">PKL</button></a>
             </div>
           </div>
         </div>
