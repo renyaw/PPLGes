@@ -12,7 +12,10 @@
     <?php
     session_start();
     require_once "db_login.php";
-    ?>
+    $nim = $_SESSION['nimbaru'];
+    $query = $db->query("SELECT * from mahasiswa where nim='$nim'");
+    $data = mysqli_fetch_assoc($query);
+    ?>  
     <div class="container mt-4">
     <div class="card">
       <div class="card-header fw-bold">
@@ -21,14 +24,13 @@
       <div class="card-body">
       <!-- BODY  -->
       <div class="container ">
-        <div class="alert alert-success pb-1 pt-2" role="alert">
-            <h5>Info : Data berhasil disimpan.</h5>
-            <p>Pastikan daya yang Anda Masukkan benar.</p>
+        <div class='alert alert-success text-center alert-dismissible fade show'><h5>Info: Data berhasil disimpan.</h5>
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>
         </div>
         <div class="row justify-content-evenly">
           <div class="col-4 mt-3">
             <div class="image overflow-hidden">
-                <img class="" src="img\Bebek.png" alt="" width="250" />
+                <img style="border-radius:5%"src='<?php echo "fotoprofile/" .$data["fotoprofile"]; ?>' alt="" width="250" />
             </div>
           </div>
           <div class="col-8">
@@ -61,7 +63,7 @@
             </div>
             
             <div class="d-flex justify-content-end">
-              <button type="submit" class="btn btn-primary mt-4 ">Submit</button>
+              <button type="button" class="btn btn-primary mt-4 " onclick="location.href='srs9.php'">Submit</button>
             </div>
             
           </form>

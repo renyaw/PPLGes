@@ -43,11 +43,13 @@
       $wali = test_input($_POST["kode_wali"]);
       $ux = explode('@',$email);
       $username = current($ux);
+      $_SESSION['nimbaru'] = $nim; 
       if(empty($nama)){
         $result2 = "INSERT INTO mahasiswa(nim,nama,angkatan,email,jalur_masuk,kode_prov, kode_kab,kode_wali) VALUES ('$nim','$nama1', '$angkatan','$email', '$jalur','0','000', '$wali');";
         $result2 .= "INSERT INTO user VALUES ('$nim','$username', '2', '1234')";
         if ($db->multi_query($result2)== TRUE){
-          header("location:srs1.php?pesan=success");
+          $_SESSION['nim'] = $nim; 
+          header("location:srs1pt2.php");
         }else{
           header("location:srs1.php?pesan=gagal");
         }
@@ -55,11 +57,11 @@
         if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
           if($ukuran < 1044070){			
             move_uploaded_file($file_tmp, 'fotoprofile/'.$nama);
-            $result3 = "INSERT INTO mahasiswa(nim,nama,fotoprofile,angkatan,email,jalur_masuk,kode_prov, kode_kab, kode_wali) VALUES ('$nim','$nama1','$nama', '$angkatan', '$jalur', '0','0','$wali');";
+            $result3 = "INSERT INTO mahasiswa(nim,nama,fotoprofile,angkatan,email,jalur_masuk,kode_prov, kode_kab, kode_wali) VALUES ('$nim','$nama1','$nama', '$angkatan','$email', '$jalur', '0','000','$wali');";
             $result3 .= "INSERT INTO user VALUES ('$nim','$username', '2', '1234')";
             //$query = $db->query("UPDATE upload  set nama_file='$nama' where id_file=9");
             if($db->multi_query($result3)== TRUE){
-              header("location:srs1.php?pesan=success");
+              header("location:srs1pt2.php");
             }
             else{
               echo 'GAGAL MENGUPLOAD GAMBAR';

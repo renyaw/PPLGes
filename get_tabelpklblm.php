@@ -2,8 +2,8 @@
 require_once('db_login.php');
 $id=$_GET['id'];
 
-$query = $db->query("SELECT mahasiswa.nama, mahasiswa.nim, dosen.nama  as namadosen, mahasiswa.angkatan from pkl inner join mahasiswa inner join dosen where mahasiswa.nim=pkl.nim and dosen.kode_wali=mahasiswa.kode_wali and status = 'Belum Lulus' and mahasiswa.angkatan='$id';");
-$query2= $db->query("SELECT mahasiswa.nama, mahasiswa.nim, dosen.nama  as namadosen, mahasiswa.angkatan from pkl inner join mahasiswa inner join dosen where mahasiswa.nim=pkl.nim and dosen.kode_wali=mahasiswa.kode_wali and status = 'Belum Lulus' ;");
+$query = $db->query("SELECT mahasiswa.nama, mahasiswa.nim, dosen.nama  as namadosen, mahasiswa.angkatan from pkl inner join mahasiswa inner join dosen where mahasiswa.nim=pkl.nim and dosen.kode_wali=mahasiswa.kode_wali and stat = 'Belum Lulus' and mahasiswa.angkatan='$id';");
+$query2= $db->query("SELECT mahasiswa.nama, mahasiswa.nim, dosen.nama  as namadosen, mahasiswa.angkatan from pkl inner join mahasiswa inner join dosen where mahasiswa.nim=pkl.nim and dosen.kode_wali=mahasiswa.kode_wali and stat = 'Belum Lulus' ;");
 
 if($id!='x'){
   $result = $query;
@@ -32,7 +32,6 @@ $nomor = $halaman_awal+1;
 if($jml!=0){
   while ($row = $result->fetch_object()) {
     echo '<tr>';
-    echo '<td>'.$nomor++. '</td>'; 
     echo '<td>'.$row->nama.'</td>';
     echo '<td>'.$row->nim.'</td>';
     echo '<td>'.$row->namadosen.'</td>';

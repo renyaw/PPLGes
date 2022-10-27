@@ -61,6 +61,7 @@
                 <div class="card-body">
                   <?php
                   $noinduk = $_SESSION['noinduk'];
+                  $kodewali = $_SESSION['kodewali'];
                   $query = $db->query("SELECT * from dosen where nip = '$noinduk'");
 
                   $data = mysqli_fetch_assoc($query);
@@ -72,7 +73,6 @@
                   echo "<p>Fakultas Sains dan Matematika</p>";
 
                   ?>
-                  <a href=""><p class="card-text text-black">edit</p></a>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@
               <div class="card" style="background-color: #84ffff">
                 <div class="card-body">
                   <?php
-                    $query = $db->query("SELECT * from mahasiswa inner join dosen where mahasiswa.kode_wali = dosen.kode_wali ");
+                    $query = $db->query("SELECT * from mahasiswa inner join dosen ON  mahasiswa.kode_wali=dosen.kode_wali WHERE mahasiswa.kode_wali = '$kodewali' ");
                     echo $query->num_rows;
                   ?>
                   <p>Mahasiswa Perwalian Aktif</p>
@@ -96,7 +96,7 @@
               <div class="card" style="background-color: #97ff95">
                 <div class="card-body">
                   <?php
-                    $query = $db->query("SELECT * from mahasiswa inner join dosen inner join pkl where mahasiswa.kode_wali = dosen.kode_wali and mahasiswa.nim=pkl.nim and pkl.status='Belum Lulus'");
+                    $query = $db->query("SELECT * from mahasiswa inner join dosen inner join pkl where mahasiswa.kode_wali = dosen.kode_wali and mahasiswa.nim=pkl.nim and pkl.stat='belum lulus' and mahasiswa.kode_wali = '$kodewali'");
                     echo $query->num_rows;
                   ?>
                   <p>Mahasiswa Perwalian PKL</p>
@@ -109,7 +109,7 @@
               <div class="card " style="background-color: #fdff8f">
                 <div class="card-body">
                   <?php
-                    $query = $db->query("SELECT * from mahasiswa inner join dosen inner join skripsi where mahasiswa.kode_wali = dosen.kode_wali and mahasiswa.nim=skripsi.nim and skripsi.status='Belum Lulus'");
+                    $query = $db->query("SELECT * from mahasiswa inner join dosen inner join skripsi where mahasiswa.kode_wali = dosen.kode_wali and mahasiswa.nim=skripsi.nim and skripsi.status='belum lulus' and mahasiswa.kode_wali = '$kodewali'");
                     echo $query->num_rows;
                   ?>
                   <p>Mahasiswa Perwalian Skripsi</p>
@@ -119,7 +119,10 @@
             <div class="col-5">
               <div class="card " style="background-color: rgba(255, 115, 115, 0.74)">
                 <div class="card-body">
-                  <div class="card-title">Belum ges</div>
+                <?php
+                    $query = $db->query("SELECT * from mahasiswa inner join dosen inner join khs where mahasiswa.kode_wali = dosen.kode_wali and mahasiswa.nim=khs.nim and (khs.status='Mangkir' or khs.status='Cuti') and mahasiswa.kode_wali = '$kodewali'");
+                    echo $query->num_rows;
+                  ?>
                   <p>Mahasiswa Non-Aktif</p>
                 </div>
               </div>
