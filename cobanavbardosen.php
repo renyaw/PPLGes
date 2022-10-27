@@ -1,3 +1,4 @@
+@@ -1,63 +1,63 @@
 <?php
 session_start();
 require_once('db_login.php');
@@ -27,6 +28,7 @@ require_once('db_login.php');
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="srs10.php">Home</a>
             <a class="nav-link active" aria-current="page" href="srs11.php">Home</a>
           </li>
           <li class="nav-item">
