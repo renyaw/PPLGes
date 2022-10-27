@@ -1,3 +1,4 @@
+<?php require_once('db_connect.php'); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -33,11 +34,16 @@
             </div>
             <div class="mb-3">
                 <label for="doswal" class="form-label">Dosen Wali</label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected disabled>-- Pilih Dosen Wali --</option>
-                    <option value="1">Dosen A</option>
-                    <option value="2">Dosen B</option>
-                    <option value="3">Dosen C</option>
+                <select class="form-select" id="dosen" name="dosen">
+                  <option>-- Pilih Dosen Wali --</option>
+                    <?php
+                      $result = $db->query('select * from dosen');
+                      while ($data = $result->fetch_object()):
+                    ?>
+                      <option value="<?php echo $data->id ?>"><?php echo $data->nama ?></option>
+                    <?php 
+                      endwhile 
+                    ?>
                 </select>
             </div>
             <br>
