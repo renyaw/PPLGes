@@ -10,7 +10,7 @@ require_once('db_login.php');
       <b class="">Hi,
       <?php
       $noinduk=$_SESSION['noinduk'];
-      $query=$db->query("SELECT dosen.nama FROM dosen inner join user where dosen.nip=nip_nim and dosen.nip='$noinduk'");
+      $query=$db->query("SELECT dosen.nama FROM dosen inner join user where dosen.nip='$noinduk'");
       $data = mysqli_fetch_assoc($query);
       echo $data['nama'].'.';
       ?>
