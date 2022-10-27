@@ -29,7 +29,27 @@
         </div>
       </div>
     </nav>
+
     <div class="container">
+      <?php
+        if(isset($_GET['pesan'])){
+          //salah akun/password
+          if($_GET['pesan']=="gagal"){
+            echo "<div>Gagal dikonfirmasi</div>";
+          }
+          else if($_GET['pesan']=="sukses"){
+            echo "<div class='alert alert-success text-center alert-dismissible fade show'>Berhasil Dikonfirmasi
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+          }
+          else if($_GET['pesan']=="suksestolak"){
+            echo "<div class='alert alert-success text-center alert-dismissible fade show'>Berhasil Ditolak
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+          }
+          else if($_GET['pesan']=="gagaltolak"){
+            echo "<div>Gagal ditolak</div>";
+          }
+        }
+        ?>
       <h2 class="mb-5">Verifikasi IRS Mahasiswa</h2>
       <div class="row">
         <div class="col-2 mt-2">
@@ -81,10 +101,6 @@
       </div>
       <div class="container">
         <div class="mt-5">
-          <div class="col-11 gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-info text-white" type="button">Verifikasi</button>
-            <button class="btn btn-danger" type="button">Belum Verifikasi</button>
-          </div>
         </div>
       </div>
       <div class="row">
@@ -113,56 +129,18 @@
         <tbody class="table-group-divider text-center">
           <?php
           require_once('db_login.php');
-          $query=$db->query("SELECT mahasiswa.nim, nama, file_sks from mahasiswa,irs where status='0'");
+          $query=$db->query("SELECT mahasiswa.nim, nama, file_sks from mahasiswa,irstemp");
           while($row=$query->fetch_object()){
             echo '<tr>';
             echo '<td>'.$row->nama.'</td>';
             echo '<td>'.$row->nim.'</td>';
             echo '<td>'.$row->file_sks.'</td>';
-            echo '<td>'.$row->file_sks.'</td>';
+            echo '<td><a class="btn btn-success btn-sm" href="srs7konfirmasiirs.php?id='.$row->nim.'">Terima</a>&nbsp;&nbsp;
+            <a class="btn btn-danger btn-sm" href="srs7tolakirs.php?id='.$row->nim.'">Tolak</a>
+            </td>';
             echo '</tr>';
           }
           ?>
-          <tr>
-            <td>2406012014001</td>
-            <td>Titi</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014002</td>
-            <td>Dije</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014003</td>
-            <td>Ahay</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014004</td>
-            <td>Soleh</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014005</td>
-            <td>Solihun</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014006</td>
-            <td>Ihik</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014007</td>
-            <td>Kursi</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014008</td>
-            <td>Meja</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
         </tbody>
       </table>
     </div>
