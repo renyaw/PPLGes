@@ -81,10 +81,6 @@
       </div>
       <div class="container">
         <div class="mt-5">
-          <div class="col-11 gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-info text-white" type="button">Verifikasi</button>
-            <button class="btn btn-danger" type="button">Belum Verifikasi</button>
-          </div>
         </div>
       </div>
       <div class="row">
@@ -119,50 +115,12 @@
             echo '<td>'.$row->nama.'</td>';
             echo '<td>'.$row->nim.'</td>';
             echo '<td>'.$row->file_sks.'</td>';
-            echo '<td>'.$row->file_sks.'</td>';
+            echo '<td><a class="btn btn-success btn-sm" href="konfirmasiirs.php?id='.$row->nim.'">Terima</a>&nbsp;&nbsp;
+            <a class="btn btn-danger btn-sm" href="tolakirs.php?id='.$row->nim.'">Tolak</a>
+            </td>';
             echo '</tr>';
           }
           ?>
-          <tr>
-            <td>2406012014001</td>
-            <td>Titi</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014002</td>
-            <td>Dije</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014003</td>
-            <td>Ahay</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014004</td>
-            <td>Soleh</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014005</td>
-            <td>Solihun</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014006</td>
-            <td>Ihik</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014007</td>
-            <td>Kursi</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
-          <tr>
-            <td>2406012014008</td>
-            <td>Meja</td>
-            <td>Terima | Tolak | Edit</td>
-          </tr>
         </tbody>
       </table>
     </div>
