@@ -139,13 +139,17 @@
           <?php
           require_once('db_login.php');
           $kodewali= $_SESSION['kodewali'];
-          $query=$db->query("SELECT mahasiswa.nim, mahasiswa.nama, file_sks, semester_aktif as smt from mahasiswa,irstemp,dosen where mahasiswa.nim=irstemp.nim and mahasiswa.kode_wali='$kodewali'" );
+          $query=$db->query("SELECT mahasiswa.nim, mahasiswa.nama, file_sks, semester_aktif as smt from mahasiswa,irstemp,dosen where mahasiswa.nim=irstemp.nim and mahasiswa.kode_wali='$kodewali' group by nim" );
           while($row=$query->fetch_object()){
             echo '<tr>';
             echo '<td>'.$row->nama.'</td>';
             echo '<td>'.$row->nim.'</td>';
             echo '<td>'.$row->smt.'</td>';
-            echo '<td>'.$row->file_sks.'</td>';
+            echo '<td>';
+            echo '<a href="fileirs/'.$row->file_sks.'" target="_blank">';
+            echo $row->file_sks;
+            echo '</a>';
+            echo '</td>';
             echo '<td><a class="btn btn-success btn-sm" href="srs7konfirmasiirs.php?id='.$row->nim.'">Terima</a>&nbsp;&nbsp;
             <a class="btn btn-danger btn-sm" href="srs7tolakirs.php?id='.$row->nim.'">Tolak</a>
             </td>';
