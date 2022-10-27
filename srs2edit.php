@@ -157,17 +157,20 @@
                 <div class="mt-1">
                   <label for="provinsi" class="form-label fw-bold">Provinsi</label>
                   <select name="provinsi" id="provinsi" class="form-control form-control-sm " >
-                  <option value="">
-                  </option>
+                    <option value="0">-- Pilih Provinsi --</option>
+                    <?php
+                    $result1 = $db->query("select * from provinsi");
+
+                    while ($data1 = $result1->fetch_object()): ?>
+                        <option value="<?php echo $data1->kode_prov; ?>"><?php echo $data1->nama; ?></option>
+                    <?php endwhile;
+                    ?>
                   </select>
                 </div>
                 <div class="mt-1">
                   <label for="kota" class="form-label fw-bold">Kabupaten/Kota</label>
-                  <select name="kabupaten" id="" class="form-control form-control-sm">
-                  <option value="<?php echo $data[
-                      "kode_kab"
-                  ]; ?>"><?php echo $data["kode_kab"]; ?>
-                  </option>
+                  <select name="kabupaten" id="kabupaten" class="form-control form-control-sm">
+                  <option value="0">-- Pilih Kabupaten/Kota --</option>
                   </select>
                 </div>
               </div>  
