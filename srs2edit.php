@@ -66,6 +66,7 @@
       }
     }
     ?>
+
     <form method="POST" onsubmit="" name="form" enctype="multipart/form-data">
       <div class="container mt-4">
         <h2 class="fw-bold">Update Data Pribadi</h2>
@@ -74,7 +75,12 @@
           <h5>Peringatan!</h5>
           <p>Lakukan update data pribadi untuk menggunakan fitur lain.</p>
         </div>
-        <div class="row justify-content-evenly border mx-1 py-4">
+        <div class="card">
+          <div class="card-header">
+            Profile
+          </div>
+          <div class="card-body">
+          <div class="row justify-content-evenly  mx-1 py-4">
           <div class="col-3 mt-3">
             <div class="image overflow-hidden d-flex justify-content-center">
               <img style="border-radius:5%"src='<?php echo "fotoprofile/" .$data["fotoprofile"]; ?>' alt="" width="250" />
@@ -140,6 +146,7 @@
                       <input type="text" readonly class="form-control-plaintext form-control-sm border bg-light text-secondary" id="prodi" value=" Sains dan Matematika">
                   </div>
                 <button type="submit" name="submit" class="btn btn-primary mt-4 shadow" value="submit">Simpan</button>
+                <button type="button"  class="btn btn-warning mt-4 shadow" onclick="location.href='srs2tampil.php'">Kembali</button>
               </div>
               <div class="col-5 ">
                 <div class="">
@@ -175,6 +182,8 @@
                 </div>
               </div>  
             </div>
+          </div>
+        </div>
           </div>
         </div>
 
