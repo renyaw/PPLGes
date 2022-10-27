@@ -111,6 +111,18 @@
           </tr>
         </thead>
         <tbody class="table-group-divider text-center">
+          <?php
+          require_once('db_login.php');
+          $query=$db->query("SELECT mahasiswa.nim, nama, file_sks from mahasiswa,irs where status='0'");
+          while($row=$query->fetch_object()){
+            echo '<tr>';
+            echo '<td>'.$row->nama.'</td>';
+            echo '<td>'.$row->nim.'</td>';
+            echo '<td>'.$row->file_sks.'</td>';
+            echo '<td>'.$row->file_sks.'</td>';
+            echo '</tr>';
+          }
+          ?>
           <tr>
             <td>2406012014001</td>
             <td>Titi</td>
