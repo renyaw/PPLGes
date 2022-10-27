@@ -50,6 +50,7 @@ require_once('db_login.php'); ?>
         <br />
         
         <?php
+        require_once('db_login.php');
           if (isset($_POST["submit"])) {
             $nama = test_input($_POST['nama']);
             $nim = test_input($_POST['nim']);

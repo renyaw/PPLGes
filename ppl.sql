@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2022 at 03:30 PM
+-- Generation Time: Oct 27, 2022 at 08:09 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `dosen` (
+  `id` int(1) NOT NULL,
   `kode_wali` varchar(14) NOT NULL,
   `nip` varchar(15) NOT NULL,
   `nama` varchar(20) NOT NULL,
@@ -40,11 +41,11 @@ CREATE TABLE `dosen` (
 -- Dumping data for table `dosen`
 --
 
-INSERT INTO `dosen` (`kode_wali`, `nip`, `nama`, `email`, `nomor_telp`, `alamat`) VALUES
-('E1', '0092038705', 'Rohmat Subarjo', 'rohmat@gmail.com', '0812347892138', 'Jalan Kenangan'),
-('E2', '0092038883', 'Aulia Dina', 'auliadin@gmail.com', '085666728012', 'Jalan Yuk'),
-('E3', '0092086435', 'Joyo Cahyono', 'joyo@gmail.com', '085567887034', 'Jalan Jalan'),
-('E4', '0092038992', 'Adhiarja Kresna', 'adikresna@gmail.com', '085627918276', 'Jalan Hidup');
+INSERT INTO `dosen` (`id`, `kode_wali`, `nip`, `nama`, `email`, `nomor_telp`, `alamat`) VALUES
+(1, 'E1', '0092038705', 'Rohmat Subarjo', 'rohmat@gmail.com', '0812347892138', 'Jalan Kenangan'),
+(2, 'E2', '0092038883', 'Aulia Dina', 'auliadin@gmail.com', '085666728012', 'Jalan Yuk'),
+(3, 'E3', '0092086435', 'Joyo Cahyono', 'joyo@gmail.com', '085567887034', 'Jalan Jalan'),
+(4, 'E4', '0092038992', 'Adhiarja Kresna', 'adikresna@gmail.com', '085627918276', 'Jalan Hidup');
 
 -- --------------------------------------------------------
 
@@ -66,17 +67,33 @@ CREATE TABLE `irs` (
 --
 
 INSERT INTO `irs` (`id_irs`, `semester_aktif`, `status`, `jml_sks`, `file_sks`, `nim`) VALUES
-(1, '7', '1', '110', '', '24060119120004'),
-(2, '7', '1', '110', '', '24060119120034'),
-(3, '7', '1', '110', '', '24060119120112'),
-(4, '7', '1', '110', '', '24060119140098'),
-(5, '7', '1', '110', '', '24060119140108'),
-(6, '5', '0', '95', '', '24060120120022'),
-(7, '5', '0', '96', '', '24060120120045'),
-(8, '5', '0', '93', '', '24060120120113'),
-(9, '5', '0', '94', '', '24060120130047'),
-(10, '5', '0', '95', '', '24060120130053'),
-(11, '5', '1', '100', '', '24060120130093');
+(1, '7', '1', '21', '', '24060119120004'),
+(2, '7', '1', '22', '', '24060119120034'),
+(3, '7', '1', '18', '', '24060119120112'),
+(4, '7', '1', '21', '', '24060119140098'),
+(5, '7', '1', '18', '', '24060119140108'),
+(6, '5', '0', '21', '', '24060120120022'),
+(7, '5', '0', '18', '', '24060120120045'),
+(8, '5', '0', '21', '', '24060120120113'),
+(9, '5', '0', '18', '', '24060120130047'),
+(10, '5', '0', '21', '', '24060120130053'),
+(11, '5', '1', '22', '', '24060120130093'),
+(13, '9', '0', '24', '', '24060118120005'),
+(15, '9', '0', '18', '', '24060118120035'),
+(16, '9', '1', '21', '', '24060118120073'),
+(18, '9', '0', '21', '', '24060118130132'),
+(20, '9', '1', '18', '', '24060118140133'),
+(21, '3', '1', '24', '', '24060121120003'),
+(22, '3', '1', '21', '', '24060121120098'),
+(23, '3', '1', '24', '', '24060121120119'),
+(24, '3', '0', '21', '', '24060121130024'),
+(25, '3', '0', '18', '', '24060121130049'),
+(26, '3', '0', '21', '', '24060121130122'),
+(27, '1', '1', '24', '', '24060122120102'),
+(28, '1', '1', '24', '', '24060122120119'),
+(29, '1', '1', '24', '', '24060122130002'),
+(30, '1', '1', '24', '', '24060122130100'),
+(31, '1', '1', '24', '', '24060122130119');
 
 -- --------------------------------------------------------
 
@@ -158,11 +175,19 @@ CREATE TABLE `khs` (
 --
 
 INSERT INTO `khs` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semester`, `ip_kumulatif`, `file_khs`, `sks_kumulatif`, `nim`) VALUES
-(8, '9', 'Aktif', '1', '3.4', '3.51', NULL, '159', '24060118120005'),
-(9, '9', 'Aktif', '1', '3,1', '3,24', NULL, '149', '24060118120035'),
-(10, '9', 'Cuti', '1', '3,7', '3,65', NULL, '156', '24060119120004'),
-(11, '9', 'Mangkir', '1', '2,4', '2,94', NULL, '153', '24060119120034'),
-(12, '5', 'Aktif', '1', '3.9', '3.83', NULL, '102', '24060118120005');
+(13, '9', 'Aktif', '1', '3.7', '3.65', NULL, '157', '24060118120005'),
+(14, '9', 'Aktif', '1', '3.1', '3.16', NULL, '151', '24060118120035'),
+(15, '9', 'Aktif', '1', '3.6', '3.72', NULL, '155', '24060118120073'),
+(16, '7', 'Mangkir', '1', '2.1', '2.32', NULL, '127', '24060118130064'),
+(17, '7', 'Aktif', '1', '3.6', '3.48', NULL, '130', '24060119120004'),
+(18, '7', 'Aktif', '1', '3.2', '3.61', NULL, '134', '24060119120034'),
+(19, '7', 'Aktif', '1', '3.9', '3.86', NULL, '132', '24060119120108'),
+(20, '7', 'Cuti', '0', '3.4', '3.28', NULL, '128', '24060119120112'),
+(21, '5', 'Aktif', '1', '4', '4', NULL, '98', '24060120120022'),
+(22, '5', 'Aktif', '1', '3.8', '3.77', NULL, '95', '24060120120045'),
+(23, '5', 'Aktif', '1', '2.1', '2.36', NULL, '92', ''),
+(24, '5', 'Aktif', '1', '3.3', '3.56', NULL, '93', '24060120130047'),
+(25, '5', 'Aktif', '1', '2.3', '2.55', NULL, '90', '24060120130053');
 
 -- --------------------------------------------------------
 
@@ -218,8 +243,14 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `fotoprofile`, `angkatan`, `alamat`, `nomor_telp`, `email`, `jalur_masuk`, `kode_prov`, `kode_kab`, `kode_wali`) VALUES
+('', '', NULL, '', '', '', '', '', '', '', ''),
 ('24060118120005', 'Akmal Mulyono', NULL, '2018', 'Jalan Bebek', '081374682115', 'akmal@gmail.com', 'SNMPTN', '4', '403', 'E1'),
 ('24060118120035', 'Elvi Caharin', NULL, '2018', 'Jalan Cempaka', '081374682543', 'elvi@gmail.com', 'SNMPTN', '5', '503', 'E4'),
+('24060118120073', 'Intan Poeryani', NULL, '2018', 'Jalan Teman', '085777861261', 'intan@gmail.com', 'SNMPTN', '2', '201', 'E3'),
+('24060118130064', 'Marshanda Caswati', NULL, '2018', 'Jalan Buyar', '085777864329', 'marsha@gmail.com', 'SBMPTN', '5', '504', 'E2'),
+('24060118130132', 'Galang Irwanto', NULL, '2018', 'Jalan Sukses', '085777864216', 'galang@gmail.com', 'SBMPTN', '3', '302', 'E1'),
+('24060118140024', 'Farrel Edianto', NULL, '2018', 'Jalan Teman', '085777864098', 'farrel@gmail.com', 'Mandiri', '2', '201', 'E4'),
+('24060118140133', 'Citra Rahayu', NULL, '2018', 'Jalan Dalam', '085777864143', 'citra@gmail.com', 'Mandiri', '5', '501', 'E1'),
 ('24060119120004', 'Wahyu Poernomo', NULL, '2019', 'Jalan Terang', '085777861233', 'wahyu@gmail.com', 'SNMPTN', '4', '401', 'E1'),
 ('24060119120034', 'Kezia Gunawan', NULL, '2019', 'Jalan Belok', '085777860507', 'kezia@gmail.com', 'SNMPTN', '5', '501', 'E3'),
 ('24060119120108', 'Andreas Saksono', NULL, '2018', 'Jalan Teman', '085777861111', 'andre@gmail.com', 'SNMPTN', '2', '201', 'E3'),
@@ -258,21 +289,29 @@ INSERT INTO `mahasiswa` (`nim`, `nama`, `fotoprofile`, `angkatan`, `alamat`, `no
 CREATE TABLE `pkl` (
   `id_pkl` int(20) NOT NULL,
   `nim` varchar(14) NOT NULL,
-  `status` varchar(15) NOT NULL DEFAULT 'belum lulus',
+  `stat` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `tanggal_mulai` varchar(20) NOT NULL,
   `nilai` varchar(2) DEFAULT NULL,
   `status_konfirmasi` varchar(20) NOT NULL,
-  `upload_pkl` longblob NOT NULL
+  `upload_pkl` longblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pkl`
 --
 
-INSERT INTO `pkl` (`id_pkl`, `nim`, `status`, `tanggal_mulai`, `nilai`, `status_konfirmasi`, `upload_pkl`) VALUES
-(1, '24060120130053', 'lulus', '25/10/2022', 'A', '1', ''),
-(2, '24060120130059', 'belum lulus', '25/10/2022', 'A', '1', ''),
-(3, '24060121130049', 'lulus', '', '', '1', '');
+INSERT INTO `pkl` (`id_pkl`, `nim`, `stat`, `tanggal_mulai`, `nilai`, `status_konfirmasi`, `upload_pkl`) VALUES
+(8, '24060119120004', 'lulus', '27/10/2021', 'A', '1', NULL),
+(9, '24060119120034', 'lulus', '27/10/2021', 'A', '1', NULL),
+(10, '24060119120108', 'lulus', '27/10/2021', 'B', '1', NULL),
+(11, '24060119120112', 'lulus', '27/10/2021', 'B', '1', NULL),
+(12, '24060119130117', 'belum lulus', '27/10/2021', NULL, '1', NULL),
+(13, '24060119130186', 'belum lulus', '27/10/2021', 'D', '1', NULL),
+(14, '24060120120022', 'belum lulus', '27/10/2022', NULL, '1', NULL),
+(15, '24060120120022', 'belum lulus', '27/10/2022', NULL, '1', NULL),
+(16, '24060120120113', 'belum lulus', '27/10/2022', NULL, '0', NULL),
+(17, '24060120130047', 'belum lulus', '27/10/2022', NULL, '0', NULL),
+(18, '24060120130112', 'belum lulus', '27/10/2022', NULL, '1', NULL);
 
 -- --------------------------------------------------------
 
@@ -330,18 +369,29 @@ INSERT INTO `provinsi` (`kode_prov`, `nama`) VALUES
 CREATE TABLE `skripsi` (
   `id_skripsi` int(20) NOT NULL,
   `nim` varchar(14) NOT NULL,
+  `judul` varchar(200) NOT NULL,
   `status` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `nilai` varchar(2) DEFAULT NULL,
   `tgl_sidang` varchar(10) DEFAULT NULL,
-  `lama_studi` varchar(10) DEFAULT NULL
+  `file_skripsi` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `skripsi`
 --
 
-INSERT INTO `skripsi` (`id_skripsi`, `nim`, `status`, `nilai`, `tgl_sidang`, `lama_studi`) VALUES
-(0, '24060120130050', 'belum lulus', NULL, NULL, NULL);
+INSERT INTO `skripsi` (`id_skripsi`, `nim`, `judul`, `status`, `nilai`, `tgl_sidang`, `file_skripsi`) VALUES
+(2, '24060118120005', 'Pengembangan Bahan Ajar Pengantar Teknologi Informasi Berbasis Contextual Teaching and Learning di Jurusan Teknik Elektro Universitas Negeri Malang', 'lulus', 'B', '28/10/2021', NULL),
+(3, '24060118120035', 'Pengembangan Sistem Informasi Presensi Kuliah Berbasis NFC di Program Studi Pendidikan Teknik Informatika dan Komputer Universitas Sebelas Maret', 'lulus', 'B', '28/10/2021', NULL),
+(4, '24060118120073', 'Pengaruh Sikap Dan Motivasi Terhadap Minat Berwirausaha Mahasiswa Program Studi Manajemen Bisnis Telekomunikasi Dan Informatika Angkatan 2014', 'lulus', 'A', '28/10/2021', NULL),
+(5, '24060118130132', 'Perancangan Algoritma Topsis-Improved Rule Matching Untuk Analisis Keamanan Berkendara Menggunakan Sepeda Motor Matic', 'belum lulus', 'D', '28/10/2021', NULL),
+(6, '24060119120004', 'Aplikasi Augmented Reality Pada Pemasaran Perumahan Puri Lestari Di Cikarang Berbasis Android', 'belum lulus', NULL, '01/11/2022', NULL),
+(7, '24060119120034', 'Pembangunan Game Edukasi Mengenal Alat Musik Tradisional Jawa Barat Menggunakan Metode Game Development Life Cycle', 'belum lulus', NULL, '01/11/2022', NULL),
+(8, '24060119120108', 'Implementasi Jaringan Syaraf Tiruan Untuk Pengelompokkan Minat Kompetensi Mahasiswa Stmik Pelita Nusantara Medan', 'belum lulus', NULL, '01/11/2022', NULL),
+(9, '24060119120112', 'Pembangunan Game Peduli Lingkungan Menggunakan Metode Agile Game Development', 'belum lulus', NULL, '01/11/2022', NULL),
+(10, '24060119130117', 'Analisis Pengaruh Nilai Tes Potensi Akademik Pada Evaluasi Pemrograman Dasar Terhadap Motivasi Dan Kemampuan Pemrograman', 'belum lulus', NULL, NULL, NULL),
+(11, '24060119130186', 'Pengenalan Bunga Anggrek Menggunakan Gray Level Co-Occurrence Dan Algoritma K–Nearest Neighbours Berbasis Mobile', 'belum lulus', NULL, NULL, NULL),
+(12, '24060119140005', 'Sistem Penjadwalan Wisata Kabupaten Nganjuk Menggunakan Algoritma Best First Search Berbasis Android', 'belum lulus', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -355,15 +405,16 @@ CREATE TABLE `skripsitemp` (
   `status` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `nilai` varchar(2) DEFAULT NULL,
   `tgl_sidang` varchar(10) DEFAULT NULL,
-  `lama_studi` varchar(10) DEFAULT NULL
+  `lama_studi` varchar(10) DEFAULT NULL,
+  `file_skripsi` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `skripsitemp`
 --
 
-INSERT INTO `skripsitemp` (`id_skripsi`, `nim`, `status`, `nilai`, `tgl_sidang`, `lama_studi`) VALUES
-(NULL, '24060120130050', 'belum lulus', NULL, NULL, NULL);
+INSERT INTO `skripsitemp` (`id_skripsi`, `nim`, `status`, `nilai`, `tgl_sidang`, `lama_studi`, `file_skripsi`) VALUES
+(NULL, '24060120130050', 'belum lulus', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -432,7 +483,7 @@ ALTER TABLE `mahasiswa`
 --
 ALTER TABLE `pkl`
   ADD PRIMARY KEY (`id_pkl`),
-  ADD KEY `fk_nim_mhs` (`nim`);
+  ADD KEY `fk_nim_pkl` (`nim`);
 
 --
 -- Indexes for table `provinsi`
@@ -445,7 +496,7 @@ ALTER TABLE `provinsi`
 --
 ALTER TABLE `skripsi`
   ADD PRIMARY KEY (`id_skripsi`),
-  ADD KEY `fk_nim_mhsw` (`nim`);
+  ADD KEY `fk_nim_skrp` (`nim`);
 
 --
 -- Indexes for table `user`
@@ -461,25 +512,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `irs`
 --
 ALTER TABLE `irs`
-  MODIFY `id_irs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_irs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `khs`
 --
 ALTER TABLE `khs`
-  MODIFY `id_khs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_khs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `pkl`
 --
 ALTER TABLE `pkl`
-  MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `skripsi`
 --
 ALTER TABLE `skripsi`
-  MODIFY `id_skripsi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_skripsi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
@@ -502,6 +553,18 @@ ALTER TABLE `kabupaten`
 --
 ALTER TABLE `khs`
   ADD CONSTRAINT `fk_nimkhs` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`);
+
+--
+-- Constraints for table `pkl`
+--
+ALTER TABLE `pkl`
+  ADD CONSTRAINT `fk_nim_pkl` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`);
+
+--
+-- Constraints for table `skripsi`
+--
+ALTER TABLE `skripsi`
+  ADD CONSTRAINT `fk_nim_skrp` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
