@@ -71,7 +71,7 @@
    <?
    
    ?>
-   <div class="row">
+   <div class="ms-1">
    <div class="col-4 mt-5 ">
 
       <form action="" method="GET">
@@ -86,7 +86,9 @@
     </div>
    
    <!-- TABEL DATA -->
+   <div class="container">
 
+   
     <table class="table table-hover text-center table-bordered mt-4">
     <thead>
       <tr>
@@ -140,7 +142,7 @@
         ?>
         </tbody>
         </table>
-
+        </div>
 
    <!-- TABEL DATA END -->
     <!-- Selesai Cari -->
