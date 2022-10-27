@@ -6,11 +6,11 @@ $id=$_GET['id'];
 //'max(khs.smt) dan group by nim' untuk mengambil smt tertinggi dari nim yang sama
 //'smt in (SELECT max(smt) FROM khs group by smt)' untuk mengambil apasaja data smt pada tabel khs, digunakan group by karena akan diambil max dari data smt yang duplikat
 //'where smt in ()' supaya smt yang diambil hanya menggunakan smt yang sudah dilakukan pada query internal
-$query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, max(khs.smt) as smt, khs.status FROM mahasiswa,khs where mahasiswa.nim=khs.nim AND smt in (SELECT max(smt) FROM khs group by smt) GROUP by nim  order by smt desc LIMIT $id;";
+$query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, max(khs.smt) as smt, khs.status, khs.ip_kumulatif as ipk FROM mahasiswa,khs where mahasiswa.nim=khs.nim AND smt in (SELECT max(smt) FROM khs group by smt) GROUP by nim  order by smt desc LIMIT $id;";
 #SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, max(khs.smt) as smt, khs.status FROM mahasiswa,khs where mahasiswa.nim=khs.nim  GROUP by nim  order by smt desc 
 //default
 $query2 =
-    "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, max(khs.smt) as smt, khs.status FROM mahasiswa,khs where mahasiswa.nim=khs.nim AND smt in (SELECT max(smt) FROM khs group by smt) GROUP by nim order by smt desc";
+    "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, max(khs.smt) as smt, khs.status , khs.ip_kumulatif as ipk FROM mahasiswa,khs where mahasiswa.nim=khs.nim AND smt in (SELECT max(smt) FROM khs group by smt) GROUP by nim order by smt desc";
 
 // Search GIMANA YA CARA MASUKINNYA ANJIR
 if(isset($_GET["search"])){
@@ -53,6 +53,7 @@ echo '
     <th scope="col">Email</th>
     <th scope="col">Semester</th>
     <th scope="col">Status</th>
+    <th scope="col">IP Kumulatif</th>
     <th scope="col">Action</th>
   </tr>
 </thead>';
@@ -74,6 +75,7 @@ while ($row = $result->fetch_object()) {
     echo "<td>" . $row->email . "</td>";
     echo "<td>" . $row->smt . "</td>";
     echo "<td>" . $row->status . "</td>";
+    echo "<td>" . $row->ipk . "</td>";
     echo '<td><a class="btn btn-warning btn-sm" href="edit_srs9.php?id=' .$row->nim .'">Edit</a>&nbsp;&nbsp;
             </td>';
     echo "</tr>";
