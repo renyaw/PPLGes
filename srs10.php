@@ -42,6 +42,11 @@
           <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
           </div>";
         }
+        if($_GET['pesan']=="suksesupload"){
+          echo "<div class='alert alert-success text-center alert-dismissible fade show' role='alert'>IRS Berhasil Diupload
+          <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+          </div>";
+        }
       }
     ?>
       <div class="row mt-1 pe-3">
@@ -102,9 +107,18 @@
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #52ff63 0%, #ffffff 55%)">
                   <p class="fw-bold">Semester</p>
                   <?php
-                  $query3 = $db->query("SELECT smt FROM khs INNER JOIN mahasiswa ON mahasiswa.nim=khs.nim where mahasiswa.nim = '$noinduk'");
-                  $data3 = mysqli_fetch_assoc($query3);
-                  echo $data3['smt'];
+                  //$query3 = $db->query("SELECT smt FROM khs INNER JOIN mahasiswa ON mahasiswa.nim=khs.nim where mahasiswa.nim = '$noinduk'");
+                  $query3=$db->query("SELECT sks_kumulatif as sksk,smt from khs where sks_kumulatif in(select max(sks_kumulatif) from khs WHERE nim=$noinduk group by nim) and nim=$noinduk");
+                  $data3=mysqli_fetch_assoc($query3);
+                  if(empty($data3['smt'])){
+                    echo '1';
+                  }
+                  else{
+                    echo $data3['smt'];
+                  }
+                  
+                  // $data3 = mysqli_fetch_assoc($query3);
+                  // echo $data3['smt'];
                   ?>
                 </div>
               </div>
@@ -116,9 +130,14 @@
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #6473ff 0%, #ffffff 55%)">
                   <p class="fw-bold">SKSk</p>
                   <?php
-                  $query4=$db->query("SELECT sks_kumulatif as sksk,smt from khs where sks_kumulatif in(select max(sks_kumulatif) from khs WHERE nim=$noinduk group by nim) and nim=$noinduk");
-                  $data3=mysqli_fetch_assoc($query4);
-                  echo $data3['sksk'];
+                  // $query4=$db->query("SELECT sks_kumulatif as sksk,smt from khs where sks_kumulatif in(select max(sks_kumulatif) from khs WHERE nim=$noinduk group by nim) and nim=$noinduk");
+                  // $data3=mysqli_fetch_assoc($query4);
+                  if(empty($data3['sksk'])){
+                    echo '0';
+                  }
+                  else{
+                    echo $data3['sksk'];
+                  }
                   ?>
                 </div>
               </div>
