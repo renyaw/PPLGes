@@ -18,8 +18,8 @@
     require_once('db_login.php');
     ?>
     <div class="container">
-      <h3 class="mt-3">Rekap Data PKL</h3>
-      <hr />
+      <h3 class="mt-3 fw-bold">Rekap Data PKL</h3>
+      <div name="garishr" class="row border border-dark my-3 mx-1"></div>
       <div class="d-grid gap-2 mt-5 d-md-block">
         <div class="container bg-light border py-2">
         <button class="btn btn-outline-secondary" type="button" onclick="showPKL('x');showPKLbelum('x');showHeader('x');">Semua</button>
@@ -32,7 +32,7 @@
         </div>
       <div class="card mt-3 bg-light rounded-0">
         <div class="text-center mt-4">
-          <h2 id="detail_header">Keseluruhan</h2>
+          <h2  class="fw-bold"id="detail_header">Keseluruhan</h2>
         </div>
         <div class="row">
           <div class="col-md-4 mx-auto mt-5">
@@ -66,6 +66,9 @@
         <div class="container mt-5 mb-5">
           <div class="col d-flex justify-content-center">
             <a href="srs14_blm.php"><button type="button" class="btn btn-outline-primary mx-auto">Lihat Detail</button> </a>
+          </div>
+          <div class="col d-flex justify-content-center pt-2">
+            <a href="srs12.php"><button type="button" class="btn btn-warning mx-auto">Kembali</button> </a>
           </div>
         </div>
       </div>

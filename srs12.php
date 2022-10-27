@@ -13,6 +13,11 @@
     <?php
     session_start();
     require_once('db_login.php');
+    $query = $db->query('SELECT count(*) as jmldsn from dosen');
+    $jmldsn=mysqli_fetch_assoc($query);
+
+    $query2 = $db->query('SELECT count(*) as jmlmhs from mahasiswa');
+    $jmlmhs=mysqli_fetch_assoc($query2);
     ?>
     <div class="container">
       <h3>Dashboard Departemen</h3>
@@ -25,7 +30,7 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Jumlah Dosen</h5>
-                <p class="card-text">120</p>
+                <p class="card-text"><?php echo $jmldsn['jmldsn']?></p>
               </div>
             </div>
           </div>
@@ -33,7 +38,7 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Jumlah Mahasiswa</h5>
-                <p class="card-text">1500</p>
+                <p class="card-text"><?php echo $jmlmhs['jmlmhs']?></p>
               </div>
             </div>
           </div>

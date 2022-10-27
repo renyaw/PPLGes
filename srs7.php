@@ -49,11 +49,8 @@
         <div class="col-6 mx-auto mb-5">
           <div class="">
             <label for="doswal" class="form-label">Fakultas</label>
-            <select class="form-select" aria-label="Default select example">
-              <option selected disabled>-- Pilih Fakultas --</option>
-              <option value="1">Sains dan Matematika</option>
-              <option value="2">Kesehatan Masyarakat</option>
-              <option value="3">Perikanan</option>
+            <select class="form-select" aria-readonly="" aria-label="Default select example">
+              <option selected disabled>Fakultas Sains dan Matematika</option>
             </select>
           </div>
         </div>
@@ -76,11 +73,8 @@
         <div class="col-6 mx-auto">
           <div class="">
             <label for="doswal" class="form-label">Program Studi</label>
-            <select class="form-select" aria-label="Default select example">
-              <option selected disabled>-- Pilih Program Studi --</option>
-              <option value="1">Informatika</option>
-              <option value="2">Matematika</option>
-              <option value="3">Biologi</option>
+            <select class="form-select" aria-readonly="" aria-label="Default select example">
+              <option selected disabled>Informatika</option>
             </select>
           </div>
         </div>
@@ -112,7 +106,8 @@
           <tr>
             <th scope="col">NIM</th>
             <th scope="col">Nama Mahasiswa</th>
-            <th scope="col">Activity</th>
+            <th scope="col">File IRS</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody class="table-group-divider text-center">
