@@ -46,6 +46,8 @@
             <th scope="col">Nama</th>
             <th scope="col">NIM</th>
             <th scope="col">Status</th>
+            <th scope="col">Angkatan</th>
+            <th scope="col">IPK</th>
           </tr>
         </thead>
         <tbody id="tabel_mhs" class="table-group-divider">
