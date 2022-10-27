@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2022 at 02:21 PM
+-- Generation Time: Oct 27, 2022 at 03:30 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -76,8 +76,7 @@ INSERT INTO `irs` (`id_irs`, `semester_aktif`, `status`, `jml_sks`, `file_sks`, 
 (8, '5', '0', '93', '', '24060120120113'),
 (9, '5', '0', '94', '', '24060120130047'),
 (10, '5', '0', '95', '', '24060120130053'),
-(11, '5', '0', '93', '', '24060120130093'),
-(12, '5', '1', '101', '', '24060120130112');
+(11, '5', '1', '100', '', '24060120130093');
 
 -- --------------------------------------------------------
 
@@ -86,20 +85,13 @@ INSERT INTO `irs` (`id_irs`, `semester_aktif`, `status`, `jml_sks`, `file_sks`, 
 --
 
 CREATE TABLE `irstemp` (
-  `id_irs` int(20) NOT NULL DEFAULT 0,
+  `id_irs` int(20) DEFAULT NULL,
   `semester_aktif` varchar(1) NOT NULL,
   `status` varchar(1) NOT NULL DEFAULT '0',
   `jml_sks` varchar(3) NOT NULL,
   `file_sks` varchar(100) NOT NULL,
   `nim` varchar(14) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `irstemp`
---
-
-INSERT INTO `irstemp` (`id_irs`, `semester_aktif`, `status`, `jml_sks`, `file_sks`, `nim`) VALUES
-(1, '5', '0', '90', '', '24060120130053');
 
 -- --------------------------------------------------------
 
@@ -169,7 +161,8 @@ INSERT INTO `khs` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semester`
 (8, '9', 'Aktif', '1', '3.4', '3.51', NULL, '159', '24060118120005'),
 (9, '9', 'Aktif', '1', '3,1', '3,24', NULL, '149', '24060118120035'),
 (10, '9', 'Cuti', '1', '3,7', '3,65', NULL, '156', '24060119120004'),
-(11, '9', 'Mangkir', '1', '2,4', '2,94', NULL, '153', '24060119120034');
+(11, '9', 'Mangkir', '1', '2,4', '2,94', NULL, '153', '24060119120034'),
+(12, '5', 'Aktif', '1', '3.9', '3.83', NULL, '102', '24060118120005');
 
 -- --------------------------------------------------------
 
@@ -178,7 +171,7 @@ INSERT INTO `khs` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semester`
 --
 
 CREATE TABLE `khstemp` (
-  `id_khs` int(20) NOT NULL DEFAULT 0,
+  `id_khs` int(20) DEFAULT 0,
   `smt` varchar(2) NOT NULL,
   `status` varchar(10) DEFAULT NULL,
   `status_konfirmasi` varchar(20) NOT NULL,
@@ -194,11 +187,11 @@ CREATE TABLE `khstemp` (
 --
 
 INSERT INTO `khstemp` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semester`, `ip_kumulatif`, `file_khs`, `sks_kumulatif`, `nim`) VALUES
-(1, '1', 'aktif', '0', '3.68', '3.68', '', '24', '24060121130049'),
-(2, '3', 'aktif', '0', '3.5', '3.90', '', '50', '24060120130152'),
-(3, '5', 'aktif', '0', '3.90', '3.90', '', '50', '24060120130050'),
-(4, '6', 'aktif', '0', '3.68', '3.90', '', '70', '24060120130059'),
-(7, '1', 'Aktif', '', '3.50', '1.75', 'Kartu UTS.pdf', '20', '24060120130053');
+(NULL, '1', 'aktif', '0', '3.68', '3.68', '', '24', '24060121130049'),
+(NULL, '3', 'aktif', '0', '3.5', '3.90', '', '50', '24060120130152'),
+(NULL, '5', 'aktif', '0', '3.90', '3.90', '', '50', '24060120130050'),
+(NULL, '6', 'aktif', '0', '3.68', '3.90', '', '70', '24060120130059'),
+(NULL, '1', 'Aktif', '', '3.50', '1.75', 'Kartu UTS.pdf', '20', '24060120130053');
 
 -- --------------------------------------------------------
 
@@ -288,7 +281,7 @@ INSERT INTO `pkl` (`id_pkl`, `nim`, `status`, `tanggal_mulai`, `nilai`, `status_
 --
 
 CREATE TABLE `pkltemp` (
-  `id_pkl` int(20) NOT NULL DEFAULT 0,
+  `id_pkl` int(20) DEFAULT NULL,
   `nim` varchar(14) NOT NULL,
   `status` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `tanggal_mulai` varchar(20) NOT NULL,
@@ -302,9 +295,9 @@ CREATE TABLE `pkltemp` (
 --
 
 INSERT INTO `pkltemp` (`id_pkl`, `nim`, `status`, `tanggal_mulai`, `nilai`, `status_konfirmasi`, `upload_pkl`) VALUES
-(1, '24060120130053', 'lulus', '25/10/2022', 'A', '1', ''),
-(2, '24060120130059', 'belum lulus', '25/10/2022', 'A', '1', ''),
-(3, '24060121130049', 'lulus', '', '', '1', '');
+(NULL, '24060120130053', 'lulus', '25/10/2022', 'A', '1', ''),
+(NULL, '24060120130059', 'belum lulus', '25/10/2022', 'A', '1', ''),
+(NULL, '24060121130049', 'lulus', '', '', '1', '');
 
 -- --------------------------------------------------------
 
@@ -348,7 +341,7 @@ CREATE TABLE `skripsi` (
 --
 
 INSERT INTO `skripsi` (`id_skripsi`, `nim`, `status`, `nilai`, `tgl_sidang`, `lama_studi`) VALUES
-(1, '24060120130050', 'belum lulus', NULL, NULL, NULL);
+(0, '24060120130050', 'belum lulus', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -357,7 +350,7 @@ INSERT INTO `skripsi` (`id_skripsi`, `nim`, `status`, `nilai`, `tgl_sidang`, `la
 --
 
 CREATE TABLE `skripsitemp` (
-  `id_skripsi` int(20) NOT NULL DEFAULT 0,
+  `id_skripsi` int(20) DEFAULT NULL,
   `nim` varchar(14) NOT NULL,
   `status` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `nilai` varchar(2) DEFAULT NULL,
@@ -370,7 +363,7 @@ CREATE TABLE `skripsitemp` (
 --
 
 INSERT INTO `skripsitemp` (`id_skripsi`, `nim`, `status`, `nilai`, `tgl_sidang`, `lama_studi`) VALUES
-(1, '24060120130050', 'belum lulus', NULL, NULL, NULL);
+(NULL, '24060120130050', 'belum lulus', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -410,7 +403,6 @@ ALTER TABLE `dosen`
 --
 ALTER TABLE `irs`
   ADD PRIMARY KEY (`id_irs`),
-  ADD UNIQUE KEY `nim_2` (`nim`),
   ADD KEY `nim` (`nim`);
 
 --
@@ -424,8 +416,7 @@ ALTER TABLE `kabupaten`
 -- Indexes for table `khs`
 --
 ALTER TABLE `khs`
-  ADD PRIMARY KEY (`id_khs`),
-  ADD UNIQUE KEY `nim` (`nim`);
+  ADD PRIMARY KEY (`id_khs`);
 
 --
 -- Indexes for table `mahasiswa`
@@ -441,7 +432,6 @@ ALTER TABLE `mahasiswa`
 --
 ALTER TABLE `pkl`
   ADD PRIMARY KEY (`id_pkl`),
-  ADD UNIQUE KEY `nim` (`nim`),
   ADD KEY `fk_nim_mhs` (`nim`);
 
 --
@@ -455,7 +445,6 @@ ALTER TABLE `provinsi`
 --
 ALTER TABLE `skripsi`
   ADD PRIMARY KEY (`id_skripsi`),
-  ADD UNIQUE KEY `nim` (`nim`),
   ADD KEY `fk_nim_mhsw` (`nim`);
 
 --
@@ -478,7 +467,7 @@ ALTER TABLE `irs`
 -- AUTO_INCREMENT for table `khs`
 --
 ALTER TABLE `khs`
-  MODIFY `id_khs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_khs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `pkl`
