@@ -18,6 +18,9 @@
     <?php
     session_start();
     require_once('db_login.php');
+    $noinduk=$_SESSION['noinduk'];
+    $query2 = $db->query("SELECT fotoprofile FROM mahasiswa where nim ='$noinduk'");
+    $data2 = mysqli_fetch_assoc($query2);
     ?>
     <include src="navbar.php"></include>
     <div class="container mt-4">
@@ -28,9 +31,12 @@
         <hr />
         <div class="row justify-content-between">
           <div class="col-3">
-            <div class="card bg-transparent border-0 mx-auto">
-              <img src="img/bebekbulet.png" class="img-fluid" />
+            <div class="row align-self-center">
+              <div class="card col bg-transparent border-0 mx-auto">
+                <img src="<?php echo "fotoprofile/".$data2['fotoprofile'];  ?>" style="border-radius:5%;" class="img-fluid" />
+              </div>
             </div>
+
             <div class="card text-center mt-3 mx-auto bg-success text-white" style="width: 14vh; max-width: 100px">
               Aktif
             </div>

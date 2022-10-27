@@ -68,7 +68,8 @@
     ?>
     <form method="POST" onsubmit="" name="form" enctype="multipart/form-data">
       <div class="container mt-4">
-        <h2>Update Data Pribadi</h2>
+        <h2 class="fw-bold">Update Data Pribadi</h2>
+        <div name="garishr" class="row border border-dark my-3 mx-1"></div>
         <div class="alert alert-warning pt-2 pb-1 col-11" role="alert">
           <h5>Peringatan!</h5>
           <p>Lakukan update data pribadi untuk menggunakan fitur lain.</p>
@@ -156,26 +157,24 @@
                 <div class="mt-1">
                   <label for="provinsi" class="form-label fw-bold">Provinsi</label>
                   <select name="provinsi" id="provinsi" class="form-control form-control-sm " >
-                    <option value="0">-- Pilih Provinsi --</option>
-                    <?php
-                    $result1 = $db->query("select * from provinsi");
-
-                    while ($data1 = $result1->fetch_object()): ?>
-                        <option value="<?php echo $data1->kode_prov; ?>"><?php echo $data1->nama; ?></option>
-                    <?php endwhile;
-                    ?>
+                  <option value="">
+                  </option>
                   </select>
                 </div>
                 <div class="mt-1">
                   <label for="kota" class="form-label fw-bold">Kabupaten/Kota</label>
-                  <select name="kabupaten" id="kabupaten" class="form-control form-control-sm">
-                  <option value="0">-- Pilih Kabupaten/Kota --</option>
+                  <select name="kabupaten" id="" class="form-control form-control-sm">
+                  <option value="<?php echo $data[
+                      "kode_kab"
+                  ]; ?>"><?php echo $data["kode_kab"]; ?>
+                  </option>
                   </select>
                 </div>
-              </div>
+              </div>  
             </div>
-          </div>  
+          </div>
         </div>
+
       </div>
     </form> 
     

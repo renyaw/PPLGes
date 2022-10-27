@@ -42,9 +42,9 @@
 </div>
 <div class="col-md-6 text-md-right">
 <ul class="nav-links list-unstyled nav-right">
-<li><a href="https://preview.colorlib.com/theme/bft/bootstrap-footer-03/#">Home</a></li>
-<li><a href="https://preview.colorlib.com/theme/bft/bootstrap-footer-03/#">Our works</a></li>
-<li><a href="https://preview.colorlib.com/theme/bft/bootstrap-footer-03/#">About</a></li>
+<li><a href="srs10.php">Home</a></li>
+<li><a href="https://github.com/renyaw/PPLGes/graphs/contributors">Contribution</a></li>
+<li><a href="https://github.com/renyaw/PPLGes">Repository</a></li>
 <li><a href="https://preview.colorlib.com/theme/bft/bootstrap-footer-03/#">Blog</a></li>
 <li><a href="https://preview.colorlib.com/theme/bft/bootstrap-footer-03/#">Contact</a></li>
 </ul>

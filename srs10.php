@@ -48,7 +48,7 @@
         <div class="col-md-6">
           <div class="col-md border bg-light pt-4">
             <div class="row">
-              <div class="col-md-4 pt-0 ps-4 pb-4">
+              <div class="col-md-4 px-3 pb-3 pt-1 ps-4">
                 <?php
                 $noinduk = $_SESSION['noinduk'];
                 $poto = $db->query("SELECT * from mahasiswa where nim = '$noinduk'") ;
@@ -85,9 +85,14 @@
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #ffee54 0%, #ffffff 55%)">
                   <p class="fw-bold">IPK</p>
                   <?php
-                  $query5 = $db->query(("SELECT ip_kumulatif FROM khs INNER JOIN mahasiswa ON mahasiswa.nim=khs.nim where mahasiswa.nim = '$noinduk'"));
-                  $data3 = mysqli_fetch_assoc($query5);
-                  echo $data3['ip_kumulatif'];
+                  $query5=$db->query("SELECT cast(avg(ip_semester) as decimal(10,2)) as ipk  from mahasiswa,khs where mahasiswa.nim=khs.nim and mahasiswa.nim='$noinduk'");
+                  $jml= mysqli_fetch_assoc($query5);
+                  if(empty($jml['ipk'])){
+                    echo '0';
+                  }
+                  else{ 
+                    echo $jml['ipk'];
+                  }
                   ?>
                 </div>
               </div>
@@ -111,9 +116,9 @@
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #6473ff 0%, #ffffff 55%)">
                   <p class="fw-bold">SKSk</p>
                   <?php
-                  $query4 = $db->query("SELECT jml_sks FROM irs INNER JOIN mahasiswa ON mahasiswa.nim=irs.nim where mahasiswa.nim = '$noinduk'");
-                  $data3 = mysqli_fetch_assoc($query4);
-                  echo $data3['jml_sks'];
+                  $query4=$db->query("SELECT sks_kumulatif as sksk,smt from khs where sks_kumulatif in(select max(sks_kumulatif) from khs WHERE nim=$noinduk group by nim) and nim=$noinduk");
+                  $data3=mysqli_fetch_assoc($query4);
+                  echo $data3['sksk'];
                   ?>
                 </div>
               </div>
@@ -138,7 +143,7 @@
       <div class="row mt-3 pe-3">
         <div class="col-md-6">
           <div class="row">
-            <div class="col-9 ms-3">
+            <div class="col-11 ms-3">
               <div class="row border bg-light">
                 <div class="col-3">
                   <div class="card border-0 bg-transparent pt-1">
