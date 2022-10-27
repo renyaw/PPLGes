@@ -60,7 +60,7 @@
           </div>
         </div>
         <div class="mt-4 ml-4">
-          <button class="btn btn-primary" hreftype="button">Data Mahasiswa</button>
+          <button class="btn btn-primary" onclick="location.href='srs17.php'" type="button">Data Mahasiswa</button>
 
           <a href="srs13.php">
             <button class="btn btn-primary" type="button">Rekap Mahasiswa PKL</button>
