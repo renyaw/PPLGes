@@ -1,6 +1,3 @@
-<?php 
-session_start();
-require_once('db_login.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,70 +10,90 @@ require_once('db_login.php'); ?>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <include src="navbar.php"></include>
+    <?php
+      require_once('db_login.php');
+      session_start();
+      $noinduk = $_SESSION["noinduk"];
+      $query = $db->query("SELECT * from mahasiswa where nim='$noinduk'");
+      $data = mysqli_fetch_assoc($query);
+    
+      if (isset($_POST["submit"])) {
+        $ekstensi_diperbolehkan	= array('pdf');
+        $namafile = $_FILES['file']['name'];
+        $x = explode('.', $namafile);
+        $ekstensi = strtolower(end($x));
+        $ukuran	= $_FILES['file']['size'];
+        $file_tmp = $_FILES['file']['tmp_name'];
+  
+        $tanggal = test_input($_POST['tanggal']);
+
+        if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
+          if($ukuran < 1044070){			
+            move_uploaded_file($file_tmp, 'filepkl/'.$namafile);
+            $result = $db->query(
+              "INSERT INTO pkltemp values (NULL,'$noinduk','belum lulus', '$tanggal', NULL, '0', '$namafile')"
+              );
+            if($result){
+              header("location:srs5_belum.php?pesan=sukses");
+            }
+            else{
+              echo 'GAGAL MENGUPLOAD GAMBAR';
+            }
+          }
+          else{
+            echo 'UKURAN FILE TERLALU BESAR';
+          }
+        }
+        else{
+          echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
+        }
+      }
+          
+    ?>
     <div class="container">
+    <?php
+          if(isset($_GET['pesan'])){
+            //salah akun/password
+            if($_GET['pesan']=="gagal"){
+              echo "<div class='alert alert-danger text-center'>Data gagal disimpan</div>";
+            }
+            else{
+              echo "<div class='alert alert-success text-center'>Data berhasil disimpan</div>";
+
+            }
+          }
+      ?>
       <br>
       <h3>Progress PKL</h3>
       <hr>
       <div class="alert alert-warning" role="alert">Anda belum mengambil/memasukkan data PKL!</div>
       <br />
       <div class="p-3 mb-2 bg-light text-dark">
-      <form method="POST" name="form" autocomplete="on" action="srs5_ong.php">
+      <form method="POST" name="form" autocomplete="on" enctype="multipart/form-data">
         <div class="mb-3 form-group">
           <label for="nama" class="form-label">Nama</label>
-          <input type="text" class="form-control" id="nama" name="nama"/>
+          <input type="text" class="form-control" id="nama" name="nama" value="<?php echo "&nbsp;" .
+                        $data["nama"]; ?>" disabled/>
         </div>
         <div class="mb-3 form-group">
           <label for="nim" class="form-label">NIM</label>
-          <input type="text" class="form-control" id="nim" name="nim"/>
+          <input type="text" class="form-control" id="nim" name="nim" value="<?php echo "&nbsp;" .
+                        $data["nim"]; ?>" disabled/>
         </div>
         <div class="mb-3 form-group">
           <label for="tanggal" class="form-label">Tanggal</label>
           <input type="text" class="form-control" id="tanggal" placeholder="dd/mm/yyyy" name="tanggal"/>
         </div>
-        <div class="mb-3 form-group">
-          <label for="doswal" class="form-label">Dosen Wali</label>
-          <select class="form-select" id="dosen" name="dosen">
-            <option>-- Pilih Dosen Wali --</option>
-              <?php
-                $result = $db->query('select * from dosen');
-                while ($data = $result->fetch_object()):
-              ?>
-                <option value="<?php echo $data->id ?>"><?php echo $data->nama ?></option>
-              <?php 
-                endwhile 
-              ?>
-          </select>
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Upload Progress PKL</label>
+          <input class="form-control" type="file" id="formFile" name="file" />
         </div>
+        
         <br />
         
-        <?php
-        require_once('db_login.php');
-          if (isset($_POST["submit"])) {
-            $nama = test_input($_POST['nama']);
-            $nim = test_input($_POST['nim']);
-            $tanggal = test_input($_POST['tanggal']);
-            $dosen = test_input($_POST['dosen']);
-
-            $result = $db->query(
-              "insert into pkl(nim, stat, tanggal_mulai, nilai, status_konfirmasi, upload_pkl) values('$nim','belum lulus', '$tanggal', NULL, '0', NULL)"
-             );
-            if (!$result) {
-              die(
-                  "Could not the query the database: <br />" .
-                      $db->error .
-                      "<br>Query:" .
-                      $query
-              );
-          } else {
-              $db->close();
-              header("Location: srs5_ong.php");
-             
-          }
-      }
-          
-        ?>
         <div class="d-grid d-md-flex justify-content-md-end">
           <button type="submit" id="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
+          <button type="button"  class="btn btn-warning ms-2 shadow" onclick="location.href='srs10.php'">Kembali</button>
         </div>
       </form>
       </div>

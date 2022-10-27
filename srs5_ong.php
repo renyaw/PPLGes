@@ -17,13 +17,13 @@
       <div class="alert alert-success" role="alert">Anda sedang melakukan PKL. Silahkan update progress PKL secara berkala.</div>
       <br />
       <div class="p-3 mb-2 bg-light text-dark">
-        <div class="mb-3">
-          <label for="progress" class="form-label">Progress ke-</label>
-          <input type="text" class="form-control" id="progress" />
-        </div>
+        <?php 
+        session_start(); 
+        require_once('db_login.php');
+        ?>
         <div class="mb-3">
           <label for="formFile" class="form-label">Scan Berita Acara</label>
-          <input class="form-control" type="file" id="formFile" />
+          <input class="form-control" type="file" id="formFile" name="file" />
         </div>
         <br />
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">

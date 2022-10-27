@@ -38,14 +38,14 @@
     
       //untuk data lainnya
       $smtinput=test_input($_POST['semester']);
-      $sks=test_input($_POST['sks']);
+      $sks = test_input($_POST["sks"]);
 
       if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
         if($ukuran < 1044070){			
           move_uploaded_file($file_tmp, 'fileirs/'.$namafile);
-          $result = $db->query("INSERT INTO irstemp values('','$smtinput','1','$sks','$namafile','$noinduk')");
+          $result = $db->query("INSERT INTO irstemp values(NULL,'$smtinput','0','$sks','$namafile','$noinduk')");
           if($result){
-            header("location:srs4.php?pesan=sukses");
+            header("location:srs3.php?pesan=sukses");
           }
           else{
             echo 'GAGAL MENGUPLOAD GAMBAR';
@@ -62,6 +62,18 @@
     ?>
     <include src="navbar.php"></include>
     <div class="container mt-4">
+      <?php
+          if(isset($_GET['pesan'])){
+            //salah akun/password
+            if($_GET['pesan']=="gagal"){
+              echo "<div class='alert alert-danger text-center'>Data gagal disimpan</div>";
+            }
+            else{
+              echo "<div class='alert alert-success text-center'>Data berhasil disimpan</div>";
+
+            }
+          }
+        ?>
       <h2 class="fw-bold">Entry IRS</h2>
       <hr />
       <div class="card bg-light px-5 pb-5 pt-4 mt-5">
@@ -78,9 +90,9 @@
             <div class="card text-center mt-3 mx-auto bg-success text-white" style="width: 14vh; max-width: 100px">
               <?php
                 $noinduk = $_SESSION['noinduk'];
-                $query = $db->query("SELECT stat FROM khs where nim ='$noinduk'");
+                $query = $db->query("SELECT status FROM khs where nim ='$noinduk'");
                 $data = mysqli_fetch_assoc($query);
-                echo $data['stat']
+                echo $data['status']
               ?>
             </div>
           </div>
@@ -146,6 +158,12 @@
           </div>
           <div class="row mx-2">
             <input type="text" name="semester" id="semester" class="border rounded-2" style="background-color: rgb(178, 178, 178)" value="<?php if (empty($smt)){echo '1';} else{echo $smt+1;} ?>" />
+          </div>
+          <div class="row mt-4">
+            <h3 class="fw-bold">SKS Semester</h3>
+          </div>
+          <div class="row mx-2">
+            <input type="text" name="sks" id="sks" class="border rounded-2" style="background-color: rgb(178, 178, 178)" placeholder="Masukan jumlah SKS yang diambil semester ini..." />
           </div>
           <div class="row mt-4">
             <h3 class="fw-bold">Upload Scan IRS</h3>
