@@ -12,7 +12,11 @@
     <?php
     session_start();
     require_once "db_login.php";
-    ?>
+    $nim = $_SESSION['nimbaru'];
+    $query = $db->query("SELECT * from mahasiswa where nim='$nim'");
+    $data = mysqli_fetch_assoc($query);
+    ?>  
+    <include src="navbaroperator.php"></include>
     <div class="container mt-4">
     <div class="card">
       <div class="card-header fw-bold">
