@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Okt 2022 pada 20.17
+-- Waktu pembuatan: 28 Okt 2022 pada 00.34
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -102,13 +102,22 @@ INSERT INTO `irs` (`id_irs`, `semester_aktif`, `status`, `jml_sks`, `file_sks`, 
 --
 
 CREATE TABLE `irstemp` (
-  `id_irs` int(20) DEFAULT NULL,
+  `id_irs` int(20) NOT NULL,
   `semester_aktif` varchar(1) NOT NULL,
   `status` varchar(1) NOT NULL DEFAULT '0',
   `jml_sks` varchar(3) NOT NULL,
   `file_sks` varchar(100) NOT NULL,
   `nim` varchar(14) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `irstemp`
+--
+
+INSERT INTO `irstemp` (`id_irs`, `semester_aktif`, `status`, `jml_sks`, `file_sks`, `nim`) VALUES
+(1, '6', '0', '20', 'IRS_MHS.pdf', '24060118130132'),
+(2, '6', '0', '7', '', '24060120130053'),
+(3, '6', '0', '22', 'KTP Laporan.pdf', '24060120130053');
 
 -- --------------------------------------------------------
 
@@ -217,7 +226,9 @@ INSERT INTO `khstemp` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semes
 (NULL, '3', 'aktif', '0', '3.5', '3.90', '', '50', '24060120130152'),
 (NULL, '5', 'aktif', '0', '3.90', '3.90', '', '50', '24060120130050'),
 (NULL, '6', 'aktif', '0', '3.68', '3.90', '', '70', '24060120130059'),
-(NULL, '1', 'Aktif', '', '3.50', '1.75', 'Kartu UTS.pdf', '20', '24060120130053');
+(NULL, '1', 'Aktif', '', '3.50', '1.75', 'Kartu UTS.pdf', '20', '24060120130053'),
+(0, '5', 'aktif', '0', '3.95', '3.60', NULL, '90', '24060118120005'),
+(NULL, '6', 'Aktif', '', '3.1', '2.70', 'KTP Laporan.pdf', '110', '24060120130053');
 
 -- --------------------------------------------------------
 
@@ -268,6 +279,7 @@ INSERT INTO `mahasiswa` (`nim`, `nama`, `fotoprofile`, `angkatan`, `alamat`, `no
 ('24060120130053', 'Fathan Muhammad Faqih', '24060121030053.jpg', '2020', 'Komplek Tugu', '087870847121', 'fathan@gmail.com', 'SNMPTN', '2', '202', 'E1'),
 ('24060120130093', 'Raihan Atmadi', NULL, '2020', 'Jalan Apa', '085777861292', 'raihan@gmail.com', 'SBMPTN', '1', '102', 'E3'),
 ('24060120130112', 'Amanda Apriyandi', NULL, '2020', 'Jalan Yuk', '085777861222', 'amanda@gmail.com', 'SBMPTN', '2', '201', 'E2'),
+('24060120140143', 'Taskia', 'nawib.png', '2019', NULL, NULL, 'taskia@gmail.com', 'SNMPTN', '0', '000', 'E2'),
 ('24060121120003', 'Dewi Cantika', NULL, '2021', 'Jalan Besar', '081278653353', 'dewi@gmail.com', 'SNMPTN', '3', '304', 'E4'),
 ('24060121120098', 'Fajar Rahartono', NULL, '2021', 'Jalan Jalan', '081278653320', 'fajartono@gmail.com', 'SNMPTN', '2', '202', 'E1'),
 ('24060121120119', 'Bintang Paiman', NULL, '2021', 'Jalan Disana', '081278653447', 'bintang@gmail.com', 'SNMPTN', '1', '103', 'E4'),
@@ -311,7 +323,8 @@ INSERT INTO `pkl` (`id_pkl`, `nim`, `stat`, `tanggal_mulai`, `nilai`, `status_ko
 (15, '24060120120022', 'belum lulus', '27/10/2022', NULL, '1', NULL),
 (16, '24060120120113', 'belum lulus', '27/10/2022', NULL, '0', NULL),
 (17, '24060120130047', 'belum lulus', '27/10/2022', NULL, '0', NULL),
-(18, '24060120130112', 'belum lulus', '27/10/2022', NULL, '1', NULL);
+(18, '24060120130112', 'belum lulus', '27/10/2022', NULL, '1', NULL),
+(19, '24060120130053', 'lulus', '25/10/2022', 'A', '1', '');
 
 -- --------------------------------------------------------
 
@@ -320,13 +333,13 @@ INSERT INTO `pkl` (`id_pkl`, `nim`, `stat`, `tanggal_mulai`, `nilai`, `status_ko
 --
 
 CREATE TABLE `pkltemp` (
-  `id_pkl` int(20) DEFAULT NULL,
+  `id_pkl` int(20) NOT NULL,
   `nim` varchar(14) NOT NULL,
   `status` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `tanggal_mulai` varchar(20) NOT NULL,
   `nilai` varchar(2) DEFAULT NULL,
   `status_konfirmasi` varchar(20) NOT NULL,
-  `upload_pkl` longblob NOT NULL
+  `upload_pkl` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -334,9 +347,7 @@ CREATE TABLE `pkltemp` (
 --
 
 INSERT INTO `pkltemp` (`id_pkl`, `nim`, `status`, `tanggal_mulai`, `nilai`, `status_konfirmasi`, `upload_pkl`) VALUES
-(NULL, '24060120130053', 'lulus', '25/10/2022', 'A', '1', ''),
-(NULL, '24060120130059', 'belum lulus', '25/10/2022', 'A', '1', ''),
-(NULL, '24060121130049', 'lulus', '', '', '1', '');
+(2, '24060120130053', 'belum lulus', '22/01/2022', NULL, '0', 'KTP Laporan.pdf');
 
 -- --------------------------------------------------------
 
@@ -401,9 +412,10 @@ INSERT INTO `skripsi` (`id_skripsi`, `nim`, `judul`, `status`, `nilai`, `tgl_sid
 --
 
 CREATE TABLE `skripsitemp` (
-  `id_skripsi` int(20) DEFAULT NULL,
+  `id_skripsi` int(20) NOT NULL,
   `nim` varchar(14) NOT NULL,
   `status` varchar(15) NOT NULL DEFAULT 'belum lulus',
+  `Judul` varchar(100) NOT NULL,
   `nilai` varchar(2) DEFAULT NULL,
   `tgl_sidang` varchar(10) DEFAULT NULL,
   `lama_studi` varchar(10) DEFAULT NULL,
@@ -414,8 +426,8 @@ CREATE TABLE `skripsitemp` (
 -- Dumping data untuk tabel `skripsitemp`
 --
 
-INSERT INTO `skripsitemp` (`id_skripsi`, `nim`, `status`, `nilai`, `tgl_sidang`, `lama_studi`, `file_skripsi`) VALUES
-(NULL, '24060120130050', 'belum lulus', NULL, NULL, NULL, NULL);
+INSERT INTO `skripsitemp` (`id_skripsi`, `nim`, `status`, `Judul`, `nilai`, `tgl_sidang`, `lama_studi`, `file_skripsi`) VALUES
+(1, '24060120130053', 'belum lulus', 'Membeli Sebuah Bebek', NULL, NULL, NULL, 'KTP Laporan.pdf');
 
 -- --------------------------------------------------------
 
@@ -435,10 +447,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`nip_nim`, `username`, `status`, `password`) VALUES
+('0092038705', 'Dosen', '3', 'dosen123'),
 ('24060120130053', 'Fathan', '2', 'fathan123'),
-('24060120130821', 'Dosen', '3', 'dosen123'),
 ('24060120130892', 'Departemen', '4', 'depart123'),
-('24060120136721', 'Admin', '1', 'admin123');
+('24060120136721', 'Admin', '1', 'admin123'),
+('24060120140143', 'imadearya1', '2', '1234'),
+('24060120140150', 'taskiaofc', '2', '1234');
 
 --
 -- Indexes for dumped tables
@@ -456,6 +470,12 @@ ALTER TABLE `dosen`
 ALTER TABLE `irs`
   ADD PRIMARY KEY (`id_irs`),
   ADD KEY `nim` (`nim`);
+
+--
+-- Indeks untuk tabel `irstemp`
+--
+ALTER TABLE `irstemp`
+  ADD PRIMARY KEY (`id_irs`);
 
 --
 -- Indeks untuk tabel `kabupaten`
@@ -488,6 +508,12 @@ ALTER TABLE `pkl`
   ADD KEY `fk_nim_pkl` (`nim`);
 
 --
+-- Indeks untuk tabel `pkltemp`
+--
+ALTER TABLE `pkltemp`
+  ADD PRIMARY KEY (`id_pkl`);
+
+--
 -- Indeks untuk tabel `provinsi`
 --
 ALTER TABLE `provinsi`
@@ -499,6 +525,12 @@ ALTER TABLE `provinsi`
 ALTER TABLE `skripsi`
   ADD PRIMARY KEY (`id_skripsi`),
   ADD KEY `fk_nim_skrp` (`nim`);
+
+--
+-- Indeks untuk tabel `skripsitemp`
+--
+ALTER TABLE `skripsitemp`
+  ADD PRIMARY KEY (`id_skripsi`);
 
 --
 -- Indeks untuk tabel `user`
@@ -517,6 +549,12 @@ ALTER TABLE `irs`
   MODIFY `id_irs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
+-- AUTO_INCREMENT untuk tabel `irstemp`
+--
+ALTER TABLE `irstemp`
+  MODIFY `id_irs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT untuk tabel `khs`
 --
 ALTER TABLE `khs`
@@ -526,13 +564,25 @@ ALTER TABLE `khs`
 -- AUTO_INCREMENT untuk tabel `pkl`
 --
 ALTER TABLE `pkl`
-  MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT untuk tabel `pkltemp`
+--
+ALTER TABLE `pkltemp`
+  MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `skripsi`
 --
 ALTER TABLE `skripsi`
   MODIFY `id_skripsi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT untuk tabel `skripsitemp`
+--
+ALTER TABLE `skripsitemp`
+  MODIFY `id_skripsi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
