@@ -33,7 +33,7 @@
             </div>              
             <br>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <a href="srs6_belum.html"><button class="btn btn-primary" type="button">Edit Data</button></a>
+              <a href="srs6_belum.php"><button class="btn btn-primary" type="button">Edit Data</button></a>
                 <button class="btn btn-primary" type="button">Submit</button>
             </div>
         </div>
