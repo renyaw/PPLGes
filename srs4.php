@@ -36,7 +36,6 @@
       $query2= $db->query("SELECT angkatan from mahasiswa where nim ='$noinduk'");
       $data=mysqli_fetch_assoc($query2);
       while($row=$query->fetch_object()){
-        // echo '<a href="srs4.php?pesan='.$row->smt.'" style="text-decoration:none">';
         echo "<div class='card my-3' style='background-color:#BFF2E9'>";
         echo '<div class="d-grid py-2" >';
         echo '<button class="btn text-start"  style="background-color:#BFF2E9" type="button">Semester '.$row->smt;
@@ -44,18 +43,19 @@
         echo "<hr>IP Semester : ".$row->ip_semester;
         echo "<br>Jumlah SKS : ".$row->sks_kumulatif;
         echo '</button>';
-        
         echo '</div>';
         echo '</div>';
-        // echo '</a>';
-        // if(isset($_GET['pesan'])){
-        //   //salah akun/password
-        //   if($_GET['pesan']==$row->smt){
-        //     echo "<div class='alert alert-danger text-center'>Kredensial masukmu tak cocok dengan akun<br> dalam sistem kami!</div>".$row->smt;
-        //   }
-        // }
       }
       ?>
+    </div>
+    <div class="container bg-white px-5 pb-5">
+      <div class="row ">
+        <div class="col-10 ">
+        </div>
+        <div class="col-2  ps-5">
+        <button type="button" class="btn btn-primary" onclick="location.href='srs4upkhs.php'">Upload KHS</button>
+        </div>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <div class="bg-white">

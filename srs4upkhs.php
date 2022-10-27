@@ -112,23 +112,41 @@
             <hr />
             <div class="row mt-4">
               <h2 class="text-center fw-bold"><u>IPK</u></h2>
-              <p class="text-center"><?php echo $jml['ipk'];?></p>
+              <p class="text-center">
+                <?php 
+                if(empty($jml['ipk'])){
+                  echo '0';
+                }
+                else{ 
+                  echo $jml['ipk'];
+                }
+                ?>
+              </p>
             </div>
             <div class="row mt-4 mb-5">
               <h2 class="text-center fw-bold fw"><u>SKS</u></h2>
-              <p class="text-center"><?php echo $data2['sksk'] ?></p>
+              <p class="text-center">
+                <?php 
+                if(empty($data2['sksk'])){
+                  echo '0';
+                }
+                else{
+                  echo $data2['sksk'];
+                } 
+                ?>
+              </p>
             </div>
           </div>
         </div>
       </div>
-
+      
       <form method="POST" onsubmit="" name="form" enctype="multipart/form-data">
         <div class="card mt-5 p-5 bg-light">
         <div class="row">
             <h3 class="fw-bold">Semester</h3>
           </div>
           <div class="row mx-2">
-            <input type="text" name="semester" id="semester" class="border rounded-2 fw-bold" readonly style="background-color: rgb(178, 178, 178)"  value="<?php echo $data2['smt']+1?>" />
+            <input type="text" name="semester" id="semester" class="border rounded-2 fw-bold" readonly style="background-color: rgb(178, 178, 178)"  value="<?php if(empty($data2['smt'])){echo '1';} else{echo $data2['smt']+1;} ?>" />
           </div>
           <div class="row mt-4">
             <h3 class="fw-bold">IP Semester</h3>
