@@ -1,4 +1,6 @@
-<?php require_once('db_connect.php'); ?>
+<?php 
+session_start();
+require_once('db_login.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,18 +20,18 @@
       <div class="alert alert-warning" role="alert">Anda belum mengambil/memasukkan data PKL!</div>
       <br />
       <div class="p-3 mb-2 bg-light text-dark">
-      <form method="POST" autocomplete="on" action="srs5_ong.php">
+      <form method="POST" name="form" autocomplete="on" action="srs5_ong.php">
         <div class="mb-3 form-group">
           <label for="nama" class="form-label">Nama</label>
-          <input type="text" class="form-control" id="nama" />
+          <input type="text" class="form-control" id="nama" name="nama"/>
         </div>
         <div class="mb-3 form-group">
           <label for="nim" class="form-label">NIM</label>
-          <input type="text" class="form-control" id="nim" />
+          <input type="text" class="form-control" id="nim" name="nim"/>
         </div>
         <div class="mb-3 form-group">
           <label for="tanggal" class="form-label">Tanggal</label>
-          <input type="text" class="form-control" id="tanggal" placeholder="dd/mm/yyyy" />
+          <input type="text" class="form-control" id="tanggal" placeholder="dd/mm/yyyy" name="tanggal"/>
         </div>
         <div class="mb-3 form-group">
           <label for="doswal" class="form-label">Dosen Wali</label>
@@ -46,15 +48,31 @@
           </select>
         </div>
         <br />
+        
         <?php
-          if (isset($_POST['submit'])) {
+          if (isset($_POST["submit"])) {
             $nama = test_input($_POST['nama']);
             $nim = test_input($_POST['nim']);
             $tanggal = test_input($_POST['tanggal']);
             $dosen = test_input($_POST['dosen']);
 
-            $result = $db->query("INSERT INTO pkl(nim, stat, tanggal_mulai, nilai, status_konfirmasi, upload_pkl) VALUES('$nim','belum lulus', '$tanggal', NULL, '0', NULL)");
+            $result = $db->query(
+              "insert into pkl(nim, stat, tanggal_mulai, nilai, status_konfirmasi, upload_pkl) values('$nim','belum lulus', '$tanggal', NULL, '0', NULL)"
+             );
+            if (!$result) {
+              die(
+                  "Could not the query the database: <br />" .
+                      $db->error .
+                      "<br>Query:" .
+                      $query
+              );
+          } else {
+              $db->close();
+              header("Location: srs5_ong.php");
+             
           }
+      }
+          
         ?>
         <div class="d-grid d-md-flex justify-content-md-end">
           <button type="submit" id="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
