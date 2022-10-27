@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2022 at 01:20 PM
+-- Generation Time: Oct 27, 2022 at 02:21 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -41,7 +41,10 @@ CREATE TABLE `dosen` (
 --
 
 INSERT INTO `dosen` (`kode_wali`, `nip`, `nama`, `email`, `nomor_telp`, `alamat`) VALUES
-('E1', '24060120130821', 'Rohmat Subarjo', 'rohmat@gmail.com', '0812347892138', 'Jalan Kenangan');
+('E1', '0092038705', 'Rohmat Subarjo', 'rohmat@gmail.com', '0812347892138', 'Jalan Kenangan'),
+('E2', '0092038883', 'Aulia Dina', 'auliadin@gmail.com', '085666728012', 'Jalan Yuk'),
+('E3', '0092086435', 'Joyo Cahyono', 'joyo@gmail.com', '085567887034', 'Jalan Jalan'),
+('E4', '0092038992', 'Adhiarja Kresna', 'adikresna@gmail.com', '085627918276', 'Jalan Hidup');
 
 -- --------------------------------------------------------
 
@@ -63,7 +66,18 @@ CREATE TABLE `irs` (
 --
 
 INSERT INTO `irs` (`id_irs`, `semester_aktif`, `status`, `jml_sks`, `file_sks`, `nim`) VALUES
-(1, '5', '0', '90', '', '24060120130053');
+(1, '7', '1', '110', '', '24060119120004'),
+(2, '7', '1', '110', '', '24060119120034'),
+(3, '7', '1', '110', '', '24060119120112'),
+(4, '7', '1', '110', '', '24060119140098'),
+(5, '7', '1', '110', '', '24060119140108'),
+(6, '5', '0', '95', '', '24060120120022'),
+(7, '5', '0', '96', '', '24060120120045'),
+(8, '5', '0', '93', '', '24060120120113'),
+(9, '5', '0', '94', '', '24060120130047'),
+(10, '5', '0', '95', '', '24060120130053'),
+(11, '5', '0', '93', '', '24060120130093'),
+(12, '5', '1', '101', '', '24060120130112');
 
 -- --------------------------------------------------------
 
@@ -152,11 +166,10 @@ CREATE TABLE `khs` (
 --
 
 INSERT INTO `khs` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semester`, `ip_kumulatif`, `file_khs`, `sks_kumulatif`, `nim`) VALUES
-(1, '1', 'aktif', '0', '3.68', '3.68', '', '24', '24060121130049'),
-(2, '3', 'aktif', '0', '3.5', '3.90', '', '50', '24060120130152'),
-(3, '5', 'aktif', '0', '3.90', '3.90', '', '50', '24060120130050'),
-(4, '6', 'aktif', '0', '3.68', '3.90', '', '70', '24060120130059'),
-(7, '1', 'Aktif', '', '3.50', '1.75', 'Kartu UTS.pdf', '20', '24060120130053');
+(8, '9', 'Aktif', '1', '3.4', '3.51', NULL, '159', '24060118120005'),
+(9, '9', 'Aktif', '1', '3,1', '3,24', NULL, '149', '24060118120035'),
+(10, '9', 'Cuti', '1', '3,7', '3,65', NULL, '156', '24060119120004'),
+(11, '9', 'Mangkir', '1', '2,4', '2,94', NULL, '153', '24060119120034');
 
 -- --------------------------------------------------------
 
@@ -212,8 +225,36 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `fotoprofile`, `angkatan`, `alamat`, `nomor_telp`, `email`, `jalur_masuk`, `kode_prov`, `kode_kab`, `kode_wali`) VALUES
+('24060118120005', 'Akmal Mulyono', NULL, '2018', 'Jalan Bebek', '081374682115', 'akmal@gmail.com', 'SNMPTN', '4', '403', 'E1'),
+('24060118120035', 'Elvi Caharin', NULL, '2018', 'Jalan Cempaka', '081374682543', 'elvi@gmail.com', 'SNMPTN', '5', '503', 'E4'),
+('24060119120004', 'Wahyu Poernomo', NULL, '2019', 'Jalan Terang', '085777861233', 'wahyu@gmail.com', 'SNMPTN', '4', '401', 'E1'),
+('24060119120034', 'Kezia Gunawan', NULL, '2019', 'Jalan Belok', '085777860507', 'kezia@gmail.com', 'SNMPTN', '5', '501', 'E3'),
+('24060119120108', 'Andreas Saksono', NULL, '2018', 'Jalan Teman', '085777861111', 'andre@gmail.com', 'SNMPTN', '2', '201', 'E3'),
+('24060119120112', 'Nurul Hanida', NULL, '2019', 'Jalan Hidup', '085777861064', 'nurunida@gmail.com', 'SNMPTN', '2', '201', 'E2'),
+('24060119130117', 'Wulan Pratuti', NULL, '2018', 'Jalan Buyar', '085777864329', 'wulan@gmail.com', 'SBMPTN', '5', '504', 'E2'),
+('24060119130186', 'Zulfikar Sadiyah', NULL, '2018', 'Jalan Sukses', '085777864444', 'zulfi@gmail.com', 'SBMPTN', '3', '302', 'E1'),
+('24060119140005', 'Adesta Wargono', NULL, '2018', 'Jalan Teman', '085777864098', 'adesta@gmail.com', 'Mandiri', '2', '201', 'E4'),
+('24060119140098', 'Jonathan Timotus', NULL, '2019', 'Jalan Jongkok', '085777861198', 'jona@gmail.com', 'Mandiri', '3', '305', 'E2'),
+('24060119140108', 'Rafi Darmawan', NULL, '2019', 'Jalan Lurus', '085777861445', 'rafi@gmail.com', 'Mandiri', '2', '203', 'E2'),
+('24060119140197', 'Angela Soandato', NULL, '2018', 'Jalan Dalam', '085777864012', 'angela@gmail.com', 'Mandiri', '5', '501', 'E1'),
+('24060120120022', 'Kevin Ginanjar', NULL, '2020', 'Jalan Besar', '08119765398', 'keving@gmail.com', 'SNMPTN', '3', '304', 'E3'),
+('24060120120045', 'Syifa Hadiatmi', NULL, '2020', 'Jalan Terus', '08119765344', 'syifaami@gmail.com', 'SNMPTN', '2', '202', 'E1'),
+('24060120120113', 'April Yanto', NULL, '2020', 'Jalan Kemana', '08119765456', 'yanto@gmail.com', 'SNMPTN', '3', '301', 'E3'),
+('24060120130047', 'Fellia Gessangie', NULL, '2020', 'Jalan Inajadulu', '085777861394', 'fellia@gmail.com', 'SBMPTN', '1', '101', 'E2'),
 ('24060120130053', 'Fathan Muhammad Faqih', '24060121030053.jpg', '2020', 'Komplek Tugu', '087870847121', 'fathan@gmail.com', 'SNMPTN', '2', '202', 'E1'),
-('24060121130049', 'Abdul Mustajir', NULL, '2021', 'Komplek tugu Timur', '08788824691', 'mustajir@gmail.com', 'SBMPTN', '1', '101', 'E1');
+('24060120130093', 'Raihan Atmadi', NULL, '2020', 'Jalan Apa', '085777861292', 'raihan@gmail.com', 'SBMPTN', '1', '102', 'E3'),
+('24060120130112', 'Amanda Apriyandi', NULL, '2020', 'Jalan Yuk', '085777861222', 'amanda@gmail.com', 'SBMPTN', '2', '201', 'E2'),
+('24060121120003', 'Dewi Cantika', NULL, '2021', 'Jalan Besar', '081278653353', 'dewi@gmail.com', 'SNMPTN', '3', '304', 'E4'),
+('24060121120098', 'Fajar Rahartono', NULL, '2021', 'Jalan Jalan', '081278653320', 'fajartono@gmail.com', 'SNMPTN', '2', '202', 'E1'),
+('24060121120119', 'Bintang Paiman', NULL, '2021', 'Jalan Disana', '081278653447', 'bintang@gmail.com', 'SNMPTN', '1', '103', 'E4'),
+('24060121130024', 'Annisa Hadiati', NULL, '2021', 'Jalan Kemana', '08119765455', 'annisa@gmail.com', 'SNMPTN', '3', '301', 'E2'),
+('24060121130049', 'Abdul Mustajir', NULL, '2021', 'Komplek tugu Timur', '08788824691', 'mustajir@gmail.com', 'SBMPTN', '1', '101', 'E1'),
+('24060121130122', 'Bayu Hadianto', NULL, '2021', 'Jalan Gas', '081278652035', 'bayu@gmail.com', 'SBMPTN', '1', '102', 'E4'),
+('24060122120102', 'Syahira Bagya', NULL, '2022', 'Jalan Kecil', '085763456433', 'hira@gmail.com', 'SNMPTN', '3', '301', 'E4'),
+('24060122120119', 'Rani Purnami', NULL, '2022', 'Jalan Ini', '085763456735', 'rani@gmail.com', 'SNMPTN', '1', '101', 'E2'),
+('24060122130002', 'Zaidan Wadifah', NULL, '2022', 'Jalan Jalan', '085763451234', 'zaidan@gmail.com', 'SBMPTN', '2', '202', 'E1'),
+('24060122130100', 'Griya Ida', NULL, '2022', 'Jalan Tirtasari', '085763456000', 'ida@gmail.com', 'SBMPTN', '2', '203', 'E1'),
+('24060122130119', 'Bagas Putra', NULL, '2022', 'Jalan Disana', '085763456443', 'putrab@gmail.com', 'SBMPTN', '4', '401', 'E1');
 
 -- --------------------------------------------------------
 
@@ -384,8 +425,7 @@ ALTER TABLE `kabupaten`
 --
 ALTER TABLE `khs`
   ADD PRIMARY KEY (`id_khs`),
-  ADD UNIQUE KEY `nim` (`nim`),
-  ADD KEY `fk_nim` (`nim`);
+  ADD UNIQUE KEY `nim` (`nim`);
 
 --
 -- Indexes for table `mahasiswa`
@@ -432,13 +472,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `irs`
 --
 ALTER TABLE `irs`
-  MODIFY `id_irs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_irs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `khs`
 --
 ALTER TABLE `khs`
-  MODIFY `id_khs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_khs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `pkl`
@@ -467,6 +507,12 @@ ALTER TABLE `irs`
 --
 ALTER TABLE `kabupaten`
   ADD CONSTRAINT `kode_prov` FOREIGN KEY (`kode_prov`) REFERENCES `provinsi` (`kode_prov`);
+
+--
+-- Constraints for table `khs`
+--
+ALTER TABLE `khs`
+  ADD CONSTRAINT `fk_nimkhs` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
