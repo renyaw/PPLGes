@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2022 at 12:33 PM
+-- Generation Time: Oct 27, 2022 at 12:39 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -173,7 +173,7 @@ INSERT INTO `mahasiswa` (`nim`, `nama`, `fotoprofile`, `angkatan`, `alamat`, `no
 CREATE TABLE `pkl` (
   `id_pkl` int(20) NOT NULL,
   `nim` varchar(14) NOT NULL,
-  `status` varchar(15) NOT NULL DEFAULT '0',
+  `status` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `tanggal_mulai` varchar(20) NOT NULL,
   `nilai` varchar(2) DEFAULT NULL,
   `status_konfirmasi` varchar(20) NOT NULL,
@@ -220,7 +220,7 @@ INSERT INTO `provinsi` (`kode_prov`, `nama`) VALUES
 CREATE TABLE `skripsi` (
   `id_skripsi` int(20) NOT NULL,
   `nim` varchar(14) NOT NULL,
-  `status` varchar(1) NOT NULL DEFAULT '0',
+  `status` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `nilai` varchar(2) DEFAULT NULL,
   `tgl_sidang` varchar(10) DEFAULT NULL,
   `lama_studi` varchar(10) DEFAULT NULL
@@ -231,7 +231,7 @@ CREATE TABLE `skripsi` (
 --
 
 INSERT INTO `skripsi` (`id_skripsi`, `nim`, `status`, `nilai`, `tgl_sidang`, `lama_studi`) VALUES
-(1, '24060120130050', '0', NULL, NULL, NULL);
+(1, '24060120130050', 'belum lulus', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
