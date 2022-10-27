@@ -54,21 +54,23 @@
                 $poto = $db->query("SELECT * from mahasiswa where nim = '$noinduk'") ;
                 $d= mysqli_fetch_assoc($poto);
                 ?>
-                <img  src='<?php echo "Fotoprofile/".$d["fotoprofile"]; ?>'style='width: 100%;border-radius:5%' />
+                <img  src='<?php echo "fotoprofile/".$d["fotoprofile"]; ?>'style='width: 100%;border-radius:5%' />
               </div>
               <div class="col-md-8">
                 <?php
                   $noinduk = $_SESSION['noinduk'];
                   $query = $db->query("SELECT * FROM mahasiswa where nim ='$noinduk'");
-                  $query2= $db->query("SELECT khs.status FROM khs inner join mahasiswa where mahasiswa.nim=khs.nim");
+                  $query2= $db->query("SELECT khs.status FROM khs inner join mahasiswa ON mahasiswa.nim=khs.nim where mahasiswa.nim = '$noinduk'");
                   $data=mysqli_fetch_assoc($query);
                   $data2=mysqli_fetch_assoc($query2);
-
+            
                   echo "<p class='fw-bold'>". $data['nama']."</p>";
                   echo "<p>". $data['nim'] ."</p>";
                   echo "<p>S1 Informatika</p>";
-                  echo "<p>Fakultas Sains dan Matematika</p>";                
-                  echo "<p class='fw-bold' style='color: #52ff63'>".$data2['status']."</p>";
+                  echo "<p>Fakultas Sains dan Matematika</p>";
+                  if($data2['status']='A'){
+                    echo "<p class='fw-bold' style='color: #52ff63'>Aktif</p>";
+                  }
                 ?>
 
               </div>
@@ -83,7 +85,7 @@
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #ffee54 0%, #ffffff 55%)">
                   <p class="fw-bold">IPK</p>
                   <?php
-                  $query5 = $db->query(("SELECT ip_kumulatif FROM khs INNER JOIN mahasiswa where mahasiswa.nim=khs.nim"));
+                  $query5 = $db->query(("SELECT ip_kumulatif FROM khs INNER JOIN mahasiswa ON mahasiswa.nim=khs.nim where mahasiswa.nim = '$noinduk'"));
                   $data3 = mysqli_fetch_assoc($query5);
                   echo $data3['ip_kumulatif'];
                   ?>
@@ -95,7 +97,7 @@
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #52ff63 0%, #ffffff 55%)">
                   <p class="fw-bold">Semester</p>
                   <?php
-                  $query3 = $db->query("SELECT smt FROM khs INNER JOIN mahasiswa where mahasiswa.nim=khs.nim");
+                  $query3 = $db->query("SELECT smt FROM khs INNER JOIN mahasiswa ON mahasiswa.nim=khs.nim where mahasiswa.nim = '$noinduk'");
                   $data3 = mysqli_fetch_assoc($query3);
                   echo $data3['smt'];
                   ?>
@@ -109,7 +111,7 @@
                 <div class="card-body text-center" style="background: linear-gradient(180deg, #6473ff 0%, #ffffff 55%)">
                   <p class="fw-bold">SKSk</p>
                   <?php
-                  $query4 = $db->query("SELECT jml_sks FROM irs INNER JOIN mahasiswa where mahasiswa.nim=irs.nim");
+                  $query4 = $db->query("SELECT jml_sks FROM irs INNER JOIN mahasiswa ON mahasiswa.nim=irs.nim where mahasiswa.nim = '$noinduk'");
                   $data3 = mysqli_fetch_assoc($query4);
                   echo $data3['jml_sks'];
                   ?>
@@ -122,7 +124,7 @@
                   <p class="fw-bold">Dosen Wali</p>
                   <?php
                   $kodewali = $data['kode_wali'];
-                  $query2 = $db->query("SELECT dosen.nama from dosen INNER JOIN mahasiswa where mahasiswa.kode_wali = dosen.kode_wali");
+                  $query2 = $db->query("SELECT dosen.nama from dosen INNER JOIN mahasiswa ON mahasiswa.kode_wali=dosen.kode_wali where mahasiswa.nim = '$noinduk'");
                   $data2 = mysqli_fetch_assoc($query2);
                   echo $data2['nama'];
                   ?>
