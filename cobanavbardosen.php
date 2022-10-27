@@ -30,19 +30,16 @@ require_once('db_login.php');
             <a class="nav-link active" aria-current="page" href="srs10.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="srs2edit.php">Verifikasi </a>
+            <a class="nav-link" href="srs7.php">Verifikasi IRS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="srs3.php">Entry IRS</a>
+            <a class="nav-link" href="srs7khs.php">Verifikasi KHS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="srs4.php">KHS</a>
+            <a class="nav-link" href="srs7pkl.php">Verifikasi PKL</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="srs5_belum.php">Progress PKL</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="srs6_belum.php">Progress Skripsi</a>
+            <a class="nav-link" href="srs7skripsi.php">Verifikasi Skripsi</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="logout.php">Logout</a>
@@ -55,10 +52,10 @@ require_once('db_login.php');
             </ul>
           </li> -->
         </ul>
-        <form class="d-flex mt-3" role="search">
+        <!-- <form class="d-flex mt-3" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
           <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        </form> -->
       </div>
     </div>
   </div>
