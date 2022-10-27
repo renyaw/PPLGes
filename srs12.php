@@ -24,7 +24,7 @@
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Jumlah Pegawai</h5>
+                <h5 class="card-title">Jumlah Dosen</h5>
                 <p class="card-text">120</p>
               </div>
             </div>
@@ -40,7 +40,7 @@
           <div class="col-sm-6 mt-3">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Jumlah Pegawai Aktif</h5>
+                <h5 class="card-title">Jumlah Mahasiswa Aktif</h5>
                 <p class="card-text">110</p>
               </div>
             </div>
@@ -48,24 +48,8 @@
           <div class="col-sm-6 mt-3">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Jumlah Mahasiswa Aktif</h5>
-                <p class="card-text">1300</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 mt-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Jumlah Pegawai Cutif</h5>
-                <p class="card-text">10</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 mt-3">
-            <div class="card">
-              <div class="card-body">
                 <h5 class="card-title">Jumlah Mahasiswa Non Aktif</h5>
-                <p class="card-text">200</p>
+                <p class="card-text">1300</p>
               </div>
             </div>
           </div>
