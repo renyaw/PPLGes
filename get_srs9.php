@@ -12,27 +12,6 @@ $query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, max(khs.smt) as
 $query2 =
     "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, max(khs.smt) as smt, khs.status , khs.ip_kumulatif as ipk FROM mahasiswa,khs where mahasiswa.nim=khs.nim AND smt in (SELECT max(smt) FROM khs group by smt) GROUP by nim order by smt desc";
 
-// Search GIMANA YA CARA MASUKINNYA ANJIR
-if(isset($_GET["search"])){
-  // Pak dika
-  
-
-  function cari($keyword){
-    $query = 
-    $query3 = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs 
-      WHERE
-    mahasiswa.nim LIKE '%$keyword%' OR
-    mahasiswa.nama LIKE '%$keyword%' OR
-    mahasiswa.email LIKE '%$keyword%'
-    ";
-    return query($query);
-  }
-  
-  $query2 = cari($_GET["keyword"]);
-  // End pak dika
-  
-}
-// // End Search
 
 //sort
 $sortR = $db->query($query);
