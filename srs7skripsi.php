@@ -39,7 +39,7 @@
 
     <div class="container">
       <?php
-        session_start();
+      session_start();
         if(isset($_GET['pesan'])){
           //salah akun/password
           if($_GET['pesan']=="gagal"){
@@ -58,7 +58,7 @@
           }
         }
         ?>
-      <h2 class="mb-5 fw-bold">Verifikasi IRS Mahasiswa</h2>
+      <h2 class="mb-5 fw-bold">Verifikasi Skripsi Mahasiswa</h2>
       <div class="row">
         <div class="col-2 mt-2">
           <div class="card border border-5">
@@ -87,7 +87,7 @@
         <div class="col-2 mt-2">
           <div class="card">
             <div class="card-body text-center" style="background-color: #52ff63">
-              <a href="srs7pkl.php"><button style="background-color: #52ff63; border: none; outline: none">PKL</button></a>
+              <a href="srs7skripsi.php"><button style="background-color: #52ff63; border: none; outline: none">PKL</button></a>
             </div>
           </div>
         </div>
@@ -130,8 +130,7 @@
           <tr>
             <th scope="col">NIM</th>
             <th scope="col">Nama Mahasiswa</th>
-            <th scope="col">smt</th>
-            <th scope="col">File IRS</th>
+            <th scope="col">Angkatan</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -139,17 +138,15 @@
           <?php
           require_once('db_login.php');
           $kodewali= $_SESSION['kodewali'];
-          $query=$db->query("SELECT mahasiswa.nim, mahasiswa.nama, file_sks, semester_aktif as smt from mahasiswa,irstemp,dosen where mahasiswa.nim=irstemp.nim and mahasiswa.kode_wali='$kodewali'" );
+          $query=$db->query("SELECT mahasiswa.nim, mahasiswa.nama, angkatan from mahasiswa,skripsitemp,dosen where mahasiswa.nim=skripsitemp.nim and mahasiswa.kode_wali='$kodewali'");
           while($row=$query->fetch_object()){
             echo '<tr>';
             echo '<td>'.$row->nama.'</td>';
             echo '<td>'.$row->nim.'</td>';
-            echo '<td>'.$row->smt.'</td>';
-            echo '<td>'.$row->file_sks.'</td>';
-            echo '<td><a class="btn btn-success btn-sm" href="srs7konfirmasiirs.php?id='.$row->nim.'">Terima</a>&nbsp;&nbsp;
-            <a class="btn btn-danger btn-sm" href="srs7tolakirs.php?id='.$row->nim.'">Tolak</a>
+            echo '<td>'.$row->angkatan.'</td>';
+            echo '<td><a class="btn btn-success btn-sm" href="srs7skripsikonfirmasi.php?id='.$row->nim.'&action=terima'.'">Terima</a>&nbsp;&nbsp;
+            <a class="btn btn-danger btn-sm" href="srs7skripsikonfirmasi.php?id='.$row->nim.'&action=tolak'.'">Tolak</a>
             </td>';
-            echo '</tr>';
           }
           ?>
         </tbody>

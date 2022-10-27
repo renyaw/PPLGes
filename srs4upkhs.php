@@ -48,7 +48,7 @@
       if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
         if($ukuran < 1044070){			
           move_uploaded_file($file_tmp, 'filekhs/'.$namafile);
-          $result = $db->query("INSERT INTO khs values('','$smt','Aktif','','$ips','$ipk','$namafile','$sksk','$noinduk')");
+          $result = $db->query("INSERT INTO khstemp values('','$smt','Aktif','','$ips','$ipk','$namafile','$sksk','$noinduk')");
           if($result){
             header("location:srs4.php?pesan=sukses");
           }

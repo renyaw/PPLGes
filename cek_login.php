@@ -26,12 +26,14 @@ if($cek>0){
   else if($data['status']==2){
     //mahasiswa
     $query1= $db->query("SELECT * FROM mahasiswa WHERE nim ='$noinduk'");
-
     
     header("location:srs10.php?pesan=sukses");
   }
   else if($data['status']==3){
     //dosen
+    $query2=$db->query("SELECT kode_wali from dosen where nip='$noinduk'");
+    $data2=mysqli_fetch_assoc($query2);
+    $_SESSION['kodewali']=$data2['kode_wali'];
     $_SESSION['status']= $data['status'];
     header("location:srs11.php");
   }

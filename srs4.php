@@ -54,6 +54,7 @@
         </div>
         <div class="col-2  ps-5">
         <button type="button" class="btn btn-primary" onclick="location.href='srs4upkhs.php'">Upload KHS</button>
+        <button type="button" class="btn btn-warning" onclick="location.href='srs10.php'">Kembali</button>
         </div>
       </div>
     </div>
