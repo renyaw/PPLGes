@@ -6,7 +6,7 @@ $id = $_GET["id"];
 //cek are user click on submit
 if (!isset($_POST["submit"])) {
     //execute the query
-    $query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status FROM mahasiswa,khs WHERE mahasiswa.nim=khs.nim  AND mahasiswa.nim=".$id;
+    $query = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.email, khs.smt, khs.status, khs.ip_semester, khs.ip_kumulatif FROM mahasiswa,khs WHERE mahasiswa.nim=khs.nim  AND mahasiswa.nim=".$id;
     $result = $db->query($query);
     if (!$result) {
         die("Could not the query database: <br />" . $db->error);
@@ -17,6 +17,7 @@ if (!isset($_POST["submit"])) {
             $email = $row->email;
             $smt = $row->smt;
             $status = $row->status;
+            $ip_kumulatif = $row->ip_kumulatif;
         }
     }
 } else {
@@ -26,6 +27,7 @@ if (!isset($_POST["submit"])) {
     $email = test_input($_POST["email"]);
     $smt = test_input($_POST["smt"]);
     $status = test_input($_POST["status"]);
+    $ip_kumulatif = test_input($_POST["ipk"]);
     if ($status == "") {
         $error_status = "Name is required";
         $valid = false;
@@ -34,7 +36,7 @@ if (!isset($_POST["submit"])) {
     //Update data ke database
     if($valid){
         $query .= "UPDATE mahasiswa SET nama='".$nama."', email='".$email."' WHERE nim='".$id."';";
-        $query .= "UPDATE khs SET smt='".$smt."', status='".$status."' WHERE nim='".$id."' ";
+        $query .= "UPDATE khs SET smt='".$smt."', status='".$status."', ip_kumulatif='".$ip_kumulatif."' WHERE nim='".$id."' ";
            //execute the query
         $result = $db->multi_query($query);
         if (!$result) {
@@ -94,8 +96,11 @@ if (!isset($_POST["submit"])) {
                             <option value="Cuti" <?php if (isset($status) && $status=="Cuti") echo 'selected="true"';?>>Cuti</option>
                             <option value="Mangkir" <?php if (isset($status) && $status=="Mangkir") echo 'selected="true"';?>>Mangkir</option>
                         </select>
-                        
                     </div>
+                </div>
+                <div class="mb-3">
+                    <label for="ipk" class="form-label">IPK Mahasiswa</label>
+                    <input type="text" class="form-control border-success" id="ipk" name="ipk" value="<?php echo $ip_kumulatif; ?>">
                 </div>
 
                 <button type="submit" class="btn btn-outline-success mt-3" name="submit" value="submit">Submit</button>

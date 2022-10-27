@@ -29,7 +29,27 @@
         </div>
       </div>
     </nav>
+
     <div class="container">
+      <?php
+        if(isset($_GET['pesan'])){
+          //salah akun/password
+          if($_GET['pesan']=="gagal"){
+            echo "<div>Gagal dikonfirmasi</div>";
+          }
+          else if($_GET['pesan']=="sukses"){
+            echo "<div class='alert alert-success text-center alert-dismissible fade show'>Berhasil Dikonfirmasi
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+          }
+          else if($_GET['pesan']=="suksestolak"){
+            echo "<div class='alert alert-success text-center alert-dismissible fade show'>Berhasil Ditolak
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+          }
+          else if($_GET['pesan']=="gagaltolak"){
+            echo "<div>Gagal ditolak</div>";
+          }
+        }
+        ?>
       <h2 class="mb-5">Verifikasi IRS Mahasiswa</h2>
       <div class="row">
         <div class="col-2 mt-2">
@@ -109,14 +129,14 @@
         <tbody class="table-group-divider text-center">
           <?php
           require_once('db_login.php');
-          $query=$db->query("SELECT mahasiswa.nim, nama, file_sks from mahasiswa,irs where status='0'");
+          $query=$db->query("SELECT mahasiswa.nim, nama, file_sks from mahasiswa,irstemp");
           while($row=$query->fetch_object()){
             echo '<tr>';
             echo '<td>'.$row->nama.'</td>';
             echo '<td>'.$row->nim.'</td>';
             echo '<td>'.$row->file_sks.'</td>';
-            echo '<td><a class="btn btn-success btn-sm" href="konfirmasiirs.php?id='.$row->nim.'">Terima</a>&nbsp;&nbsp;
-            <a class="btn btn-danger btn-sm" href="tolakirs.php?id='.$row->nim.'">Tolak</a>
+            echo '<td><a class="btn btn-success btn-sm" href="srs7konfirmasiirs.php?id='.$row->nim.'">Terima</a>&nbsp;&nbsp;
+            <a class="btn btn-danger btn-sm" href="srs7tolakirs.php?id='.$row->nim.'">Tolak</a>
             </td>';
             echo '</tr>';
           }
