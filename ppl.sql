@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2022 at 12:39 PM
+-- Generation Time: Oct 27, 2022 at 12:43 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -54,7 +54,7 @@ CREATE TABLE `irs` (
   `semester_aktif` varchar(1) NOT NULL,
   `status` varchar(1) NOT NULL DEFAULT '0',
   `jml_sks` varchar(3) NOT NULL,
-  `file_sks` longblob NOT NULL,
+  `file_sks` varchar(100) NOT NULL,
   `nim` varchar(14) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -120,7 +120,7 @@ CREATE TABLE `khs` (
   `status_konfirmasi` varchar(20) NOT NULL,
   `ip_semester` varchar(4) NOT NULL,
   `ip_kumulatif` varchar(4) NOT NULL,
-  `file_khs` longblob NOT NULL,
+  `file_khs` varchar(100) DEFAULT NULL,
   `sks_kumulatif` varchar(3) NOT NULL,
   `nim` varchar(14) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -134,7 +134,7 @@ INSERT INTO `khs` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semester`
 (2, '3', 'A', '0', '3.5', '3.90', '', '50', '24060120130152'),
 (3, '5', 'A', '0', '3.90', '3.90', '', '50', '24060120130050'),
 (4, '6', 'A', '0', '3.68', '3.90', '', '70', '24060120130059'),
-(6, '1', 'A', '', '3.70', '1.85', 0x4b61727475205554532e706466, '24', '24060120130053');
+(6, '1', 'A', '', '3.70', '1.85', 'Kartu UTS.pdf', '24', '24060120130053');
 
 -- --------------------------------------------------------
 
