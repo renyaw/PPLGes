@@ -15,14 +15,15 @@
     ?>
     <include src="navbaroperator.php"></include>
     <div class="container bg-white px-3 ">
+      <br>
         <h3 class="mt-3 mb-3">Dashboard Operator</h3>
         <div class="row">
             <div class="col-md-6">
               <div class="card mb-3" style="max-width: 540px; background-color: #f1f1f1">
                 <div class="row g-0">
                   <div class="col-md-4 mx-auto my-auto">
-                    <div class="card-title mt-2">Profil</div>
-                    <img src="img\bebekbulet.png" class="img-fluid rounded-start mx-auto mb-3" alt="bebek" style="width: 90%" />
+                    <!-- <div class="card-title mt-2">Profil</div> -->
+                    <img src="img\bebekbulet.png" class="img-fluid rounded-start ms-4 mb-3 mt-3" alt="bebek" style="width: 90%" />
                   </div>
                   <div class="col-md-7">
                     <div class="card-body">
@@ -35,7 +36,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-3 mx-auto">
+            <!-- <div class="col-md-3 mx-auto">
                 <div class="card" style="background-color: #84ffff">
                   <div class="card-body">
                     <div class="card-title">100</div>
@@ -66,7 +67,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
    <!-- Cari -->
    <?
@@ -182,9 +183,7 @@
     </div>
 
       <br>
-    <?php 
-    include("footer.php");
-    ?>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="ajaxsrs9.js"></script>
     <div class="bg-white">
