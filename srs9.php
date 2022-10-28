@@ -23,11 +23,11 @@
                 <div class="row g-0">
                   <div class="col-md-4 mx-auto my-auto">
                     <!-- <div class="card-title mt-2">Profil</div> -->
-                    <img src="img\bebekbulet.png" class="img-fluid rounded-start ms-4 mb-3 mt-3" alt="bebek" style="width: 90%" />
+                    <img src="img\monalisa.png" class="img-fluid rounded-start ms-4 mb-3 mt-3" alt="bebek" style="width: 90%" />
                   </div>
                   <div class="col-md-7">
                     <div class="card-body">
-                      <p class="card-title fs-4">Bensu</p>
+                      <p class="card-title fs-4">Mona</p>
                       <p class="card-text">Operator</p>
                       <p class="card-text">Fakultas Sains dan Matematika</p>
                       <p class="card-text">Informatika</p>
