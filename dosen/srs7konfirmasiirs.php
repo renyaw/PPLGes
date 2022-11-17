@@ -1,6 +1,6 @@
 <?php
-    require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    ?>
+require_once('db_login.php');
+
 $nim = $_GET['id'];
 
 $query = $db->query("INSERT into irs select * from irstemp where nim=$nim");

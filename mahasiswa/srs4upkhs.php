@@ -17,8 +17,8 @@
   <body>
     <?php
     session_start();
-        require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    ?>    $noinduk=$_SESSION['noinduk'];
+    require_once('db_login.php');
+    $noinduk=$_SESSION['noinduk'];
     $query=$db->query("SELECT mahasiswa.nama, nim, angkatan, dosen.nama as namadsn, fotoprofile From mahasiswa,dosen where mahasiswa.kode_wali=dosen.kode_wali and nim='$noinduk' ");
     $data=mysqli_fetch_assoc($query);
     

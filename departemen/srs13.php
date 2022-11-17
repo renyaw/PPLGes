@@ -15,8 +15,8 @@
     <include src="navdep.html"></include>
     <?php
     session_start();
-        require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    ?>    ?>
+    require_once('db_login.php');
+    ?>
     <div class="container">
       <h3 class="mt-3 fw-bold">Rekap Data PKL</h3>
       <div name="garishr" class="row border border-dark my-3 mx-1"></div>

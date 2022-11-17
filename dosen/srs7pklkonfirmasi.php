@@ -1,6 +1,6 @@
 <?php
-    require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    ?>$action = $_GET['action'];
+require_once('db_login.php');
+$action = $_GET['action'];
 $nim = $_GET['id'];
 
 if($action=="terima"){

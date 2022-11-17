@@ -11,8 +11,8 @@
   <body class="bg-light">
     <?php 
     session_start();
-        require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    ?>    ?>
+    require_once('db_login.php');
+    ?>
     <include src="navbaroperator.php"></include>
     <div class="container bg-white px-3 ">
       <br>

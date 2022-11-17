@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-    require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    ?>$username = $_POST['username'];
+require_once('db_login.php');
+$username = $_POST['username'];
 $password = $_POST['password'];
 
 
@@ -21,13 +21,13 @@ if($cek>0){
   if($data['status']==1){
     //operator
     $_SESSION['status']= $data['status'];
-    header("location:mahasiswa/srs9.php");
+    header("location:srs9.php");
   }
   else if($data['status']==2){
     //mahasiswa
     $query1= $db->query("SELECT * FROM mahasiswa WHERE nim ='$noinduk'");
     
-    header("location:mahasiswa/srs10.php?pesan=sukses");
+    header("location:srs10.php?pesan=sukses");
   }
   else if($data['status']==3){
     //dosen
@@ -35,12 +35,12 @@ if($cek>0){
     $data2=mysqli_fetch_assoc($query2);
     $_SESSION['kodewali']=$data2['kode_wali'];
     $_SESSION['status']= $data['status'];
-    header("location:mahasiswa/srs11.php");
+    header("location:srs11.php");
   }
   else if($data['status']==4){
     //departemen
     $_SESSION['status']= $data['status'];
-    header("location:mahasiswa/srs12.php");
+    header("location:srs12.php");
   }
 }
 else{

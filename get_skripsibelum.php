@@ -1,6 +1,6 @@
 <?php
-    require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    ?>$id=$_GET['id'];
+require_once('db_login.php');
+$id=$_GET['id'];
 
 $defaultR=$db->query("SELECT * from mahasiswa left join skripsi on mahasiswa.nim=skripsi.nim where skripsi.nim is null;");
 $sumR=$db->query("SELECT * from mahasiswa left join skripsi on mahasiswa.nim=skripsi.nim where skripsi.nim is null and angkatan = '$id';");

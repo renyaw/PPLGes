@@ -1,6 +1,6 @@
 <?php
-    require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    ?>$id=$_GET['id'];
+require_once('db_login.php');
+$id=$_GET['id'];
 
 $query = $db->query("SELECT mahasiswa.nama, mahasiswa.nim, skripsi.tgl_sidang from skripsi inner join mahasiswa where mahasiswa.nim=skripsi.nim  and status = 'Lulus' and mahasiswa.angkatan='$id';");
 $query2= $db->query("SELECT mahasiswa.nama, mahasiswa.nim, skripsi.tgl_sidang from skripsi inner join mahasiswa where mahasiswa.nim=skripsi.nim  and status = 'Lulus' ;");

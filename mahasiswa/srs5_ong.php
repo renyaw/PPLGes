@@ -19,8 +19,8 @@
       <div class="p-3 mb-2 bg-light text-dark">
         <?php 
         session_start(); 
-            require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    ?>        ?>
+        require_once('db_login.php');
+        ?>
         <div class="mb-3">
           <label for="formFile" class="form-label">Scan Berita Acara</label>
           <input class="form-control" type="file" id="formFile" name="file" />

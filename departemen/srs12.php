@@ -12,8 +12,8 @@
     <include src="navdep.html"></include>
     <?php
     session_start();
-        require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    ?>    $query = $db->query('SELECT count(*) as jmldsn from dosen');
+    require_once('db_login.php');
+    $query = $db->query('SELECT count(*) as jmldsn from dosen');
     $jmldsn=mysqli_fetch_assoc($query);
 
     $query2 = $db->query('SELECT count(*) as jmlmhs from mahasiswa');

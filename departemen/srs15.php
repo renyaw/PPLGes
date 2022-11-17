@@ -13,8 +13,8 @@
   <body class="body">
     <?php
     session_start();
-        require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    ?>    ?>
+    require_once('db_login.php');
+    ?>
     <include src="navdep.html"></include>
     <div class="container">
       <h3 class="mt-3">Rekap Data Skripsi</h3>

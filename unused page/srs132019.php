@@ -14,8 +14,8 @@
     <include src="navdep.html"></include>
     <?php
     session_start();
-        require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    ?>    ?>
+    require_once('db_login.php');
+    ?>
     <div class="container">
       <h3 class="mt-3">Rekap Data PKL</h3>
       <hr />
