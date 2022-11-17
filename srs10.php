@@ -108,7 +108,7 @@
                   <p class="fw-bold">Semester</p>
                   <?php
                   //$query3 = $db->query("SELECT smt FROM khs INNER JOIN mahasiswa ON mahasiswa.nim=khs.nim where mahasiswa.nim = '$noinduk'");
-                  $query3=$db->query("SELECT sks_kumulatif as sksk,smt from khs where sks_kumulatif in(select min(sks_kumulatif) from khs WHERE nim=$noinduk group by nim) and nim=$noinduk");
+                  $query3=$db->query("SELECT sks_kumulatif as sksk,smt from khs where sks_kumulatif in(select max(sks_kumulatif) from khs WHERE nim=$noinduk group by nim) and nim=$noinduk");
                   $data3=mysqli_fetch_assoc($query3);
                   if(empty($data3['smt'])){
                     echo '1';

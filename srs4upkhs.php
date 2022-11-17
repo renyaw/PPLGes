@@ -25,7 +25,7 @@
     $query2=$db->query("SELECT cast(avg(ip_semester) as decimal(10,2)) as ipk  from mahasiswa,khs where mahasiswa.nim=khs.nim and mahasiswa.nim='$noinduk'");
     $jml= mysqli_fetch_assoc($query2);
 
-    $query3=$db->query("SELECT sks_kumulatif as sksk,smt from khs where sks_kumulatif in(select min(sks_kumulatif) from khs WHERE nim=$noinduk group by nim) and nim=$noinduk");
+    $query3=$db->query("SELECT sks_kumulatif as sksk,smt from khs where sks_kumulatif in(select max(sks_kumulatif) from khs WHERE nim=$noinduk group by nim) and nim=$noinduk");
     $data2=mysqli_fetch_assoc($query3);
     
     if (isset($_POST["submit"])) {
