@@ -19,7 +19,7 @@ if($jml!=0){
     echo '<tr>';
     echo '<td>'.$row->nama.'</td>';
     echo '<td>'.$row->nim.'</td>';
-    echo '<td>'.$row->tgl_lulus.'</td>';
+    echo '<td>'.$row->tgl_sidang.'</td>';
     echo '<td> - </td>';
     echo '</tr>';  
   }   
