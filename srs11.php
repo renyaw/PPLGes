@@ -139,10 +139,7 @@
     </div>
 
     <br />
-    <div class="bg-white">
-      <br>
-      <br>
-    </div>
+
     <?PHP
     include('Footer.php');
     ?>

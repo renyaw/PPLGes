@@ -80,9 +80,6 @@
         showPKLbelum("x");
       }
     </script>
-    <div class="bg-white">
-      <br>
-      <br>
     </div>
     <?PHP
     include('Footer.php');

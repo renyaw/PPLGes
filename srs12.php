@@ -81,10 +81,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-white">
-      <br>
-      <br>
-    </div>
+
     <?PHP
     include('Footer.php');
     ?>
