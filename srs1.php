@@ -30,7 +30,7 @@
     
     if (isset($_POST["submit"])) {
       //untuk foto
-      $ekstensi_diperbolehkan	= array('png','jpg','pdf');
+      $ekstensi_diperbolehkan	= array('png','jpg');
 			$nama = $_FILES['file']['name'];
 			$x = explode('.', $nama);
 			$ekstensi = strtolower(end($x));
