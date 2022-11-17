@@ -15,7 +15,7 @@
       }
       </style>
   </head>
-  <body>
+  <body class="bg-light">
     <?php include "navbar.php"; ?>
     <?php
     require_once "db_login.php";

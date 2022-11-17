@@ -17,7 +17,7 @@
     session_start();
     require_once('db_login.php');
     ?>
-    <div class="container">
+    <div class="container p-4 bg-white">
       <h3 class="mt-3 fw-bold">Rekap Data PKL</h3>
       <div name="garishr" class="row border border-dark my-3 mx-1"></div>
       <div class="d-grid gap-2 mt-5 d-md-block">

@@ -16,7 +16,7 @@
     require_once('db_login.php');
     ?>
     <include src="navdep.html"></include>
-    <div class="container">
+    <div class="container p-4 bg-white">
       <h3 class="mt-3">Rekap Data Skripsi</h3>
       <hr />
       <div class="d-grid gap-2 mt-5 d-md-block">

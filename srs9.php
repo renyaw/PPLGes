@@ -88,7 +88,7 @@
     </div>
    
    <!-- TABEL DATA -->
-   <div class="container">
+   <div class="container p-4 bg-white">
 
    
     <table class="table table-hover text-center table-bordered mt-4">
@@ -149,7 +149,7 @@
    <!-- TABEL DATA END -->
     <!-- Selesai Cari -->
 
-    <div class="container">
+    <div class="container p-4 bg-white">
         <div class="row">
             <div class="col-2 mt-5">
             <select name="status" id="status" onchange="showMhs(this.value)" class="form-select" aria-label="Default select example">

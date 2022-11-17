@@ -88,7 +88,7 @@
           </div>
         </div>
       </div>
-      <div class="container">
+      <div class="container p-4 bg-white">
         <div class="mt-5">
         </div>
       </div>

@@ -14,7 +14,7 @@
     </style>
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
-  <body>
+  <body class="bg-light">
     <?php
     session_start();
     require_once('db_login.php');
@@ -60,8 +60,9 @@
       }
     }
     ?>
+
     <include src="navbar.php"></include>
-    <div class="container mt-4">
+    <div class="container bg-white p-5">
       <?php
           if(isset($_GET['pesan'])){
             //salah akun/password

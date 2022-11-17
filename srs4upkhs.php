@@ -14,7 +14,7 @@
     </style>
     <script src="https://unpkg.com/htmlincludejs"></script>
   </head>
-  <body>
+  <body class="bg-light">
     <?php
     session_start();
     require_once('db_login.php');
@@ -66,7 +66,7 @@
     }
     ?>
     <include src="navbar.php"></include>
-    <div class="container mt-4">
+    <div class="container p-5 bg-white">
       <h2 class="fw-bold">Entry KHS</h2>
       <hr />
       <div class="row justify-content-evenly">

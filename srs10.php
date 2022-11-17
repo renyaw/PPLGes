@@ -27,7 +27,7 @@
     ?>
 
     <include src="navbar.php"></include>
-    <div class="container pt-4 bg-white" mx2>
+    <div class="container p-4 bg-white">
       <h2 class="fw-bold">Dashboard Mahasiswa</h2>
       <hr />
       <?php
