@@ -26,8 +26,7 @@
     require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
     ?>
 
-        <?php include($_SERVER["DOCUMENT_ROOT"].'/navbar.php');
-    ?>
+    <include src="navbar.php"></include>
     <div class="container pt-4 bg-white" mx2>
       <h2 class="fw-bold">Dashboard Mahasiswa</h2>
       <hr />
@@ -60,7 +59,7 @@
                 $poto = $db->query("SELECT * from mahasiswa where nim = '$noinduk'") ;
                 $d= mysqli_fetch_assoc($poto);
                 ?>
-                <img  src='<?php echo $_SERVER["DOCUMENT_ROOT"]."\\"."fotoprofile\\".$d["fotoprofile"]; ?>'style='width: 100%;border-radius:5%' />
+                <img  src='<?php echo "fotoprofile/".$d["fotoprofile"]; ?>'style='width: 100%;border-radius:5%' />
               </div>
               <div class="col-md-8">
                 <?php

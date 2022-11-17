@@ -60,8 +60,7 @@
       }
     }
     ?>
-        <?php include($_SERVER["DOCUMENT_ROOT"].'/navbar.php');
-    ?>
+    <include src="navbar.php"></include>
     <div class="container mt-4">
       <?php
           if(isset($_GET['pesan'])){
@@ -84,7 +83,7 @@
           <div class="col-3">
             <div class="row align-self-center">
               <div class="card col bg-transparent border-0 mx-auto">
-                <img src="<?php echo $_SERVER["DOCUMENT_ROOT"]."fotoprofile/".$data2['fotoprofile'];  ?>" style="border-radius:5%;" class="img-fluid" />
+                <img src="<?php echo "fotoprofile/".$data2['fotoprofile'];  ?>" style="border-radius:5%;" class="img-fluid" />
               </div>
             </div>
 
