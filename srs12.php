@@ -19,7 +19,7 @@
     $query2 = $db->query('SELECT count(*) as jmlmhs from mahasiswa');
     $jmlmhs=mysqli_fetch_assoc($query2);
 
-    $query3= $db->query('SELECT count(*) as jmlaktif from khs WHERE status="Aktif"');
+    $query3= $db->query('SELECT count(*) as jmlaktif from khs WHERE status="Aktif" and nim in(select * from)');
     $jmlaktif=mysqli_fetch_assoc($query3);
 
     $query4= $db->query('SELECT count(*) as jmltdka from khs WHERE status!="Aktif"');

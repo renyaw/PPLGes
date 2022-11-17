@@ -48,6 +48,7 @@
             <th scope="col">Status</th>
             <th scope="col">Angkatan</th>
             <th scope="col">IPK</th>
+            <!-- <th scope="col">Action</th> -->
           </tr>
         </thead>
         <tbody id="tabel_mhs" class="table-group-divider">
@@ -73,6 +74,14 @@
         </ul>
       </nav>
     </div>
+
+    
+    
+    <!-- Optional: Place to the bottom of scripts
+    <script>
+      const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+    
+    </script> -->
     <script>
       window.onload = function(){
         showTabelmhs('x');
