@@ -111,6 +111,7 @@
           <tr>
             <th scope="col">Nama Mahasiswa</th>
             <th scope="col">NIM</th>
+            <th scope="col">Judul</th>
             <th scope="col">File Skripsi</th>
             <th scope="col">Angkatan</th>
             <th scope="col">Action</th>
@@ -120,11 +121,12 @@
           <?php
           require_once('db_login.php');
           $kodewali= $_SESSION['kodewali'];
-          $query=$db->query("SELECT mahasiswa.nim, mahasiswa.nama, angkatan, skripsitemp.file_skripsi from mahasiswa,skripsitemp,dosen where mahasiswa.nim=skripsitemp.nim and mahasiswa.kode_wali='$kodewali' group by nim");
+          $query=$db->query("SELECT mahasiswa.nim, mahasiswa.nama, angkatan, skripsitemp.file_skripsi, judul from mahasiswa,skripsitemp,dosen where mahasiswa.nim=skripsitemp.nim and mahasiswa.kode_wali='$kodewali' group by nim");
           while($row=$query->fetch_object()){
             echo '<tr>';
             echo '<td>'.$row->nama.'</td>';
             echo '<td>'.$row->nim.'</td>';
+            echo '<td>'.$row->judul.'</td>';
             echo '<td>';
             echo '<a href="filepkl/'.$row->file_skripsi.'" target="_blank">';
             echo $row->file_skripsi;
