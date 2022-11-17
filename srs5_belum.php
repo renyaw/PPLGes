@@ -85,8 +85,8 @@
           <input type="text" class="form-control" id="tanggal" placeholder="dd/mm/yyyy" name="tanggal"/>
         </div>
         <div class="mb-3">
-          <label for="formFile" class="form-label">Upload Progress PKL</label>
-          <input class="form-control" type="file" id="formFile" name="file" />
+          <label for="file" class="form-label">Upload Progress PKL</label>
+          <input class="form-control" type="file" id="file" name="file" />
         </div>
         
         <br />

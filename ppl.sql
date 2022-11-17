@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2022 at 07:13 AM
+-- Generation Time: Nov 17, 2022 at 09:52 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -329,7 +329,7 @@ CREATE TABLE `pkl` (
   `tanggal_mulai` varchar(20) NOT NULL,
   `nilai` varchar(2) DEFAULT NULL,
   `status_konfirmasi` varchar(20) NOT NULL,
-  `upload_pkl` longblob DEFAULT NULL
+  `upload_pkl` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -337,6 +337,9 @@ CREATE TABLE `pkl` (
 --
 
 INSERT INTO `pkl` (`id_pkl`, `nim`, `stat`, `tanggal_mulai`, `nilai`, `status_konfirmasi`, `upload_pkl`) VALUES
+(2, '24060120130053', 'belum lulus', '22/01/2022', NULL, '0', 'KTP Laporan.pdf'),
+(3, '24060120130053', 'belum lulus', '28/09/2002', NULL, '0', 'B_Matematika 1_Fathan Muhammad Faqih_24060120130053.pdf'),
+(5, '24060120130053', 'belum lulus', '28/09/2002', NULL, '0', 'tugas.pdf'),
 (8, '24060119120004', 'lulus', '27/10/2021', 'A', '1', NULL),
 (9, '24060119120034', 'lulus', '27/10/2021', 'A', '1', NULL),
 (10, '24060119120108', 'lulus', '27/10/2021', 'B', '1', NULL),
@@ -371,7 +374,7 @@ CREATE TABLE `pkltemp` (
 --
 
 INSERT INTO `pkltemp` (`id_pkl`, `nim`, `status`, `tanggal_mulai`, `nilai`, `status_konfirmasi`, `upload_pkl`) VALUES
-(2, '24060120130053', 'belum lulus', '22/01/2022', NULL, '0', 'KTP Laporan.pdf');
+(4, '', 'belum lulus', '', NULL, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -594,7 +597,7 @@ ALTER TABLE `pkl`
 -- AUTO_INCREMENT for table `pkltemp`
 --
 ALTER TABLE `pkltemp`
-  MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `skripsi`
