@@ -1,6 +1,6 @@
 <?php
-require_once('db_login.php');
-
+    require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
+    ?>
 $nim = $_GET['id'];
 
 $query2 = $db->query("DELETE from irstemp where nim=$nim");

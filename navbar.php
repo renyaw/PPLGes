@@ -1,7 +1,8 @@
 <?php
 session_start();
-require_once('db_login.php');
-?>
+echo getcwd();
+    require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
+    ?>?>
 <nav class="navbar bg-light sticky-top border">
   <div class="container">
     <a class="navbar-brand" href="srs10.php">

@@ -118,8 +118,8 @@
         </thead>
         <tbody class="table-group-divider text-center">
           <?php
-          require_once('db_login.php');
-          $kodewali= $_SESSION['kodewali']; 
+              require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
+    ?>          $kodewali= $_SESSION['kodewali']; 
           $query=$db->query("SELECT mahasiswa.nim, mahasiswa.nama, angkatan, pkltemp.upload_pkl from mahasiswa,pkltemp,dosen where mahasiswa.nim=pkltemp.nim and mahasiswa.kode_wali='$kodewali' group by nim");
           while($row=$query->fetch_object()){
             echo '<tr>';

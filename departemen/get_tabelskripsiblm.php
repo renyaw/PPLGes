@@ -1,6 +1,6 @@
 <?php
-require_once('db_login.php');
-$id=$_GET['id'];
+    require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
+    ?>$id=$_GET['id'];
 
 $query = $db->query("SELECT mahasiswa.nama, mahasiswa.nim, dosen.nama  as namadosen, mahasiswa.angkatan from skripsi inner join mahasiswa inner join dosen where mahasiswa.nim=skripsi.nim and dosen.kode_wali=mahasiswa.kode_wali and status = 'Belum Lulus' and mahasiswa.angkatan='$id';");
 $query2= $db->query("SELECT mahasiswa.nama, mahasiswa.nim, dosen.nama  as namadosen, mahasiswa.angkatan from skripsi inner join mahasiswa inner join dosen where mahasiswa.nim=skripsi.nim and dosen.kode_wali=mahasiswa.kode_wali and status = 'Belum Lulus' ;");

@@ -23,7 +23,7 @@
   <body class="bg-light">
     <?php
     session_start();
-    require_once('db_login.php');
+    require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
     ?>
 
     <include src="navbar.php"></include>
