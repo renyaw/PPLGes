@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- gajadi kepake -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -18,35 +19,35 @@
       $data = mysqli_fetch_assoc($query);
     
       if (isset($_POST["submit"])) {
-        $ekstensi_diperbolehkan	= array('pdf');
-        $namafile = $_FILES['file']['name'];
-        $x = explode('.', $namafile);
-        $ekstensi = strtolower(end($x));
-        $ukuran	= $_FILES['file']['size'];
-        $file_tmp = $_FILES['file']['tmp_name'];
+      //   $ekstensi_diperbolehkan	= array('pdf');
+      //   $namafile = $_FILES['file']['name'];
+      //   $x = explode('.', $namafile);
+      //   $ekstensi = strtolower(end($x));
+      //   $ukuran	= $_FILES['file']['size'];
+      //   $file_tmp = $_FILES['file']['tmp_name'];
   
         $tanggal = test_input($_POST['tanggal']);
 
-        if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
-          if($ukuran < 1044070){			
-            move_uploaded_file($file_tmp, 'filepkl/'.$namafile);
-            $result = $db->query(
-              "INSERT INTO pkltemp values (NULL,'$noinduk','belum lulus', '$tanggal', NULL, '0', '$namafile')"
-              );
-            if($result){
-              header("location:srs5_belum.php?pesan=sukses");
-            }
-            else{
-              echo 'GAGAL MENGUPLOAD GAMBAR';
-            }
-          }
-          else{
-            echo 'UKURAN FILE TERLALU BESAR';
-          }
-        }
-        else{
-          echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
-        }
+        // if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
+        //   if($ukuran < 1044070){			
+        //     move_uploaded_file($file_tmp, 'filepkl/'.$namafile);
+        //     $result = $db->query(
+        //       "INSERT INTO pkltemp values (NULL,'$noinduk','belum lulus', '$tanggal', NULL, '0', '$namafile')"
+        //       );
+        //     if($result){
+        //       header("location:srs5_belum.php?pesan=sukses");
+        //     }
+        //     else{
+        //       echo 'GAGAL MENGUPLOAD GAMBAR';
+        //     }
+        //   }
+        //   else{
+        //     echo 'UKURAN FILE TERLALU BESAR';
+        //   }
+        // }
+        // else{
+        //   echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
+        // }
       }
           
     ?>
@@ -84,10 +85,10 @@
           <label for="tanggal" class="form-label">Tanggal</label>
           <input type="text" class="form-control" id="tanggal" placeholder="dd/mm/yyyy" name="tanggal"/>
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label for="file" class="form-label">Upload Progress PKL</label>
           <input class="form-control" type="file" id="file" name="file" />
-        </div>
+        </div> -->
         
         <br />
         
