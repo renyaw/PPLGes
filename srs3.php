@@ -143,7 +143,7 @@
                 <h3 class="fw-bold">Jumlah SKS</h3>
                 <?php
                 $noinduk = $_SESSION['noinduk'];
-                $query = $db->query("SELECT sks_kumulatif FROM khs where nim ='$noinduk'");
+                $query = $db->query("SELECT min(sks_kumulatif) as sks_kumulatif FROM khs where nim ='$noinduk'");
                 $data = mysqli_fetch_assoc($query);
                 echo "<p>".$data['sks_kumulatif']."</p>"
                 ?>
