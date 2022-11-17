@@ -31,7 +31,7 @@
         <div class="row justify-content-evenly">
           <div class="col-4 mt-3">
             <div class="image overflow-hidden">
-                <img style="border-radius:5%"src='<?php echo "fotoprofile/" .$data["fotoprofile"]; ?>' alt="" width="250" />
+                <img style="border-radius:5%"src='<?php echo $_SERVER["DOCUMENT_ROOT"]."fotoprofile/" .$data["fotoprofile"]; ?>' alt="" width="250" />
             </div>
           </div>
           <div class="col-8">

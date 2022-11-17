@@ -65,7 +65,8 @@
       }
     }
     ?>
-    <include src="navbar.php"></include>
+        <?php include($_SERVER["DOCUMENT_ROOT"].'/navbar.php');
+    ?>
     <div class="container mt-4">
       <h2 class="fw-bold">Entry KHS</h2>
       <hr />
@@ -77,7 +78,7 @@
             <div class="row justify-content-between">
               <div class="col-3">
                 <div class="card bg-transparent border-0 mx-auto">
-                  <img src="<?php echo "fotoprofile/" .$data["fotoprofile"]; ?>" style="border-radius:5%"class="img-fluid" />
+                  <img src="<?php echo $_SERVER["DOCUMENT_ROOT"]."fotoprofile/" .$data["fotoprofile"]; ?>" style="border-radius:5%"class="img-fluid" />
                 </div>
                 <div class="card text-center mt-3 mx-auto bg-success text-white" style="width: 14vh; max-width: 100px">Aktif</div>
               </div>

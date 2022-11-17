@@ -83,7 +83,7 @@
           <div class="row justify-content-evenly  mx-1 py-4">
           <div class="col-3 mt-3">
             <div class="image overflow-hidden d-flex justify-content-center">
-              <img style="border-radius:5%"src='<?php echo "fotoprofile/" .$data["fotoprofile"]; ?>' alt="" width="250" />
+              <img style="border-radius:5%"src='<?php echo $_SERVER["DOCUMENT_ROOT"]."fotoprofile/" .$data["fotoprofile"]; ?>' alt="" width="250" />
             </div>
             <div class="d-flex justify-content-center ">
             <!-- Modal trigger button -->

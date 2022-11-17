@@ -59,7 +59,7 @@
           <div class="row justify-content-evenly">
             <div class="col-3 mt-3">
               <div class="image overflow-hidden d-flex justify-content-center">
-                <img src='<?php echo "fotoprofile/" .$data["fotoprofile"]; ?>' alt="" width="250" style="border-radius: 10%"/>
+                <img src='<?php echo $_SERVER["DOCUMENT_ROOT"]."fotoprofile/" .$data["fotoprofile"]; ?>' alt="" width="250" style="border-radius: 10%"/>
               </div>
                 <div class="d-flex justify-content-center ">
               </div>

@@ -14,7 +14,8 @@
     session_start();
         require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
     ?>    ?>
-    <include src="navbar.php"></include>
+        <?php include($_SERVER["DOCUMENT_ROOT"].'/navbar.php');
+    ?>
     <div class="container py-4 px-5 bg-white">
       <?php
         if(isset($_GET['pesan'])){
