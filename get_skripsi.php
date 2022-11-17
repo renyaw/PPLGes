@@ -1,7 +1,7 @@
 <?php
     require_once($_SERVER["DOCUMENT_ROOT"].'/db_login.php');
-    $id=$_GET['id'];
-
+    ?>$id=$_GET['id'];
+<?
 $defaultR=$db->query("SELECT * from mahasiswa inner join skripsi where mahasiswa.nim=skripsi.nim;");
 $sumR=$db->query("SELECT * from mahasiswa inner join skripsi where mahasiswa.nim=skripsi.nim and angkatan = '$id';");
 if ($id == "x") {
