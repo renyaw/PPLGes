@@ -26,6 +26,7 @@ if($cek>0){
   else if($data['status']==2){
     //mahasiswa
     $query1= $db->query("SELECT * FROM mahasiswa WHERE nim ='$noinduk'");
+    $_SESSION['status']= $data['status'];
     
     header("location:srs10.php?pesan=sukses");
   }
