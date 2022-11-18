@@ -1,8 +1,8 @@
 <?php
 require_once('db_login.php');
 $id=$_GET['id'];
-$query = $db->query("SELECT mahasiswa.nama, mahasiswa.nim, mahasiswa.angkatan, khs.status as stat, khs.ip_kumulatif as ipk from mahasiswa inner join khs where mahasiswa.nim=khs.nim and mahasiswa.angkatan='$id';");
-$query2= $db->query("SELECT mahasiswa.nama, mahasiswa.nim, mahasiswa.angkatan, khs.status as stat, khs.ip_kumulatif as ipk from khs inner join mahasiswa inner JOIN (select nim, max(smt) smt from khs group by nim) b on khs.nim = b.nim and khs.smt=b.smt and mahasiswa.nim=khs.nim;");
+$query = $db->query("SELECT mahasiswa.nama, mahasiswa.nim, mahasiswa.angkatan,khs.smt, khs.status as stat, sks_kumulatif as sks , khs.ip_kumulatif as ipk from khs inner join mahasiswa inner JOIN (select nim, max(smt) smt from khs group by nim) b on khs.nim = b.nim and khs.smt=b.smt and mahasiswa.nim=khs.nim and mahasiswa.angkatan='$id';");
+$query2= $db->query("SELECT mahasiswa.nama, mahasiswa.nim, mahasiswa.angkatan,khs.smt, khs.status as stat, sks_kumulatif as sks , khs.ip_kumulatif as ipk from khs inner join mahasiswa inner JOIN (select nim, max(smt) smt from khs group by nim) b on khs.nim = b.nim and khs.smt=b.smt and mahasiswa.nim=khs.nim;");
 
 if($id!='x'){
   $result = $query;
@@ -16,10 +16,12 @@ $jml= mysqli_num_rows($result);
 if($jml!=0){
   while ($row = $result->fetch_object()) {
     echo '<tr>';
-    echo '<td>'.$row->nama.'</td>';
     echo '<td>'.$row->nim.'</td>';
+    echo '<td>'.$row->nama.'</td>';
     echo '<td>'.$row->stat.'</td>';
     echo '<td>'.$row->angkatan.'</td>';
+    echo '<td>'.$row->sks.'</td>';
+    echo '<td>'.$row->smt.'</td>';
     echo '<td>'.$row->ipk.'</td>';
     
 
@@ -59,5 +61,7 @@ else{
   echo '<td> - </td>';
   echo '</tr>';
 }
+echo 'Banyak Data: '.mysqli_num_rows($result);
 ?>
+
 

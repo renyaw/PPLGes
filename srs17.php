@@ -43,10 +43,12 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">Nama</th>
             <th scope="col">NIM</th>
+            <th scope="col">Nama</th>
             <th scope="col">Status</th>
             <th scope="col">Angkatan</th>
+            <th scope="col">Jumlah SKS</th>
+            <th scope="col">SMT</th>
             <th scope="col">IPK</th>
           </tr>
         </thead>
