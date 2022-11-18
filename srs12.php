@@ -19,10 +19,10 @@
     $query2 = $db->query('SELECT count(*) as jmlmhs from mahasiswa');
     $jmlmhs=mysqli_fetch_assoc($query2);
 
-    $query3= $db->query('SELECT count(*) as jmlaktif from khs WHERE status="Aktif"');
+    $query3= $db->query("SELECT count(*) as jmlaktif from khs inner JOIN (select nim, max(smt) smt from khs group by nim) b on khs.nim = b.nim and khs.smt=b.smt and khs.status = 'aktif';");
     $jmlaktif=mysqli_fetch_assoc($query3);
 
-    $query4= $db->query('SELECT count(*) as jmltdka from khs WHERE status!="Aktif"');
+    $query4= $db->query("SELECT count(*) as jmltdka from khs inner JOIN (select nim, max(smt) smt from khs group by nim) b on khs.nim = b.nim and khs.smt=b.smt and khs.status != 'aktif';");
     $jmltdka=mysqli_fetch_assoc($query4);
 
 

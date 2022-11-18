@@ -2,7 +2,7 @@
 require_once('db_login.php');
 $id=$_GET['id'];
 $query = $db->query("SELECT mahasiswa.nama, mahasiswa.nim, mahasiswa.angkatan, khs.status as stat, khs.ip_kumulatif as ipk from mahasiswa inner join khs where mahasiswa.nim=khs.nim and mahasiswa.angkatan='$id';");
-$query2= $db->query("SELECT mahasiswa.nama, mahasiswa.nim, mahasiswa.angkatan, khs.status as stat, khs.ip_kumulatif as ipk from mahasiswa inner join khs where mahasiswa.nim=khs.nim;");
+$query2= $db->query("SELECT mahasiswa.nama, mahasiswa.nim, mahasiswa.angkatan, khs.status as stat, khs.ip_kumulatif as ipk from khs inner join mahasiswa inner JOIN (select nim, max(smt) smt from khs group by nim) b on khs.nim = b.nim and khs.smt=b.smt and mahasiswa.nim=khs.nim;");
 
 if($id!='x'){
   $result = $query;
@@ -61,26 +61,3 @@ else{
 }
 ?>
 
-    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
-      Launch
-    </button>
-    
-    <!-- Modal Body -->
-    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalTitleId">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            Body
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save</button>
-          </div>
-        </div>
-      </div>
-    </div>
