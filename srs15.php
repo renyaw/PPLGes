@@ -56,6 +56,9 @@
           <div class="col d-flex justify-content-center">
             <a href="srs16_blm.php"><button type="button" class="btn btn-outline-primary mx-auto">Lihat Detail</button> </a>
           </div>
+          <div class="col d-flex justify-content-center pt-2">
+            <a href="srs12.php"><button type="button" class="btn btn-warning mx-auto">Kembali</button> </a>
+          </div>
         </div>
       </div>
     </div>

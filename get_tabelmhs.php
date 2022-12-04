@@ -61,7 +61,7 @@ else{
   echo '<td> - </td>';
   echo '</tr>';
 }
-echo 'Banyak Data: '.mysqli_num_rows($result);
+echo '<div class="row justify-content-center">Banyak Data: '.mysqli_num_rows($result). '<div>';
 ?>
 
 
