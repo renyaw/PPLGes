@@ -22,7 +22,7 @@
     ?>
     <include src="navbaroperator.php"></include>
     <div class="container bg-white px-3 py-3 ">
-        <h3 class="mt-3 mb-3">Dashboard Operator</h3>
+        <h3 class="mt-3 mb-3 fw-bolder">Dashboard Operator</h3>
         <hr>
         <div class="row">
             <div class="col-md-6">
@@ -34,7 +34,7 @@
                   </div>
                   <div class="col-md-7">
                     <div class="card-body">
-                      <p class="card-title fs-4">Mona</p>
+                      <p class="card-title fs-4 fw-bold">Mona</p>
                       <p class="card-text">Operator</p>
                       <p class="card-text">Fakultas Sains dan Matematika</p>
                       <p class="card-text">Informatika</p>

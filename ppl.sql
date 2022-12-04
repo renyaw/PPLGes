@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2022 at 06:47 PM
+-- Generation Time: Dec 04, 2022 at 02:56 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `dosen` (
-  `id` int(1) NOT NULL,
   `kode_wali` varchar(14) NOT NULL,
   `nip` varchar(15) NOT NULL,
   `nama` varchar(20) NOT NULL,
+  `fotoprofile` varchar(100) DEFAULT NULL,
   `email` varchar(30) NOT NULL,
   `nomor_telp` varchar(15) NOT NULL,
   `alamat` varchar(30) NOT NULL
@@ -41,11 +41,11 @@ CREATE TABLE `dosen` (
 -- Dumping data for table `dosen`
 --
 
-INSERT INTO `dosen` (`id`, `kode_wali`, `nip`, `nama`, `email`, `nomor_telp`, `alamat`) VALUES
-(1, 'E1', '0092038705', 'Rohmat Subarjo', 'rohmat@gmail.com', '0812347892138', 'Jalan Kenangan'),
-(2, 'E2', '0092038883', 'Aulia Dina', 'auliadin@gmail.com', '085666728012', 'Jalan Yuk'),
-(3, 'E3', '0092086435', 'Joyo Cahyono', 'joyo@gmail.com', '085567887034', 'Jalan Jalan'),
-(4, 'E4', '0092038992', 'Adhiarja Kresna', 'adikresna@gmail.com', '085627918276', 'Jalan Hidup');
+INSERT INTO `dosen` (`kode_wali`, `nip`, `nama`, `fotoprofile`, `email`, `nomor_telp`, `alamat`) VALUES
+('E1', '0092038705', 'Rohmat Subarjo', 'rohmatsubarjo.png', 'rohmat@gmail.com', '0812347892138', 'Jalan Kenangan'),
+('E2', '0092038883', 'Aulia Dina', 'auliadina.png', 'auliadin@gmail.com', '085666728012', 'Jalan Yuk'),
+('E3', '0092086435', 'Joyo Cahyono', 'joyocahyono.png', 'joyo@gmail.com', '085567887034', 'Jalan Jalan'),
+('E4', '0092038992', 'Adhiarja Kresna', 'adhiarjakresna.png', 'adikresna@gmail.com', '085627918276', 'Jalan Hidup');
 
 -- --------------------------------------------------------
 
@@ -174,7 +174,7 @@ CREATE TABLE `khs` (
   `id_khs` int(20) NOT NULL,
   `smt` varchar(2) NOT NULL,
   `status` varchar(10) DEFAULT NULL,
-  `status_konfirmasi` varchar(20) NOT NULL,
+  `status_konfirmasi` varchar(20) NOT NULL DEFAULT '0',
   `ip_semester` varchar(4) NOT NULL,
   `ip_kumulatif` varchar(4) NOT NULL,
   `file_khs` varchar(100) DEFAULT NULL,
@@ -328,7 +328,7 @@ CREATE TABLE `pkl` (
   `stat` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `tanggal_mulai` varchar(20) NOT NULL,
   `nilai` varchar(2) DEFAULT NULL,
-  `status_konfirmasi` varchar(20) NOT NULL,
+  `status_konfirmasi` varchar(20) NOT NULL DEFAULT '0',
   `upload_pkl` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -338,8 +338,6 @@ CREATE TABLE `pkl` (
 
 INSERT INTO `pkl` (`id_pkl`, `nim`, `stat`, `tanggal_mulai`, `nilai`, `status_konfirmasi`, `upload_pkl`) VALUES
 (2, '24060120130053', 'belum lulus', '22/01/2022', NULL, '0', 'KTP Laporan.pdf'),
-(3, '24060120130053', 'belum lulus', '28/09/2002', NULL, '0', 'B_Matematika 1_Fathan Muhammad Faqih_24060120130053.pdf'),
-(5, '24060120130053', 'belum lulus', '28/09/2002', NULL, '0', 'tugas.pdf'),
 (8, '24060119120004', 'lulus', '27/10/2021', 'A', '1', NULL),
 (9, '24060119120034', 'lulus', '27/10/2021', 'A', '1', NULL),
 (10, '24060119120108', 'lulus', '27/10/2021', 'B', '1', NULL),
