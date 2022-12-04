@@ -92,20 +92,6 @@
         <div class="mt-5">
         </div>
       </div>
-      <div class="row">
-        <div class="col-2 mt-5">
-          <select class="form-select" aria-label="Default select example">
-            <option selected disabled>Tampilkan 8 Item</option>
-            <option value="1">BWA</option>
-            <option value="2">BWA</option>
-            <option value="3">BWA</option>
-          </select>
-        </div>
-        <div class="col-2 mt-3 ">
-            <label for="nama" class="form-label">Cari</label>
-            <input type="text" placeholder="Cari"class="form-control" id="nama">
-        </div>
-      </div>
       <table class="table table-hover mt-4 text-center">
         <thead>
           <tr>
