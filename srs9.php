@@ -14,9 +14,9 @@
     require_once('db_login.php');
     ?>
     <include src="navbaroperator.php"></include>
-    <div class="container bg-white px-3 ">
-      <br>
+    <div class="container bg-white px-3 py-3 ">
         <h3 class="mt-3 mb-3">Dashboard Operator</h3>
+        <hr>
         <div class="row">
             <div class="col-md-6">
               <div class="card mb-3" style="max-width: 540px; background-color: #f1f1f1">
@@ -79,7 +79,7 @@
       <form action="" method="GET">
         <div class="input-group mb-3">
           <input type="text" name="search" value="<?php if(isset($_GET['search']))
-          {echo $_GET['search'];}?>"class="form-control" placeholder="Masukkan Inputan" autocomplete="off">
+          {echo $_GET['search'];}?>"class="form-control" placeholder="Masukkan Nama Mahasiswa..." autocomplete="off">
           <button type="submit" class="btn btn-outline-secondary" name="cari" >Cari</button>
         </div>
       </form>
@@ -90,20 +90,7 @@
    <!-- TABEL DATA -->
    <div class="container p-4 bg-white">
 
-   
-    <table class="table table-hover text-center table-bordered mt-4">
-    <thead>
-      <tr>
-        <th scope="col">NIM</th>
-        <th scope="col">Nama Mahasiswa</th>
-        <th scope="col">Email</th>
-        <th scope="col">Semester</th>
-        <th scope="col">Status</th>
-        <th scope="col">IP Kumulatif</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
+
       <?php
         require_once "db_login.php";
         if(isset($_GET['search']))
@@ -118,6 +105,19 @@
             foreach($query_run as $row)
             {
               ?>
+                  <table class="table table-hover text-center table-bordered mt-4">
+                <thead>
+                <tr>
+                  <th scope="col">NIM</th>
+                  <th scope="col">Nama Mahasiswa</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Semester</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">IP Kumulatif</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
               <tr>
                 <td><?= $row['nim']; ?></td>
                 <td><?= $row['nama']; ?></td>
@@ -130,6 +130,7 @@
                   <a class="btn btn-warning btn-sm" href="edit_srs9.php?id=mahasiswa.nim">Edit</a>&nbsp;&nbsp;
                 </td>
               </tr>
+              </tbody>
               <?php
             }
           }
@@ -142,14 +143,14 @@
             }
           }
         ?>
-        </tbody>
+
         </table>
         </div>
 
    <!-- TABEL DATA END -->
     <!-- Selesai Cari -->
 
-    <div class="container p-4 bg-white">
+    <div class="container px-4 bg-white">
         <div class="row">
             <div class="col-2 mt-5">
             <select name="status" id="status" onchange="showMhs(this.value)" class="form-select" aria-label="Default select example">
@@ -166,7 +167,7 @@
               </select>
             </div>
             <div class="col-3 mt-5">
-              <a href="srs1.php"><button type="button" class="btn btn-warning">Tambah Mahasiswa</button></a>
+              <a href="srs1.php"><button type="button" class="btn btn-primary fw-bold">+ Tambah Mahasiswa</button></a>
             </div>
           </div>
           <div class="row text-center">
@@ -181,7 +182,8 @@
             </div>
           </div>
     </div>
-
+        </div>
+    </div>
       <br>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

@@ -6,7 +6,7 @@ require_once('db_login.php');
   <div class="container">
     <a class="navbar-brand" href="srs1.php">
       <img src="img/logo.png" alt="Logo" width="30" height="35" class="d-inline-block" />
-      <b>informatika |</b>
+      <b>informatika | Hi, Admin.</b>
       
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">

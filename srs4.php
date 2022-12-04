@@ -40,7 +40,7 @@
         echo '<div class="d-grid py-2" >';
         echo '<button class="btn text-start"  style="background-color:#BFF2E9" type="button">Semester '.$row->smt;
         echo '<div name="garishr" class="row border border-dark my-3 mx-1"></div>';
-        echo "<hr>IP Semester : ".$row->ip_semester;
+        echo "IP Semester : ".$row->ip_semester;
         echo "<br>Jumlah SKS : ".$row->sks_kumulatif;
         echo '</button>';
         echo '</div>';

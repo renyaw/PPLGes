@@ -82,10 +82,12 @@
     
     ?>
 
-    <div class="container mt-4">
+    <div class="container mt-4 py-5 bg-white">
+    <h2 class="fw-bold">Data Diri</h2>
+      <div name="garishr" class="row border border-dark my-3 mx-1"></div>
       <div class="card">
         <div class="card-header fw-bold">
-          Data Mahasiswa
+          Masukkan Data Mahasiswa
         </div>
         <div class="card-body">
         <form method="POST" name="form" autocomplete="on" enctype="multipart/form-data">
@@ -93,7 +95,7 @@
           <div class="row justify-content-evenly">
             <div class="col-4 mt-3">
               <div class="image overflow-hidden">
-                  <img class="" src="img\Bebek.png" alt="" width="250" />
+                  <img class="" src="img\default.png" alt="" width="250" />
               </div>
               <div class="d-flex">
                 <!-- Modal trigger button -->
