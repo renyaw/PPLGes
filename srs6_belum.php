@@ -23,6 +23,7 @@
       $noinduk = $_SESSION["noinduk"];
       $query = $db->query("SELECT * from mahasiswa where nim='$noinduk'");
       $data = mysqli_fetch_assoc($query);
+      
 
       if (isset($_POST["submit"])) {
         $ekstensi_diperbolehkan	= array('pdf');
@@ -67,7 +68,19 @@
             }
             else{
               echo "<div class='alert alert-success text-center'>Data berhasil disimpan</div>";
-
+            }
+          }
+          
+          if(isset($_GET['status'])){
+            if($_GET['status']=="belum"){
+              echo "<div class='alert alert-success text-center alert-dismissible fade show' role='alert'>Silakan Memasukkan data skripsi!
+              <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+              </div>";
+            }
+            if($_GET['status']=="sudah"){
+              echo "<div class='alert alert-success text-center alert-dismissible fade show' role='alert'>Anda sedang mengerjakan skripsi. Silahkan update progress skripsi secara berkala.
+              <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+              </div>";
             }
           }
       ?>
