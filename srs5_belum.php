@@ -34,7 +34,10 @@
       //   $file_tmp = $_FILES['file']['tmp_name'];
   
         $tanggal = test_input($_POST['tanggal']);
-
+        $result = $db->query("INSERT INTO pkl values (NULL,'$noinduk','belum lulus', '$tanggal', NULL, '0', NULL)");
+        if($result){
+          header("location:srs10.php");
+        }
         // if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
         //   if($ukuran < 1044070){			
         //     move_uploaded_file($file_tmp, 'filepkl/'.$namafile);

@@ -98,6 +98,7 @@
             <th scope="col">NIM</th>
             <th scope="col">Nama Mahasiswa</th>
             <th scope="col">Angkatan</th>
+            <th scope="col">Progress Ke-</th>
             <th scope="col">File PKL</th>
             <th scope="col">Action</th>
           </tr>
@@ -106,12 +107,13 @@
           <?php
           require_once('db_login.php');
           $kodewali= $_SESSION['kodewali']; 
-          $query=$db->query("SELECT mahasiswa.nim, mahasiswa.nama, angkatan, pkltemp.upload_pkl from mahasiswa,pkltemp,dosen where mahasiswa.nim=pkltemp.nim and mahasiswa.kode_wali='$kodewali' group by nim");
+          $query=$db->query("SELECT mahasiswa.nim, mahasiswa.nama, angkatan, pkltemp.upload_pkl, pkltemp.Progress from mahasiswa,pkltemp,dosen where mahasiswa.nim=pkltemp.nim and mahasiswa.kode_wali='$kodewali' group by nim");
           while($row=$query->fetch_object()){
             echo '<tr>';
-            echo '<td>'.$row->nama.'</td>';
             echo '<td>'.$row->nim.'</td>';
+            echo '<td>'.$row->nama.'</td>';
             echo '<td>'.$row->angkatan.'</td>';
+            echo '<td>'.$row->Progress.'</td>';
             echo '<td>';
             echo '<a href="filepkl/'.$row->upload_pkl.'" target="_blank">';
             echo $row->upload_pkl;

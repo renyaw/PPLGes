@@ -34,7 +34,7 @@
           <div class="card mb-3 bg-transparent border-0" style="max-width: 540px; background-color: #f1f1f1">
             <div class="row g-0">
               <div class="col-md-4 mx-auto my-auto">
-                <img  src='<?php echo "ppdosen/".$dpoto["fotoprofile"]; ?>'style='width: 100%;border-radius:5%' />
+                <img  src='<?php echo "ppdosen/".$dpoto["fotoprofiled"]; ?>'style='width: 100%;border-radius:5%' />
                 <!-- <img src="img\bebekbulet.png" class="img-fluid rounded-start mx-auto" alt="bebek" style="width: 90%" /> -->
               </div>
               <div class="col-md-7">
