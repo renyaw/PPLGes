@@ -193,17 +193,18 @@
             <div class="col-md-4">
               <a href=
               <?php 
-                $queryskrip = $db->query('SELECT * from skripsi where nim = "$noinduk"');
+                $queryskrip = $db->query("SELECT * from skripsi where nim = $noinduk");
 
                 $statskripsi = mysqli_num_rows($queryskrip);
                 
-                if($statskripsi=0){
+                if($statskripsi==0){
                   echo 'srs6_belum.php?status=belum';
                 }
                 else{
                   echo 'srs6_belum.php?status=sudah';
                 }
               ?>>
+
                 <div class="card border-0 shadow mt-2">
                   <div class="card-body text-center rounded-1" style="background: #52ff63;">
                     <button class="fw-bold border-0 bg-transparent">Skripsi</button>

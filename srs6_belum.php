@@ -39,7 +39,7 @@
           if($ukuran < 1044070){			
             move_uploaded_file($file_tmp, 'fileskrip/'.$namafile);
             $result = $db->query(
-              "INSERT INTO skripsitemp values (NULL,'$noinduk','belum lulus', '$judul', NULL, NULL, '$namafile')"
+              "INSERT INTO skripsitemp values (NULL,'$noinduk', '$judul','belum lulus', NULL, NULL, '$namafile')"
               );
             if($result){
               header("location:srs6_belum.php?pesan=sukses");
@@ -86,9 +86,6 @@
       ?>
         <h3>Entry Skripsi</h3>
         <hr>
-        <div class="alert alert-warning" role="alert">
-            Silakan Memasukkan data skripsi!
-        </div>
         <br>
         <div class="p-3 mb-2 bg-light text-dark">
           <form method="POST" name="form" autocomplete="on" enctype="multipart/form-data">
