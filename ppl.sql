@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Des 2022 pada 08.31
--- Versi server: 10.4.24-MariaDB
--- Versi PHP: 8.1.6
+-- Generation Time: Dec 05, 2022 at 08:47 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dosen`
+-- Table structure for table `dosen`
 --
 
 CREATE TABLE `dosen` (
@@ -38,7 +38,7 @@ CREATE TABLE `dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `dosen`
+-- Dumping data for table `dosen`
 --
 
 INSERT INTO `dosen` (`kode_wali`, `nip`, `nama`, `fotoprofiled`, `email`, `nomor_telp`, `alamat`) VALUES
@@ -50,7 +50,7 @@ INSERT INTO `dosen` (`kode_wali`, `nip`, `nama`, `fotoprofiled`, `email`, `nomor
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `irs`
+-- Table structure for table `irs`
 --
 
 CREATE TABLE `irs` (
@@ -63,7 +63,7 @@ CREATE TABLE `irs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `irs`
+-- Dumping data for table `irs`
 --
 
 INSERT INTO `irs` (`id_irs`, `semester_aktif`, `status`, `jml_sks`, `file_sks`, `nim`) VALUES
@@ -100,11 +100,11 @@ INSERT INTO `irs` (`id_irs`, `semester_aktif`, `status`, `jml_sks`, `file_sks`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `irstemp`
+-- Table structure for table `irstemp`
 --
 
 CREATE TABLE `irstemp` (
-  `id_irs` int(20) NOT NULL,
+  `id_irs` varchar(20) NOT NULL,
   `semester_aktif` int(2) NOT NULL,
   `status` varchar(1) NOT NULL DEFAULT '0',
   `jml_sks` int(11) NOT NULL,
@@ -113,18 +113,18 @@ CREATE TABLE `irstemp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `irstemp`
+-- Dumping data for table `irstemp`
 --
 
 INSERT INTO `irstemp` (`id_irs`, `semester_aktif`, `status`, `jml_sks`, `file_sks`, `nim`) VALUES
-(1, 6, '0', 20, 'IRS_MHS.pdf', '24060118130132'),
-(3, 6, '0', 22, 'KTP Laporan.pdf', '24060120130053'),
-(4, 6, '0', 19, 'Modul Praktikum IMK 03 user persona.pdf', '24060120130053');
+('', 6, '0', 20, 'IRS_MHS.pdf', '24060118130132'),
+('', 6, '0', 22, 'KTP Laporan.pdf', '24060120130053'),
+('', 6, '0', 19, 'Modul Praktikum IMK 03 user persona.pdf', '24060120130053');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kabupaten`
+-- Table structure for table `kabupaten`
 --
 
 CREATE TABLE `kabupaten` (
@@ -134,7 +134,7 @@ CREATE TABLE `kabupaten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kabupaten`
+-- Dumping data for table `kabupaten`
 --
 
 INSERT INTO `kabupaten` (`kode_kab`, `nama`, `kode_prov`) VALUES
@@ -167,7 +167,7 @@ INSERT INTO `kabupaten` (`kode_kab`, `nama`, `kode_prov`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `khs`
+-- Table structure for table `khs`
 --
 
 CREATE TABLE `khs` (
@@ -183,7 +183,7 @@ CREATE TABLE `khs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `khs`
+-- Dumping data for table `khs`
 --
 
 INSERT INTO `khs` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semester`, `ip_kumulatif`, `file_khs`, `sks_kumulatif`, `nim`) VALUES
@@ -221,16 +221,17 @@ INSERT INTO `khs` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semester`
 (47, '1', 'Aktif', '1', '3.9', '3.90', NULL, 21, '24060122120119'),
 (48, '1', 'Aktif', '1', '4.0', '4.00', NULL, 24, '24060122130002'),
 (49, '1', 'Aktif', '1', '4.0', '4.00', NULL, 21, '24060122130100'),
-(50, '1', 'Aktif', '1', '3.4', '3.40', NULL, 21, '24060122130119');
+(50, '1', 'Aktif', '1', '3.4', '3.40', NULL, 21, '24060122130119'),
+(55, '5', 'aktif', '0', '3.95', '3.60', NULL, 90, '24060118120005');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `khstemp`
+-- Table structure for table `khstemp`
 --
 
 CREATE TABLE `khstemp` (
-  `id_khs` int(20) DEFAULT 0,
+  `id_khs` varchar(20) DEFAULT NULL,
   `smt` varchar(2) NOT NULL,
   `status` varchar(10) DEFAULT NULL,
   `status_konfirmasi` varchar(20) NOT NULL,
@@ -242,7 +243,7 @@ CREATE TABLE `khstemp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `khstemp`
+-- Dumping data for table `khstemp`
 --
 
 INSERT INTO `khstemp` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semester`, `ip_kumulatif`, `file_khs`, `sks_kumulatif`, `nim`) VALUES
@@ -250,13 +251,12 @@ INSERT INTO `khstemp` (`id_khs`, `smt`, `status`, `status_konfirmasi`, `ip_semes
 (NULL, '3', 'aktif', '0', '3.5', '3.90', '', 50, '24060120130152'),
 (NULL, '5', 'aktif', '0', '3.90', '3.90', '', 50, '24060120130050'),
 (NULL, '6', 'aktif', '0', '3.68', '3.90', '', 70, '24060120130059'),
-(0, '5', 'aktif', '0', '3.95', '3.60', NULL, 90, '24060118120005'),
 (NULL, '5', 'Aktif', '', '3.4', '2.85', 'CV Made.pdf', 111, '24060120130053');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mahasiswa`
+-- Table structure for table `mahasiswa`
 --
 
 CREATE TABLE `mahasiswa` (
@@ -274,7 +274,7 @@ CREATE TABLE `mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `mahasiswa`
+-- Dumping data for table `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `fotoprofile`, `angkatan`, `alamat`, `nomor_telp`, `email`, `jalur_masuk`, `kode_prov`, `kode_kab`, `kode_wali`) VALUES
@@ -318,7 +318,7 @@ INSERT INTO `mahasiswa` (`nim`, `nama`, `fotoprofile`, `angkatan`, `alamat`, `no
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pkl`
+-- Table structure for table `pkl`
 --
 
 CREATE TABLE `pkl` (
@@ -332,7 +332,7 @@ CREATE TABLE `pkl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `pkl`
+-- Dumping data for table `pkl`
 --
 
 INSERT INTO `pkl` (`id_pkl`, `nim`, `stat`, `tanggal_mulai`, `nilai`, `status_konfirmasi`, `upload_pkl`) VALUES
@@ -359,11 +359,11 @@ INSERT INTO `pkl` (`id_pkl`, `nim`, `stat`, `tanggal_mulai`, `nilai`, `status_ko
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pkltemp`
+-- Table structure for table `pkltemp`
 --
 
 CREATE TABLE `pkltemp` (
-  `id_pkl` int(20) NOT NULL,
+  `id_pkl` varchar(20) DEFAULT NULL,
   `nim` varchar(14) NOT NULL,
   `Progress` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `tanggal_mulai` varchar(20) NOT NULL,
@@ -373,21 +373,21 @@ CREATE TABLE `pkltemp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `pkltemp`
+-- Dumping data for table `pkltemp`
 --
 
 INSERT INTO `pkltemp` (`id_pkl`, `nim`, `Progress`, `tanggal_mulai`, `nilai`, `status_konfirmasi`, `upload_pkl`) VALUES
-(8, '24060118120005', '2', '', NULL, '', 'CV Made.pdf'),
-(9, '24060118130132', '3', '', NULL, '', 'CV Made.pdf'),
-(10, '24060118140133', '2', '', NULL, '', 'CV Made.pdf'),
-(11, '24060119120004', '1', '', NULL, '', 'CV Made.pdf'),
-(12, '24060119130186', '3', '', NULL, '', 'CV Made.pdf'),
-(13, '24060120120045', '1', '', NULL, '', 'CV Made.pdf');
+(NULL, '24060118140133', '2', '', NULL, '', 'CV Made.pdf'),
+(NULL, '24060119120004', '1', '', NULL, '', 'CV Made.pdf'),
+(NULL, '24060119130186', '3', '', NULL, '', 'CV Made.pdf'),
+(NULL, '24060120120045', '1', '', NULL, '', 'CV Made.pdf'),
+(NULL, '24060118120005', '2', '', NULL, '', 'CV Made.pdf'),
+(NULL, '24060118130132', '3', '', NULL, '', 'CV Made.pdf');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `provinsi`
+-- Table structure for table `provinsi`
 --
 
 CREATE TABLE `provinsi` (
@@ -396,7 +396,7 @@ CREATE TABLE `provinsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `provinsi`
+-- Dumping data for table `provinsi`
 --
 
 INSERT INTO `provinsi` (`kode_prov`, `nama`) VALUES
@@ -410,7 +410,7 @@ INSERT INTO `provinsi` (`kode_prov`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `skripsi`
+-- Table structure for table `skripsi`
 --
 
 CREATE TABLE `skripsi` (
@@ -424,7 +424,7 @@ CREATE TABLE `skripsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `skripsi`
+-- Dumping data for table `skripsi`
 --
 
 INSERT INTO `skripsi` (`id_skripsi`, `nim`, `judul`, `status`, `nilai`, `tgl_sidang`, `file_skripsi`) VALUES
@@ -443,31 +443,23 @@ INSERT INTO `skripsi` (`id_skripsi`, `nim`, `judul`, `status`, `nilai`, `tgl_sid
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `skripsitemp`
+-- Table structure for table `skripsitemp`
 --
 
 CREATE TABLE `skripsitemp` (
-  `id_skripsi` int(20) NOT NULL,
+  `id_skripsi` int(20) DEFAULT NULL,
   `nim` varchar(14) NOT NULL,
   `status` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `Judul` varchar(100) NOT NULL,
   `nilai` varchar(2) DEFAULT NULL,
   `tgl_sidang` varchar(10) DEFAULT NULL,
-  `lama_studi` varchar(10) DEFAULT NULL,
   `file_skripsi` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `skripsitemp`
---
-
-INSERT INTO `skripsitemp` (`id_skripsi`, `nim`, `status`, `Judul`, `nilai`, `tgl_sidang`, `lama_studi`, `file_skripsi`) VALUES
-(1, '24060120130053', 'belum lulus', 'Membeli Sebuah Bebek', NULL, NULL, NULL, 'KTP Laporan.pdf');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -478,7 +470,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`nip_nim`, `username`, `status`, `password`) VALUES
@@ -494,40 +486,34 @@ INSERT INTO `user` (`nip_nim`, `username`, `status`, `password`) VALUES
 --
 
 --
--- Indeks untuk tabel `dosen`
+-- Indexes for table `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`kode_wali`);
 
 --
--- Indeks untuk tabel `irs`
+-- Indexes for table `irs`
 --
 ALTER TABLE `irs`
   ADD PRIMARY KEY (`id_irs`),
   ADD KEY `nim` (`nim`);
 
 --
--- Indeks untuk tabel `irstemp`
---
-ALTER TABLE `irstemp`
-  ADD PRIMARY KEY (`id_irs`);
-
---
--- Indeks untuk tabel `kabupaten`
+-- Indexes for table `kabupaten`
 --
 ALTER TABLE `kabupaten`
   ADD PRIMARY KEY (`kode_kab`),
   ADD KEY `kode_prov` (`kode_prov`);
 
 --
--- Indeks untuk tabel `khs`
+-- Indexes for table `khs`
 --
 ALTER TABLE `khs`
   ADD PRIMARY KEY (`id_khs`),
   ADD KEY `fk_nimkhs` (`nim`);
 
 --
--- Indeks untuk tabel `mahasiswa`
+-- Indexes for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`nim`),
@@ -536,107 +522,77 @@ ALTER TABLE `mahasiswa`
   ADD KEY `fk_kab` (`kode_kab`);
 
 --
--- Indeks untuk tabel `pkl`
+-- Indexes for table `pkl`
 --
 ALTER TABLE `pkl`
   ADD PRIMARY KEY (`id_pkl`),
   ADD KEY `fk_nim_pkl` (`nim`);
 
 --
--- Indeks untuk tabel `pkltemp`
---
-ALTER TABLE `pkltemp`
-  ADD PRIMARY KEY (`id_pkl`);
-
---
--- Indeks untuk tabel `provinsi`
+-- Indexes for table `provinsi`
 --
 ALTER TABLE `provinsi`
   ADD PRIMARY KEY (`kode_prov`);
 
 --
--- Indeks untuk tabel `skripsi`
+-- Indexes for table `skripsi`
 --
 ALTER TABLE `skripsi`
   ADD PRIMARY KEY (`id_skripsi`),
   ADD KEY `fk_nim_skrp` (`nim`);
 
 --
--- Indeks untuk tabel `skripsitemp`
---
-ALTER TABLE `skripsitemp`
-  ADD PRIMARY KEY (`id_skripsi`);
-
---
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`nip_nim`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `irs`
+-- AUTO_INCREMENT for table `irs`
 --
 ALTER TABLE `irs`
   MODIFY `id_irs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- AUTO_INCREMENT untuk tabel `irstemp`
---
-ALTER TABLE `irstemp`
-  MODIFY `id_irs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT untuk tabel `khs`
+-- AUTO_INCREMENT for table `khs`
 --
 ALTER TABLE `khs`
-  MODIFY `id_khs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id_khs` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
--- AUTO_INCREMENT untuk tabel `pkl`
+-- AUTO_INCREMENT for table `pkl`
 --
 ALTER TABLE `pkl`
   MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT untuk tabel `pkltemp`
---
-ALTER TABLE `pkltemp`
-  MODIFY `id_pkl` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT untuk tabel `skripsi`
+-- AUTO_INCREMENT for table `skripsi`
 --
 ALTER TABLE `skripsi`
-  MODIFY `id_skripsi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_skripsi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT untuk tabel `skripsitemp`
---
-ALTER TABLE `skripsitemp`
-  MODIFY `id_skripsi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `irs`
+-- Constraints for table `irs`
 --
 ALTER TABLE `irs`
   ADD CONSTRAINT `nim` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`);
 
 --
--- Ketidakleluasaan untuk tabel `kabupaten`
+-- Constraints for table `kabupaten`
 --
 ALTER TABLE `kabupaten`
   ADD CONSTRAINT `kode_prov` FOREIGN KEY (`kode_prov`) REFERENCES `provinsi` (`kode_prov`);
 
 --
--- Ketidakleluasaan untuk tabel `pkl`
+-- Constraints for table `pkl`
 --
 ALTER TABLE `pkl`
   ADD CONSTRAINT `fk_nim_pkl` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`);
