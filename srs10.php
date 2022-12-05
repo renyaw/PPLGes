@@ -43,7 +43,7 @@
           </div>";
         }
         if($_GET['pesan']=="suksesupload"){
-          echo "<div class='alert alert-success text-center alert-dismissible fade show' role='alert'>IRS Berhasil Diupload
+          echo "<div class='alert alert-success text-center alert-dismissible fade show' role='alert'>Berhasil Diupload
           <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
           </div>";
         }
@@ -223,7 +223,21 @@
               </a>
             </div>
             <div class="col-md-4">
-              <a href="srs5_belum.php">
+              <?php
+                $noinduk = $_SESSION['noinduk'];
+                $query3 = $db->query("SELECT nim, stat from pkl where nim = '$noinduk'");
+                $data4 = mysqli_fetch_assoc($query3);
+                $data3 = mysqli_num_rows($query3);
+              ?>
+              <a href="<?php 
+              if($data3==0){
+                echo 'srs5_belum.php';
+              }elseif($data3==1 || $data4['stat']=='belum lulus'){
+                echo 'srs5_ong.php';
+              }else{
+                echo 'srs5_sls.php';
+              }
+              ?>">
                 <div class="card border-0 shadow mt-2">
                   <div class="card-body text-center rounded-1" style="background: #ff5a5a">
                     <button class="fw-bold border-0 bg-transparent">PKL</button>
