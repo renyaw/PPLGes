@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2022 at 08:47 AM
+-- Generation Time: Dec 05, 2022 at 08:55 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -438,7 +438,8 @@ INSERT INTO `skripsi` (`id_skripsi`, `nim`, `judul`, `status`, `nilai`, `tgl_sid
 (9, '24060119120112', 'Pembangunan Game Peduli Lingkungan Menggunakan Metode Agile Game Development', 'belum lulus', NULL, '01/11/2022', NULL),
 (10, '24060119130117', 'Analisis Pengaruh Nilai Tes Potensi Akademik Pada Evaluasi Pemrograman Dasar Terhadap Motivasi Dan Kemampuan Pemrograman', 'belum lulus', NULL, NULL, NULL),
 (11, '24060119130186', 'Pengenalan Bunga Anggrek Menggunakan Gray Level Co-Occurrence Dan Algoritma K–Nearest Neighbours Berbasis Mobile', 'belum lulus', NULL, NULL, NULL),
-(12, '24060119140005', 'Sistem Penjadwalan Wisata Kabupaten Nganjuk Menggunakan Algoritma Best First Search Berbasis Android', 'belum lulus', NULL, NULL, NULL);
+(12, '24060119140005', 'Sistem Penjadwalan Wisata Kabupaten Nganjuk Menggunakan Algoritma Best First Search Berbasis Android', 'belum lulus', NULL, NULL, NULL),
+(17, '24060120130053', 'belum lulus', 'Ayam Goreng Ena', NULL, NULL, 'Atribut Maba.pdf');
 
 -- --------------------------------------------------------
 
@@ -449,8 +450,8 @@ INSERT INTO `skripsi` (`id_skripsi`, `nim`, `judul`, `status`, `nilai`, `tgl_sid
 CREATE TABLE `skripsitemp` (
   `id_skripsi` int(20) DEFAULT NULL,
   `nim` varchar(14) NOT NULL,
-  `status` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `Judul` varchar(100) NOT NULL,
+  `status` varchar(15) NOT NULL DEFAULT 'belum lulus',
   `nilai` varchar(2) DEFAULT NULL,
   `tgl_sidang` varchar(10) DEFAULT NULL,
   `file_skripsi` varchar(200) DEFAULT NULL
@@ -573,7 +574,7 @@ ALTER TABLE `pkl`
 -- AUTO_INCREMENT for table `skripsi`
 --
 ALTER TABLE `skripsi`
-  MODIFY `id_skripsi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_skripsi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables

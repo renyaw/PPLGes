@@ -39,7 +39,7 @@
           if($ukuran < 1044070){			
             move_uploaded_file($file_tmp, 'fileskrip/'.$namafile);
             $result = $db->query(
-              "INSERT INTO skripsitemp values (NULL,'$noinduk','belum lulus', '$judul', NULL, NULL, NULL, '$namafile')"
+              "INSERT INTO skripsitemp values (NULL,'$noinduk','belum lulus', '$judul', NULL, NULL, '$namafile')"
               );
             if($result){
               header("location:srs6_belum.php?pesan=sukses");
@@ -70,7 +70,7 @@
               echo "<div class='alert alert-success text-center'>Data berhasil disimpan</div>";
             }
           }
-          
+
           if(isset($_GET['status'])){
             if($_GET['status']=="belum"){
               echo "<div class='alert alert-success text-center alert-dismissible fade show' role='alert'>Silakan Memasukkan data skripsi!
