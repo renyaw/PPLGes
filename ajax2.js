@@ -1,7 +1,7 @@
 var provinsi = document.forms.form.provinsi;
 var kabupaten = document.forms.form.kabupaten;
 
-provinsi.onchange = function(){
+provinsi.onchange = function () {
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", "get_kabupaten.php?id=" + provinsi.value);
@@ -11,4 +11,4 @@ provinsi.onchange = function(){
     };
 
     xhr.send();
-}
+};

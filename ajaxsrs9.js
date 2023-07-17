@@ -1,34 +1,34 @@
 function getXMLHTTPRequest() {
     if (window.XMLHttpRequest) {
-      return new XMLHttpRequest();
+        return new XMLHttpRequest();
     } else {
-      // code for old IE browsers
-      return new ActiveXObject('Microsoft.XMLHTTP');
+        // code for old IE browsers
+        return new ActiveXObject("Microsoft.XMLHTTP");
     }
-  
-  }
-  
-  // Fungsi urlAjax
-  function callAjax(url, inner) {
+}
+
+// Fungsi urlAjax
+function callAjax(url, inner) {
     var xmlhttp = getXMLHTTPRequest();
-    xmlhttp.open('GET', url, true);
+    xmlhttp.open("GET", url, true);
     xmlhttp.onreadystatechange = function () {
-      document.getElementById(inner).innerHTML = '<img src="images/ajax_loader.png"/>';
-      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        document.getElementById(inner).innerHTML = xmlhttp.responseText;
-      }
-      return false;
+        document.getElementById(inner).innerHTML =
+            '<img src="images/ajax_loader.png"/>';
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById(inner).innerHTML = xmlhttp.responseText;
+        }
+        return false;
     };
     xmlhttp.send(null);
-  }
-  
-  function showMhs(status) {
+}
+
+function showMhs(status) {
     // var status = document.getElementById('status').value;
-    var inner = 'detail_mhs';
-    var url = 'get_srs9.php?id=' + status;
-    if (status == '') {
-      document.getElementById(inner).innerHTML = '';
+    var inner = "detail_mhs";
+    var url = "get_srs9.php?id=" + status;
+    if (status == "") {
+        document.getElementById(inner).innerHTML = "";
     } else {
-      callAjax(url, inner);
+        callAjax(url, inner);
     }
-  }
+}

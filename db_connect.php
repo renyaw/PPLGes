@@ -2,7 +2,8 @@
 
 $db = new mysqli('localhost', 'root', '', 'ppl');
 
-function test_input($data) {
+function test_input($data)
+{
     global $db;
 
     $data = trim($data);

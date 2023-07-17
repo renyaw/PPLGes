@@ -1,8 +1,8 @@
 <?php
 // include our login information
- //menginisialilasi session lalu akan diteruskan ke get dan post
+//menginisialilasi session lalu akan diteruskan ke get dan post
 require_once "db_login.php"; // memanggil halaman
-$id=$_GET['id'];
+$id = $_GET['id'];
 //'max(khs.smt) dan group by nim' untuk mengambil smt tertinggi dari nim yang sama
 //'smt in (SELECT max(smt) FROM khs group by smt)' untuk mengambil apasaja data smt pada tabel khs, digunakan group by karena akan diambil max dari data smt yang duplikat
 //'where smt in ()' supaya smt yang diambil hanya menggunakan smt yang sudah dilakukan pada query internal
@@ -16,12 +16,12 @@ $query2 =
 //sort
 $sortR = $db->query($query);
 if (!$sortR) {
-  die("Could not the query the database: <br />" .$db->error ."<br>Query: " .$query);
+    die("Could not the query the database: <br />" . $db->error . "<br>Query: " . $query);
 }
 //default
 $defaultR = $db->query($query2);
 if (!$defaultR) {
-  die("Could not the query the database: <br />" .$db->error ."<br>Query: " .$query);
+    die("Could not the query the database: <br />" . $db->error . "<br>Query: " . $query);
 }
 echo '
 <table class="table table-hover text-center table-bordered mt-4">
@@ -40,7 +40,7 @@ echo '
 
 if ($id == "3") {
     $result = $defaultR;
-} else{
+} else {
     $result = $sortR;
 }
 
@@ -55,7 +55,7 @@ while ($row = $result->fetch_object()) {
     echo "<td>" . $row->smt . "</td>";
     echo "<td>" . $row->status . "</td>";
     echo "<td>" . $row->ipk . "</td>";
-    echo '<td><a class="btn btn-warning btn-sm" href="edit_srs9.php?id=' .$row->nim .'">Edit</a>&nbsp;&nbsp;
+    echo '<td><a class="btn btn-warning btn-sm" href="edit_srs9.php?id=' . $row->nim . '">Edit</a>&nbsp;&nbsp;
             </td>';
     echo "</tr>";
     $i++;
@@ -66,4 +66,3 @@ echo "</table>";
 echo "<br />";
 $result->free();
 $db->close();
-?>

@@ -1,5 +1,5 @@
     <head>
-      <link rel="stylesheet" href="Footer.css">
+        <link rel="stylesheet" href="Footer.css">
     </head>
     <!-- FOOTER -->
     <footer class="w-100 py-4 flex-shrink-0">
@@ -13,7 +13,15 @@
                 <div class="col-lg-2 col-md-6">
                     <h5 class="text-white mb-3">Quick links</h5>
                     <ul class="list-unstyled text-muted">
-                        <li><a href="<?php if ($_SESSION['status']==1) {echo "srs9.php";} elseif($_SESSION['status']==2){echo "srs10.php";} elseif($_SESSION['status']==3) {echo "srs11.php";} elseif ($_SESSION['status']==4){echo 'srs12.php';}?>">Home</a></li>
+                        <li><a href="<?php if ($_SESSION['status'] == 1) {
+                                            echo "srs9.php";
+                                        } elseif ($_SESSION['status'] == 2) {
+                                            echo "srs10.php";
+                                        } elseif ($_SESSION['status'] == 3) {
+                                            echo "srs11.php";
+                                        } elseif ($_SESSION['status'] == 4) {
+                                            echo 'srs12.php';
+                                        } ?>">Home</a></li>
                         <li><a href="https://github.com/renyaw/PPL_C_2022_3">Our Repository</a></li>
                         <li><a href="https://github.com/renyaw/PPL_C_2022_3/graphs/contributors">Contribution</a></li>
                         <li><a href="#">Insight</a></li>

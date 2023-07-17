@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Skripsi</title>
@@ -8,13 +9,14 @@
     <script src="https://unpkg.com/htmlincludejs"></script>
     <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
     <style>
-      body {
-        font-family: "Inter";
-        font-size: 22px;
-      }
-      </style>
-  </head>
-  <body class="bg-light">
+        body {
+            font-family: "Inter";
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <include src="navbar.php"></include>
     <br>
@@ -37,10 +39,10 @@
             <div class="mb-3">
                 <label for="formFile" class="form-label">Scan Skripsi Terakhir</label>
                 <input class="form-control" type="file" id="formFile">
-            </div>              
+            </div>
             <br>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <a href="srs6_belum.php"><button class="btn btn-primary" type="button">Edit Data</button></a>
+                <a href="srs6_belum.php"><button class="btn btn-primary" type="button">Edit Data</button></a>
                 <button class="btn btn-primary" type="button">Submit</button>
             </div>
         </div>
@@ -50,4 +52,4 @@
     <?PHP
     include('Footer.php');
     ?>
-  </body>
+</body>
